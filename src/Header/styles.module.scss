@@ -1,10 +1,12 @@
+@import "../variables.scss";
+
 $header-height: 72px;
 
 .header {
-  background-color: red;
   position: fixed;
-  top: 0;
   width: 100%;
+  z-index: 10;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .placeholder {
@@ -12,18 +14,49 @@ $header-height: 72px;
 }
 
 .body {
-    height: $header-height;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  height: $header-height;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-left: 1rem;
+
+  // Example use of color variables
+  color: $main-font-color;
 }
 
 .menu {
   display: flex;
-  gap: 1em;
+  gap: 2rem;
   align-items: center;
-  flex-wrap: wrap;
   list-style: none;
 }
-.menuItem:not(:last-child) {
+
+.menuLink {
+  color: $link-color;
+  text-decoration: none;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease-in-out;
+
+  &:hover,
+  &.active {
+    border-color: $link-color;
+  }
+}
+
+.menuItem {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-right: 2rem;
+
+  // Example use of color variables
+  color: $secondary-font-color;
 }

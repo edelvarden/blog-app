@@ -5,7 +5,7 @@
     "author": "John Doe",
     "date": "2022-03-01",
     "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "image": "https://example.com/article1.jpg"
+    "image": "general.webp"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "author": "Jane Smith",
     "date": "2022-03-02",
     "excerpt": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "image": "https://example.com/article2.jpg"
+    "image": "general.webp"
   },
   {
     "id": 3,
@@ -21,6 +21,6 @@
     "author": "Bob Johnson",
     "date": "2022-03-03",
     "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "https://example.com/article3.jpg"
+    "image": "general.webp"
   }
 ]

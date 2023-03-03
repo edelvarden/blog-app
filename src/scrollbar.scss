@@ -1,0 +1,37 @@
+$scrollbar-track-color: #f3f4ed;
+$scrollbar-thumb-color: #bfbfbf;
+$scrollbar-thumb-hover-color: #d2d2d2;
+$scrollbar-thumb-active-color: #a6a6a6;
+
+// Mixin to style the scrollbar track and thumb
+@mixin scrollbar {
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background-color: $scrollbar-track-color;
+  }
+
+  /* Thumb */
+  &::-webkit-scrollbar-thumb {
+    background-color: $scrollbar-thumb-color;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: $scrollbar-thumb-hover-color;
+    }
+
+    &:active {
+      background-color: $scrollbar-thumb-active-color;
+    }
+  }
+}
+
+/* Apply the mixin to the body */
+body {
+  /* Set the width of the scrollbar */
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Style the scrollbar */
+  @include scrollbar;
+}

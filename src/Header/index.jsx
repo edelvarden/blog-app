@@ -3,6 +3,7 @@ import Container from '../Container';
 import styles from './styles.module.scss';
 
 const Header = () => {
+
   return (
     <>
       <header className={styles.header}>
@@ -10,9 +11,9 @@ const Header = () => {
           <div className={styles.body}>
             <nav>
               <ul className={styles.menu}>
-                <li className={styles.menuItem}><Link to="/">Home</Link></li>
-                <li className={styles.menuItem}><Link to="/blog">Blog</Link></li>
-                <li className={styles.menuItem}><Link to="/contact">Contact</Link></li>
+                <li className={styles.menuItem}><Link className={styles.menuLink} to="/">Home</Link></li>
+                <li className={styles.menuItem}><Link className={styles.menuLink} to="/blog">Blog</Link></li>
+                <li className={styles.menuItem}><Link className={styles.menuLink} to="/contact">Contact</Link></li>
               </ul>
             </nav>
           </div>

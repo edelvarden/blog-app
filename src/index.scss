@@ -1,9 +1,20 @@
+@import "variables.scss";
+@import "scrollbar.scss";
+
+// reset styles
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-.blog-layout {
-  height: 100%;
+body {
+  overflow-y: scroll; // fix scrollbar page moving
+  font-family: $main-font;
+}
+
+// change selection color
+::selection {
+  background-color: #b3d4fc;
+  color: #333;
 }
