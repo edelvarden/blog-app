@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import BlogPage from './BlogPage';
-import ContactPage from './ContactPage';
-import HomePage from './HomePage';
-import NotFoundPage from './NotFoundPage';
+import BlogPage from './Pages/Blog';
+import ContactPage from './Pages/Contact';
+import HomePage from './Pages/Home';
+import NotFoundPage from './Pages/NotFound';
 
 const ArticleList = ({ articles }) => {
 
