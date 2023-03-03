@@ -1,0 +1,29 @@
+$header-height: 72px;
+
+.header {
+  background-color: red;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.placeholder {
+  height: $header-height;
+}
+
+.body {
+    height: $header-height;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+}
+.menuItem:not(:last-child) {
+}
