@@ -5,7 +5,7 @@ import ContactPage from './Pages/Contact';
 import HomePage from './Pages/Home';
 import NotFoundPage from './Pages/NotFound';
 
-const ArticleList = ({ articles }) => {
+const Content = ({ articles }) => {
 
     // set document title on mount and title change
     useEffect(() => {
@@ -38,4 +38,4 @@ const ArticleList = ({ articles }) => {
     );
 };
 
-export default ArticleList;
+export default Content;

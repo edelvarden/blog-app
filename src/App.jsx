@@ -1,12 +1,11 @@
-import articlesData from './articles.json';
+import articles from './articles.json';
 import BlogLayout from './BlogLayout';
 
 function App() {
 
   return (
     <div className="App">
-
-      <BlogLayout articles={articlesData.articles} />
+      <BlogLayout articles={articles} />
     </div>
   )
 }

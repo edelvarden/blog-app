@@ -1,5 +1,5 @@
 import Container from '../Container';
-import styles from './Header.module.scss';
+import styles from './styles.module.scss';
 
 const Header = () => {
   return (

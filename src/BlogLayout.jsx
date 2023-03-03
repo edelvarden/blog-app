@@ -1,4 +1,4 @@
-import ArticleList from "./ArticleList";
+import Content from "./Content";
 import Container from "./Container";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -10,7 +10,7 @@ function BlogLayout({ articles }) {
       <div className="blog-layout">
         <Container>
           <div className="blog-layout-content">
-            <ArticleList articles={articles} />
+            <Content articles={articles} />
           </div>
         </Container>
       </div>
