@@ -8,7 +8,7 @@
   }
   
   .item {
-    background-color: #fff;
+    background-color: val(card-bgcolor);
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     overflow: hidden;
@@ -38,7 +38,7 @@
       padding: 1rem;
       
       .title {
-        color: $main-font-color;
+        color: val(main-font-color);
         
         font-size: 1.5em;
         font-weight: bold;
@@ -47,7 +47,7 @@
       }
   
       .paragraph {
-        color: $secondary-font-color;
+        color: val(secondary-font-color);
 
         margin-top: auto;
         font-size: 1em;

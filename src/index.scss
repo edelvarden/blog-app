@@ -8,9 +8,25 @@
   padding: 0;
 }
 
+:root {
+  @each $key, $value in $light-mode {
+    --#{$prefix}-#{$key}: #{$value};
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @each $key, $value in $dark-mode {
+      --#{$prefix}-#{$key}: #{$value};
+    }
+  }
+}
+
 body {
   overflow-y: scroll; // fix scrollbar page moving
   font-family: $main-font;
+  color: val(main-font-color);
+  background-color: val(main-bgcolor);
 }
 
 // change selection color

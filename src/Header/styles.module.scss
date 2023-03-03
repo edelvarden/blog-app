@@ -28,7 +28,7 @@ $header-height: 72px;
   margin-left: 1rem;
 
   // Example use of color variables
-  color: $main-font-color;
+  color: val(main-font-color);
 }
 
 .menu {
@@ -39,7 +39,7 @@ $header-height: 72px;
 }
 
 .menuLink {
-  color: $link-color;
+  color: val(link-color);
   text-decoration: none;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid transparent;
@@ -47,7 +47,7 @@ $header-height: 72px;
 
   &:hover,
   &.active {
-    border-color: $link-color;
+    border-color: val(link-color);
   }
 }
 
@@ -58,5 +58,5 @@ $header-height: 72px;
   margin-right: 2rem;
 
   // Example use of color variables
-  color: $secondary-font-color;
+  color: val(secondary-font-color);
 }
