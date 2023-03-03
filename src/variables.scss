@@ -20,7 +20,7 @@ $dark-mode: (
   "card-bgcolor": #333333,
 );
 
-// get val from css variable
+// get val from css variable, example: val(main-font-color)
 @function val($variable-name) {
   @return #{var(--#{$prefix}-#{$variable-name})};
 }

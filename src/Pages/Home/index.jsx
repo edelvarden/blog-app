@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
+import AddPost from '../../AddPost';
 import styles from "./styles.module.scss";
 
 const Home = ({ articles }) => {
   return (
     <>
       <h1>Home</h1>
+      <AddPost />
 
       {/* Map over articles and display them */}
       <ul className={styles.list}>
