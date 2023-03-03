@@ -1,39 +1,39 @@
 import { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import BlogPage from './Pages/Blog';
-import ContactPage from './Pages/Contact';
-import HomePage from './Pages/Home';
-import NotFoundPage from './Pages/NotFound';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import Blog from './Pages/Blog';
+import Contact from './Pages/Contact';
+import Home from './Pages/Home';
 
 const Content = ({ articles }) => {
 
-    // set document title on mount and title change
+
+    const location = useLocation();
+
+    // change the tab title to h1 content
     useEffect(() => {
         const titleElement = document.querySelector('h1');
-        document.title = titleElement.innerHTML;
-    }, []);
+        document.title = (titleElement) ? titleElement.textContent : "Home";
+    }, [location]);
 
     return (
         <>
-            <Router>
-                <Routes>
-                    {/* defined routes */}
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/blog" element={<BlogPage />} />
-                    <Route path="/contact" element={<ContactPage />} />
-                    <Route path="/*" element={<NotFoundPage />} />
+            <Routes>
+                {/* map all articles to their own route */}
+                {articles?.map((article, index) => (
+                    <Route key={index} path={`/article/${article.id}`} element={
+                        <>
+                            <h1>{article.title}</h1>
+                            <p>{article.excerpt}</p>
+                        </>
+                    } />
+                ))}
 
-                    {/* map all articles to their own route */}
-                    {articles?.map((article, index) => (
-                        <Route key={index} path={`/article/${article.id}`} element={
-                            <>
-                                <h1>{article.title}</h1>
-                                <p>{article.excerpt}</p>
-                            </>
-                        } />
-                    ))}
-                </Routes>
-            </Router>
+                {/* defined routes */}
+                <Route path="/" element={<Home />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/*" element={<Home />} />
+            </Routes>
         </>
     );
 };

@@ -7,13 +7,9 @@ function BlogLayout({ articles }) {
   return (
     <>
       <Header />
-      <div className="blog-layout">
         <Container>
-          <div className="blog-layout-content">
             <Content articles={articles} />
-          </div>
         </Container>
-      </div>
       <Footer />
     </>
   );
