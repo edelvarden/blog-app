@@ -29,7 +29,7 @@ const Content = ({ articles }) => {
                 ))}
 
                 {/* defined routes */}
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Home articles={articles} />} />
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/*" element={<Home />} />
