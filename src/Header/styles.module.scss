@@ -2,47 +2,48 @@
 
 $header-height: 72px;
 
-.header {
-  position: fixed;
-  width: 100%;
-  z-index: 10;
-  background-color: val(card-bgcolor);
-}
-
-.placeholder {
-  height: $header-height;
-}
-
 .body {
-  height: $header-height;
-  display: flex;
   align-items: center;
+  display: flex;
+  height: $header-height;
   justify-content: space-between;
 }
 
+.header {
+  background-color: val(card-bgcolor);
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
 .logo {
+  color: val(main-font-color);
   font-size: 2rem;
   font-weight: bold;
-  text-transform: uppercase;
   letter-spacing: 2px;
   margin-left: 1rem;
-
-  // Example use of color variables
-  color: val(main-font-color);
+  text-transform: uppercase;
 }
 
 .menu {
+  align-items: center;
   display: flex;
   gap: 2rem;
-  align-items: center;
   list-style: none;
 }
 
+.menuItem {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  margin-right: 2rem;
+  text-transform: uppercase;
+}
+
 .menuLink {
-  color: val(link-color);
-  text-decoration: none;
-  padding-bottom: 0.5rem;
   border-bottom: 2px solid transparent;
+  color: val(link-color);
+  padding-bottom: 0.5rem;
+  text-decoration: none;
   transition: border-color 0.3s ease-in-out;
 
   &:hover,
@@ -51,9 +52,6 @@ $header-height: 72px;
   }
 }
 
-.menuItem {
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-right: 2rem;
+.placeholder {
+  height: $header-height;
 }

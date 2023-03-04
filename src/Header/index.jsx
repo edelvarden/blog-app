@@ -1,9 +1,9 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Container from '../Container';
 import styles from './styles.module.scss';
 
 const Header = () => {
-
   return (
     <>
       <header className={styles.header}>

@@ -2,10 +2,15 @@
   appearance: none;
   border: none;
   border-radius: 8px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  margin: 0.2em;
   outline: none;
   padding: 0.5em;
-  transition: all ease-in-out 0.2s;
+  transition: all ease-in-out 187ms;
+
+  &:hover {
+    background-color: #b5b5b5;
+  }
 }
 
 .input {

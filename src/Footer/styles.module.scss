@@ -1,11 +1,17 @@
 @import "../variables.scss";
 
+.footer {
+  background-color: val(card-bgcolor);
+  padding: 2em;
+}
 .body {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.copyright {
+.text {
   color: val(secondary-font-color);
+  font-size: 1rem;
+  text-align: center;
 }
