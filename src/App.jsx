@@ -1,6 +1,5 @@
 import articles from './articles.json';
-import BlogLayout from './BlogLayout';
-
+import BlogLayout from './components/BlogLayout';
 
 function App() {
 

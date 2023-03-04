@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Container from '../Container';
 import styles from './styles.module.scss';
@@ -12,9 +11,9 @@ const Header = () => {
             <nav>
               <ul className={styles.menu}>
                 <li className={styles.menuItem}><Link className={styles.menuLink} to="/">Home</Link></li>
-                <li className={styles.menuItem}><Link className={styles.menuLink} to="/blog">Blog</Link></li>
                 <li className={styles.menuItem}><Link className={styles.menuLink} to="/contact">Contact</Link></li>
               </ul>
+              <Link className={styles.createPost} to="/post">+ Create Post</Link>
             </nav>
           </div>
         </Container>

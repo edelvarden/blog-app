@@ -14,13 +14,13 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    @each $key, $value in $dark-mode {
-      --#{$prefix}-#{$key}: #{$value};
-    }
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     @each $key, $value in $dark-mode {
+//       --#{$prefix}-#{$key}: #{$value};
+//     }
+//   }
+// }
 
 body {
   overflow-y: scroll; // fix scrollbar page moving
@@ -35,3 +35,41 @@ body {
   color: #333;
 }
 
+:root {
+  --font-size: 105%;
+  --line-height: 1.5;
+  --letter-spacing: 0.02em;
+}
+
+body {
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  letter-spacing: var(--letter-spacing);
+}
+
+h1 {
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-size: 3em;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+
+h2 {
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-size: 2em;
+  line-height: 1.2;
+}
+
+p {
+  font-weight: 400;
+  margin-bottom: 1em;
+}
+
+a {
+  color: val(link-color);
+  text-decoration: none;
+}

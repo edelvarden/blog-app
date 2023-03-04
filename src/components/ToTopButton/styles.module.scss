@@ -1,0 +1,40 @@
+.toTopBtn {
+    appearance: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 28px;
+    color: #fff;
+    background: #2196f3;
+    opacity: 0.2;
+    cursor: pointer;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 100;
+    outline: none;
+    border: none;
+  }
+  
+  .toTopBtn:hover,
+  .toTopBtn:focus {
+    opacity: 0.8;
+  }
+  
+  .toTopBtn:focus {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #2196f3;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .toTopBtn {
+      right: 30px;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .toTopBtn {
+      right: 50px;
+    }
+  }
+  

@@ -1,15 +1,15 @@
-import Content from "./Content";
 import Container from "./Container";
+import Content from "./Content";
 import Footer from "./Footer";
 import Header from "./Header";
 
-function BlogLayout({ articles }) {
+const BlogLayout = ({ articles }) => {
   return (
     <>
       <Header />
-        <Container>
-            <Content articles={articles} />
-        </Container>
+      <Container>
+        <Content articles={articles} />
+      </Container>
       <Footer />
     </>
   );

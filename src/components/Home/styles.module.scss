@@ -19,7 +19,7 @@
   overflow: hidden;
 
   .content {
-    padding: 1em;
+    padding: 0 1em;
     overflow: hidden;
 
     .paragraph {
@@ -38,8 +38,9 @@
     .title {
       color: val(main-font-color);
       font-size: 1.5rem;
-      font-weight: bold;
-      grid-row: 1 / span 1; /* Place the title in the first row */
+
+      margin-bottom: 0.25em;
+      margin-top: 0.5em;
     }
   }
 
@@ -54,9 +55,9 @@
   }
 
   .link {
-    display: grid; 
-    grid-template-columns: 1fr; 
-    grid-template-rows: auto auto; 
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
     text-decoration: none;
   }
 }

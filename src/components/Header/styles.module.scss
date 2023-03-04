@@ -1,4 +1,4 @@
-@import "../variables.scss";
+@import "../../variables.scss";
 
 $header-height: 72px;
 
@@ -14,6 +14,13 @@ $header-height: 72px;
   position: fixed;
   width: 100%;
   z-index: 10;
+
+  nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
 .logo {
@@ -54,4 +61,27 @@ $header-height: 72px;
 
 .placeholder {
   height: $header-height;
+}
+
+
+.createPost {
+  color: white;
+  background-color: val(link-color);
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  margin-left: auto;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
