@@ -1,25 +1,23 @@
 @import "../../variables.scss";
 
-$header-height: 72px;
-
 .body {
   align-items: center;
   display: flex;
-  height: $header-height;
   justify-content: space-between;
 }
 
 .header {
   background-color: val(card-bgcolor);
-  position: fixed;
+  position: relative;
   width: 100%;
-  z-index: 10;
+  z-index: 9999;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
   nav {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
   }
 }
 
@@ -35,7 +33,6 @@ $header-height: 72px;
 .menu {
   align-items: center;
   display: flex;
-  gap: 2rem;
   list-style: none;
 }
 
@@ -49,39 +46,14 @@ $header-height: 72px;
 .menuLink {
   border-bottom: 2px solid transparent;
   color: val(link-color);
-  padding-bottom: 0.5rem;
   text-decoration: none;
   transition: border-color 0.3s ease-in-out;
+  display: flex;
+  height: 100%;
+  padding: 1em;
 
   &:hover,
   &.active {
     border-color: val(link-color);
-  }
-}
-
-.placeholder {
-  height: $header-height;
-}
-
-
-.createPost {
-  color: white;
-  background-color: val(link-color);
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 1rem;
-  font-weight: bold;
-  line-height: 1.5;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  border-radius: 10px;
-  transition: all 0.3s ease-in-out;
-  margin-left: auto;
-
-  &:hover {
-    opacity: 0.8;
   }
 }

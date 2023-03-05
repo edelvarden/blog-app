@@ -1,19 +1,20 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import articles from './articles.json';
 import Contact from './components/Contact';
 import Container from "./components/Container";
 import Create from './components/Create';
+import Error404 from './components/Error404';
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from './components/Home';
 import ToTopButton from './components/ToTopButton';
-import articles from './articles.json';
 
 const applyRouteMapping = (articles) => ({
   '/': <Home articles={articles} />,
   '/create': <Create />,
   '/contact': <Contact />,
-  '/*': <Home />
+  '/*': <Error404 />
 });
 
 const ArticleContent = ({ title, excerpt }) => {
@@ -26,8 +27,10 @@ const ArticleContent = ({ title, excerpt }) => {
 
   return (
     <>
-      <h1>{title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: excerpt }}></div>
+      <div style={{maxWidth: '720px', margin: '0 auto'}}>
+        <h1>{title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: excerpt }}></div>
+      </div>
     </>
   )
 };
@@ -39,18 +42,27 @@ const renderRoutes = (articles) =>
 
 
 const App = () => {
+
+  const [routes, setRoutes] = useState({
+    '/': 'Home',
+    '/create': 'Create',
+    '/contact': 'Contact',
+  });
+
   return (
     <div className="App">
       <Router>
-        <Header />
-        <Container>
-          <Routes>
-            {renderRoutes(articles)}
-            {Object.entries(applyRouteMapping(articles)).map(([path, element]) => <Route key={path} path={path} element={element} />)}
-          </Routes>
+        <Header routes={routes} />
+        <main style={{ height: '100%' }}>
+          <Container>
+            <Routes>
+              {renderRoutes(articles)}
+              {Object.entries(applyRouteMapping(articles)).map(([path, element]) => <Route key={path} path={path} element={element} />)}
+            </Routes>
 
-          <ToTopButton />
-        </Container>
+            <ToTopButton />
+          </Container>
+        </main>
         <Footer />
       </Router>
     </div>

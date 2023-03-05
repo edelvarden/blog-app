@@ -1,26 +1,54 @@
-import { Link } from 'react-router-dom';
-import Container from '../Container';
-import styles from './styles.module.scss';
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import Container from "../Container";
+import styles from "./styles.module.scss";
 
-const Header = () => {
+const Header = ({ routes }) => {
+  const [isFixed, setIsFixed] = useState(false);
+  const [offset, setOffset] = useState(0);
+  const headerRef = useRef(null);
+
+  useEffect(() => {
+    let prevScrollPos = window.pageYOffset;
+
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      setIsFixed(headerRef.current?.getBoundingClientRect().top === 0);
+      prevScrollPos = currentScrollPos;
+    };
+
+    setOffset(headerRef.current?.offsetHeight || 0);
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
-      <header className={styles.header}>
+      <header
+        className={styles.header}
+        ref={headerRef}
+        style={{ position: "fixed", width: "100%", zIndex: 9999 }}
+      >
         <Container>
           <div className={styles.body}>
             <nav>
               <ul className={styles.menu}>
-                <li className={styles.menuItem}><Link className={styles.menuLink} to="/">Home</Link></li>
-                <li className={styles.menuItem}><Link className={styles.menuLink} to="/contact">Contact</Link></li>
+                {Object.entries(routes).map(([path, name]) => (
+                  <li key={path}>
+                    <Link className={styles.menuLink} to={path}>
+                      {name}
+                    </Link>
+                  </li>
+                ))}
               </ul>
-              <Link className={styles.createPost} to="/create">+ Create</Link>
             </nav>
           </div>
         </Container>
       </header>
-      <div className={styles.placeholder} />
+      <div style={{ paddingTop: `${offset}px` }} />
     </>
   );
-}
+};
 
 export default Header;

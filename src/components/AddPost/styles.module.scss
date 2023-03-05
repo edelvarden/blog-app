@@ -15,9 +15,8 @@
 
 .input {
   background-color: white;
-  border: none;
+  border: 2px solid rgb(229, 232, 235);
   border-radius: 10px;
-  box-shadow: inset 0 0 0 1.5px #a6a6a6;
   color: #1a1a1a;
   font-size: 16px;
   font-weight: 500;
@@ -29,17 +28,15 @@
     color: #999;
   }
 
-  &:focus,
-  &:hover {
+  &:focus {
     outline: none;
     box-shadow: inset 0 0 0 1.5px #007aff;
   }
 }
 
 .textarea {
-  border: none;
   border-radius: 10px;
-  box-shadow: inset 0 0 0 1.5px #a6a6a6;
+  border: 2px solid rgb(229, 232, 235);
   color: #1a1a1a;
   font-family: Helvetica Neue, Arial, sans-serif;
   font-size: 16px;

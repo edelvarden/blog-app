@@ -8,6 +8,10 @@
   padding: 0;
 }
 
+html, body, #root{
+  height: 100%;
+}
+
 :root {
   @each $key, $value in $light-mode {
     --#{$prefix}-#{$key}: #{$value};

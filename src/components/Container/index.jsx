@@ -1,7 +1,7 @@
 import styles from './styles.module.scss';
-const Container = ({adaptive, children}) => {
+const Container = ({ children }) => {
   return (
-    <div className={ adaptive ? `${styles.container}` : `${styles.containerFixed}`} >
+    <div className={`${styles.container}`} >
       {children}
     </div>
   );
