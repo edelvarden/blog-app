@@ -1,13 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 
-const initialState = {
-    postTitle: "",
-    postContent: ""
-};
-
 const AddPost = ({ onClose, onSave }) => {
-    const [postFields, setPostFields] = useState(initialState);
+    const [postFields, setPostFields] = useState({
+        postTitle: "",
+        postContent: "",
+    });
     const [undoStack, setUndoStack] = useState([]);
 
 
@@ -163,7 +161,11 @@ const AddPost = ({ onClose, onSave }) => {
             <button type="submit">Publish</button>
 
             {postFields.postContent.length > 0 && <h2>Preview:</h2>}
-            <div dangerouslySetInnerHTML={{ __html: `<p>${postFields.postTitle}</p>${postFields.postContent}` }}></div>
+            <div
+                dangerouslySetInnerHTML={{
+                    __html: `<p>${postFields.postTitle}</p>${postFields.postContent}`,
+                }}
+            ></div>
         </form>
     );
 }

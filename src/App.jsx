@@ -26,12 +26,14 @@ const ArticleContent = ({ title, excerpt }) => {
   }, [location]);
 
   return (
-    <>
-      <div style={{maxWidth: '720px', margin: '0 auto'}}>
+    <article style={{ maxWidth: '720px', margin: '0 auto' }}>
+      <header>
         <h1>{title}</h1>
+      </header>
+      <section className="content">
         <div dangerouslySetInnerHTML={{ __html: excerpt }}></div>
-      </div>
-    </>
+      </section>
+    </article>
   )
 };
 
@@ -53,15 +55,17 @@ const App = () => {
     <div className="App">
       <Router>
         <Header routes={routes} />
-        <main style={{ height: '100%' }}>
-          <Container>
-            <Routes>
-              {renderRoutes(articles)}
-              {Object.entries(applyRouteMapping(articles)).map(([path, element]) => <Route key={path} path={path} element={element} />)}
-            </Routes>
+        <main>
+          <div>
+            <Container>
+              <Routes>
+                {renderRoutes(articles)}
+                {Object.entries(applyRouteMapping(articles)).map(([path, element]) => <Route key={path} path={path} element={element} />)}
+              </Routes>
 
-            <ToTopButton />
-          </Container>
+              <ToTopButton />
+            </Container>
+          </div>
         </main>
         <Footer />
       </Router>
