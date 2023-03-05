@@ -1,11 +1,11 @@
 import AddPost from './AddPost';
-const Post = () => {
+const Create = () => {
   return (
     <>
-        <h1>Post</h1>
+        <h1>Create</h1>
         <AddPost />
     </>
   );
 }
 
-export default Post;
+export default Create;

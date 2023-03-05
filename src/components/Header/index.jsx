@@ -13,7 +13,7 @@ const Header = () => {
                 <li className={styles.menuItem}><Link className={styles.menuLink} to="/">Home</Link></li>
                 <li className={styles.menuItem}><Link className={styles.menuLink} to="/contact">Contact</Link></li>
               </ul>
-              <Link className={styles.createPost} to="/post">+ Create Post</Link>
+              <Link className={styles.createPost} to="/create">+ Create</Link>
             </nav>
           </div>
         </Container>
