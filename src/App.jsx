@@ -37,7 +37,8 @@ const renderRoutes = (articles) => articles?.map(({ id, title, excerpt }, index)
 const App = () => (
   <div className="App">
     <Router>
-      <Header routes={{
+      <Header
+      routes={{
         '/': 'Home',
         '/create': 'Create',
         '/contact': 'Contact',
