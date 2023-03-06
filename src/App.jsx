@@ -10,13 +10,6 @@ import Header from "./components/Header";
 import Home from './components/Home';
 import ToTopButton from './components/ToTopButton';
 
-const applyRouteMapping = (articles) => ({
-  '/': <Home articles={articles} />,
-  '/create': <Create />,
-  '/contact': <Contact />,
-  '/*': <Error404 />
-});
-
 const ArticleContent = ({ title, excerpt }) => {
   const location = useLocation();
 
@@ -37,40 +30,36 @@ const ArticleContent = ({ title, excerpt }) => {
   )
 };
 
-const renderRoutes = (articles) =>
-  articles?.map((article, index) =>
-    <Route key={index} path={`/article/${article.id}`} element={<ArticleContent title={article.title} excerpt={article.excerpt} />} />);
+const renderRoutes = (articles) => articles?.map(({ id, title, excerpt }, index) =>
+  <Route key={index} exact path={`/article/${id}`} element={<ArticleContent title={title} excerpt={excerpt} />} />
+);
 
+const App = () => (
+  <div className="App">
+    <Router>
+      <Header routes={{
+        '/': 'Home',
+        '/create': 'Create',
+        '/contact': 'Contact',
+      }} />
+      <main>
+        <div>
+          <Container>
+            <Routes>
+              {renderRoutes(articles)}
+              <Route exact path="/" element={<Home articles={articles} />} />
+              <Route path="/create" element={<Create />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/*" element={<Error404 />} />
+            </Routes>
 
-
-const App = () => {
-
-  const [routes, setRoutes] = useState({
-    '/': 'Home',
-    '/create': 'Create',
-    '/contact': 'Contact',
-  });
-
-  return (
-    <div className="App">
-      <Router>
-        <Header routes={routes} />
-        <main>
-          <div>
-            <Container>
-              <Routes>
-                {renderRoutes(articles)}
-                {Object.entries(applyRouteMapping(articles)).map(([path, element]) => <Route key={path} path={path} element={element} />)}
-              </Routes>
-
-              <ToTopButton />
-            </Container>
-          </div>
-        </main>
-        <Footer />
-      </Router>
-    </div>
-  )
-}
+            <ToTopButton />
+          </Container>
+        </div>
+      </main>
+      <Footer />
+    </Router>
+  </div>
+);
 
 export default App;
