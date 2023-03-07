@@ -25,7 +25,7 @@ const App = () => {
   }, [location.pathname]);
 
   const renderRoutes = (articles) => articles?.map(({ id, title, excerpt }, index) =>
-    <Route key={index} exact path={`/articles/${id}`} element={<ArticleContent title={title} excerpt={excerpt} />} />
+    <Route key={index} exact path={`/articles/${id}`} element={<ArticleContent title={title} excerpt={excerpt} link={`/articles/${id}`} />} />
   );
 
   return (

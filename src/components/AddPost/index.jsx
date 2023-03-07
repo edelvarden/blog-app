@@ -38,6 +38,7 @@ const FormInput = ({ id, value, onChange, required }) => (
     value={value}
     onChange={onChange}
     required={required}
+    autocomplete="off"
   />
 );
 
@@ -76,6 +77,7 @@ const AddPost = ({ onClose, onSave }) => {
           required
         />
 
+        <FormLabel text="Content" />
         {/* Replace the component with the lazy component */}
         <LazyReactQuill
           theme={'snow'}
