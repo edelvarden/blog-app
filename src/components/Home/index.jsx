@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
 import ArticleCard from "../ArticleCard";
 import styles from "./styles.module.scss";
 
@@ -39,7 +38,7 @@ const Home = ({ articles }) => {
         <li key={id} className={styles.item}>
           <ArticleCard
             id={id}
-            image={`/articles/1/${image}`}
+            image={`/articles/${id}/${image}`}
             title={title}
             excerpt={excerpt}
           />

@@ -4,19 +4,25 @@ import "./styles.scss";
 
 const ArticleCard = ({ id, image, title, excerpt }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
-  const preview = excerpt.split("<p>")[1] || excerpt;
+  const preview = excerpt.includes("<p>")
+    ? excerpt.split("<p>").splice(1).join("").replace("</p>", "") // extract text from first <p>
+    : excerpt.split(" ").splice(0, 30).join(" ") + "..."; // apply some logic to get a preview without HTML tags
+
+  const handleImageError = (event) => {
+    event.target.src = "/articles/260x260.webp"; // set the source to the fallback image
+    setIsImageLoaded(true); // make sure the fallback image is not considered as failed
+  };
 
   return (
     <article className="article">
-      <Link className="article__link" to={`/article/${id}`}>
+      <Link className="article__link" to={`/articles/${id}`}>
         <div className="article__image">
-          {!isImageLoaded && (
-            <div className="skeleton-image pulse"></div>
-          )}
+          {!isImageLoaded && <div className="skeleton-image pulse"></div>}
           <img
             src={image}
             alt={title}
             onLoad={() => setIsImageLoaded(true)}
+            onError={handleImageError} // handle the error event
             style={{ display: isImageLoaded ? "block" : "none" }}
           />
         </div>
