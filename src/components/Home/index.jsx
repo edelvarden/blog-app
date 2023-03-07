@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import ArticleCard from "../ArticleCard";
 import styles from "./styles.module.scss";
 
 const Home = ({ articles }) => {
@@ -36,20 +37,12 @@ const Home = ({ articles }) => {
       .slice(loadedArticles, visibleArticles)
       .map(({ id, image, title, excerpt }, index) => (
         <li key={index} className={styles.item}>
-          <Link className={styles.link} to={`/article/${id}`}>
-            <div className={styles.image}>
-              <img src={`/articles/1/${image}`} alt="image" />
-            </div>
-            <div className={styles.content}>
-              <h2 className={styles.title}>{title}</h2>
-              <p
-                className={styles.paragraph}
-                dangerouslySetInnerHTML={{
-                  __html: excerpt.split("<p>")[1],
-                }}
-              ></p>
-            </div>
-          </Link>
+          <ArticleCard
+            id={id}
+            image={`/articles/1/${image}`}
+            title={title}
+            excerpt={excerpt}
+          />
         </li>
       ));
 
