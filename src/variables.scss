@@ -1,26 +1,10 @@
-$prefix: "blog";
-$main-font: ("Roboto", sans-serif);
+:root {
+  /* colors */
+  --primary-color: #333333;
+  --secondary-color: #54575a;
+  --accent-color: #007aff;
 
-$light-mode: (
-  "main-font-color": #333333,
-  "secondary-font-color": #54575a,
-  "link-color": #007aff,
-
-  "main-bgcolor": #fff,
-  "card-bgcolor": #fff,
-
-);
-
-$dark-mode: (
-  "main-font-color": #f5f5f5,
-  "secondary-font-color": #a4a3a3,
-  "link-color": #88c9ed,
-
-  "main-bgcolor": #222222,
-  "card-bgcolor": #333333,
-);
-
-// get val from css variable, example: val(main-font-color)
-@function val($variable-name) {
-  @return #{var(--#{$prefix}-#{$variable-name})};
+  /* background colors */
+  --primary-bgcolor: #fff;
+  --secondary-bgcolor: #fff;
 }

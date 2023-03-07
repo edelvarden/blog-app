@@ -8,7 +8,7 @@
     border-radius: 50%;
     font-size: 28px;
     color: #fff;
-    background: #2196f3;
+    background: var(--accent-color);
     opacity: 0.2;
     cursor: pointer;
     transition: opacity 0.3s, visibility 0.3s;
@@ -23,7 +23,7 @@
   }
   
   .toTopBtn:focus {
-    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #2196f3;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--accent-color);
   }
   
   @media screen and (min-width: 768px) {

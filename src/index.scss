@@ -12,25 +12,9 @@ html, body, #root{
   height: 100%;
 }
 
-:root {
-  @each $key, $value in $light-mode {
-    --#{$prefix}-#{$key}: #{$value};
-  }
-}
-
-// @media (prefers-color-scheme: dark) {
-//   :root {
-//     @each $key, $value in $dark-mode {
-//       --#{$prefix}-#{$key}: #{$value};
-//     }
-//   }
-// }
-
 body {
   overflow-y: scroll; // fix scrollbar page moving
-  font-family: $main-font;
-  color: val(main-font-color);
-  background-color: val(main-bgcolor);
+  font-family: "Roboto", sans-serif;
 }
 
 // change selection color
@@ -74,6 +58,6 @@ p {
 }
 
 a {
-  color: val(link-color);
+  color: var(--accent-color);
   text-decoration: none;
 }
