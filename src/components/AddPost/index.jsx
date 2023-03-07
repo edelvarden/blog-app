@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, lazy, Suspense } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import './styles.scss';
@@ -26,6 +26,34 @@ const syntaxOptions = {
   theme: 'default',
 };
 
+const FormLabel = ({ text }) => (
+  <label className="form__label">{text}</label>
+);
+
+const FormInput = ({ id, value, onChange, required }) => (
+  <input
+    className="form__input"
+    type="text"
+    id={id}
+    value={value}
+    onChange={onChange}
+    required={required}
+  />
+);
+
+const FormTextareaButtons = () => (
+  <div className="form__textarea-buttons"></div>
+);
+
+const FormSubmitButton = ({ text }) => (
+  <button className="form__submit" type="submit">
+    {text}
+  </button>
+);
+
+// Use React.lazy to lazily import the component
+const LazyReactQuill = lazy(() => import('react-quill'));
+
 const AddPost = ({ onClose, onSave }) => {
   const [postTitle, setPostTitle] = useState('');
   const [postContent, setPostContent] = useState('');
@@ -38,26 +66,26 @@ const AddPost = ({ onClose, onSave }) => {
 
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <label className="form__label">Title</label>
-      <input
-        className="form__input"
-        type="text"
-        id="postTitle"
-        value={postTitle}
-        onChange={(e) => setPostTitle(e.target.value)}
-        required
-      />
-      <label className="form__label">Content</label>
-      <ReactQuill
-        theme={'snow'}
-        value={postContent}
-        onChange={setPostContent}
-        modules={{ toolbar: toolbarOptions, syntax: syntaxOptions }}
-      />
-      <div className="form__textarea-buttons"></div>
-      <button className="form__submit" type="submit">
-        Publish
-      </button>
+      {/* Wrap the component with React.Suspense */}
+      <Suspense fallback={<div>Loading...</div>}>
+        <FormLabel text="Title" />
+        <FormInput
+          id="postTitle"
+          value={postTitle}
+          onChange={(e) => setPostTitle(e.target.value)}
+          required
+        />
+
+        {/* Replace the component with the lazy component */}
+        <LazyReactQuill
+          theme={'snow'}
+          value={postContent}
+          onChange={setPostContent}
+          modules={{ toolbar: toolbarOptions, syntax: syntaxOptions }}
+        />
+        <FormTextareaButtons />
+        <FormSubmitButton text="Publish" />
+      </Suspense>
     </form>
   );
 };

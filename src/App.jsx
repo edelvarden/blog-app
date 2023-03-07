@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import articles from './articles.json';
 import Contact from './components/Contact';
 import Container from "./components/Container";
@@ -10,47 +10,36 @@ import Header from "./components/Header";
 import Home from './components/Home';
 import ToTopButton from './components/ToTopButton';
 
-const ArticleContent = ({ title, excerpt }) => {
+const routeTitles = {
+  '/': 'Home',
+  '/create': 'Create',
+  '/contact': 'Contact',
+};
+
+const App = () => {
+
   const location = useLocation();
 
   useEffect(() => {
-    const titleElement = document.querySelector('h1');
-    document.title = (titleElement) ? titleElement.textContent : "Home";
-  }, [location]);
+    document.title = `${routeTitles[location.pathname] || "404 Page Not Found"}`;
+  }, [location.pathname]);
+
+  const renderRoutes = (articles) => articles?.map(({ id, title, excerpt }, index) =>
+    <Route key={index} exact path={`/article/${id}`} element={<ArticleContent title={title} excerpt={excerpt} />} />
+  );
 
   return (
-    <article style={{ maxWidth: '720px', margin: '0 auto' }}>
-      <header>
-        <h1>{title}</h1>
-      </header>
-      <section className="content">
-        <div dangerouslySetInnerHTML={{ __html: excerpt }}></div>
-      </section>
-    </article>
-  )
-};
-
-const renderRoutes = (articles) => articles?.map(({ id, title, excerpt }, index) =>
-  <Route key={index} exact path={`/article/${id}`} element={<ArticleContent title={title} excerpt={excerpt} />} />
-);
-
-const App = () => (
-  <div className="App">
-    <Router>
+    <div className="App">
       <Header
-      routes={{
-        '/': 'Home',
-        '/create': 'Create',
-        '/contact': 'Contact',
-      }} />
+        routes={routeTitles} />
       <main>
         <div>
           <Container>
             <Routes>
               {renderRoutes(articles)}
               <Route exact path="/" element={<Home articles={articles} />} />
-              <Route path="/create" element={<Create />} />
-              <Route path="/contact" element={<Contact />} />
+              <Route exact path="/create" element={<Create />} />
+              <Route exact path="/contact" element={<Contact />} />
               <Route path="/*" element={<Error404 />} />
             </Routes>
 
@@ -59,8 +48,23 @@ const App = () => (
         </div>
       </main>
       <Footer />
-    </Router>
-  </div>
-);
+    </div>
+  );
+};
+
+const ArticleContent = ({ title, excerpt }) => {
+  useEffect(() => {
+    document.title = `${title}`;
+  }, [title]);
+
+  return (
+    <article>
+      <h1>{title}</h1>
+      <section>
+        <div dangerouslySetInnerHTML={{ __html: excerpt }} />
+      </section>
+    </article>
+  );
+};
 
 export default App;

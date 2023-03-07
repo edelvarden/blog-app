@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, useCallback, useLayoutEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Container from "../Container";
 import "./styles.scss";
@@ -8,18 +8,18 @@ const Header = ({ routes, current }) => {
   const headerRef = useRef(null);
   const location = useLocation();
 
-
-  useEffect(() => {
-    const handleScroll = () =>
-      (headerRef.current?.getBoundingClientRect().top === 0);
-
+  const handleScroll = useCallback(() => (headerRef.current?.getBoundingClientRect().top === 0), []);
+  
+  useLayoutEffect(() => {
     setOffset(headerRef.current?.offsetHeight || 0);
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const menuItems = Object.entries(routes);
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
+
+  const menuItems = useMemo(() => Object.entries(routes), [routes]);
 
   return (
     <>

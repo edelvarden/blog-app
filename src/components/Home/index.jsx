@@ -36,7 +36,7 @@ const Home = ({ articles }) => {
     (articles || [])
       .slice(loadedArticles, visibleArticles)
       .map(({ id, image, title, excerpt }, index) => (
-        <li key={index} className={styles.item}>
+        <li key={id} className={styles.item}>
           <ArticleCard
             id={id}
             image={`/articles/1/${image}`}
