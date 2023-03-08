@@ -3,13 +3,17 @@ import { Link, useLocation } from "react-router-dom";
 import Container from "../Container";
 import "./styles.scss";
 
-const Header = ({ routes, current }) => {
+const Header = ({ routes }) => {
   const [offset, setOffset] = useState(0);
   const headerRef = useRef(null);
   const location = useLocation();
 
-  const handleScroll = useCallback(() => (headerRef.current?.getBoundingClientRect().top === 0), []);
-  
+  const handleScroll = useCallback(() => {
+    if (!headerRef.current) return;
+    const { top } = headerRef.current.getBoundingClientRect();
+    return top === 0;
+  }, [headerRef]);
+
   useLayoutEffect(() => {
     setOffset(headerRef.current?.offsetHeight || 0);
   }, []);

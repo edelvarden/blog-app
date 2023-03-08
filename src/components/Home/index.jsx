@@ -9,7 +9,14 @@ const Home = ({ articles }) => {
   const handleObserver = useCallback((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting && visibleArticles < articles?.length) {
-        setVisibleArticles(visibleArticles + 10);
+        const lastListItem = document.querySelector(`.${styles.list} > li:last-of-type`);
+        if (lastListItem) {
+          const lastListItemOffset = lastListItem.offsetTop + lastListItem.clientHeight;
+          const windowOffset = window.pageYOffset + window.innerHeight;
+          if (windowOffset > lastListItemOffset - 100) {
+            setVisibleArticles(visibleArticles + 10);
+          }
+        }
       }
     });
   }, [articles, visibleArticles]);

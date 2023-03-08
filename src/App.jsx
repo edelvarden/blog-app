@@ -1,4 +1,4 @@
-import { useEffect, lazy, Suspense } from 'react';
+import { useEffect, lazy, Suspense, useMemo } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import articles from './articles.json';
 import Container from './components/Container';
@@ -6,6 +6,7 @@ import Error404 from './components/Error404';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './components/Home';
+import Loader from './components/Loader';
 import ToTopButton from './components/ToTopButton';
 
 const routeTitles = {
@@ -16,7 +17,6 @@ const routeTitles = {
 
 const Create = lazy(() => import('./components/Create'));
 const Contact = lazy(() => import('./components/Contact'));
-
 const ArticleDetail = lazy(() => import('./components/ArticleDetail'));
 
 const App = () => {
@@ -26,7 +26,7 @@ const App = () => {
     document.title = `${routeTitles[pathname] || '404 Page Not Found'}`;
   }, [pathname]);
 
-  const renderRoutes = () =>
+  const renderRoutes = useMemo(() => (
     articles?.length > 0 &&
     articles.map(({ id, title, excerpt }) => (
       <Route
@@ -34,12 +34,13 @@ const App = () => {
         exact
         path={`/articles/${id}`}
         element={
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<Loader/>}>
             <ArticleDetail title={title} excerpt={excerpt} />
           </Suspense>
         }
       />
-    ));
+    ))
+  ), [articles]);
 
   return (
     <div className="App">
@@ -47,14 +48,14 @@ const App = () => {
       <main style={{ minHeight: '100vh' }}>
         <Container>
           <Routes>
-            {renderRoutes()}
+            {renderRoutes}
             <Route exact path="/" element={<Home articles={articles} />} />
             <Route exact path="/home" element={<Home articles={articles} />} />
             <Route
               exact
               path="/create"
               element={
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<Loader/>}>
                   <Create />
                 </Suspense>
               }
@@ -63,7 +64,7 @@ const App = () => {
               exact
               path="/contact"
               element={
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<Loader/>}>
                   <Contact />
                 </Suspense>
               }

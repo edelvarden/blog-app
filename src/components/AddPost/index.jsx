@@ -6,7 +6,6 @@ import Skeleton from '../Skeleton';
 import './styles.scss';
 
 hljs.registerLanguage('javascript', javascript);
-hljs.highlightAll();
 
 const toolbarOptions = [
   { header: '2' },
@@ -66,11 +65,7 @@ const AddPost = ({ onClose, onSave }) => {
   };
 
   return (
-    <Suspense fallback={<>
-      <Skeleton height={50} />
-      <Skeleton height={250} />
-    </>
-    }>
+    <Suspense fallback={<div className="skeleton-wrapper"><Skeleton height={50}/><Skeleton height={250}/></div>}>
       <form className='form' onSubmit={handleSubmit}>
         <FormLabel text='Title' />
         <FormInput
