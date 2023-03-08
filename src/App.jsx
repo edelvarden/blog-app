@@ -1,4 +1,4 @@
-import { useEffect, lazy, Suspense, useMemo } from 'react';
+import { lazy, Suspense, useEffect, useMemo } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import articles from './articles.json';
 import Container from './components/Container';
@@ -34,7 +34,7 @@ const App = () => {
         exact
         path={`/articles/${id}`}
         element={
-          <Suspense fallback={<Loader/>}>
+          <Suspense fallback={<Loader />}>
             <ArticleDetail title={title} excerpt={excerpt} />
           </Suspense>
         }
@@ -55,7 +55,7 @@ const App = () => {
               exact
               path="/create"
               element={
-                <Suspense fallback={<Loader/>}>
+                <Suspense fallback={<Loader />}>
                   <Create />
                 </Suspense>
               }
@@ -64,7 +64,7 @@ const App = () => {
               exact
               path="/contact"
               element={
-                <Suspense fallback={<Loader/>}>
+                <Suspense fallback={<Loader />}>
                   <Contact />
                 </Suspense>
               }

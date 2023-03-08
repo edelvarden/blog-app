@@ -1,17 +1,20 @@
-import {useEffect} from 'react';
+import { useEffect } from 'react';
+import "./styles.scss";
 const ArticleDetail = ({ title, excerpt }) => {
-    useEffect(() => {
-      document.title = `${title}`;
-    }, [title]);
+  useEffect(() => {
+    document.title = `${title}`;
+  }, [title]);
 
-    return (
-      <>
+  return (
+    <>
+      <div className='article__container'>
         <h1>{title}</h1>
         <section>
           <div dangerouslySetInnerHTML={{ __html: excerpt }} />
         </section>
-      </>
-    );
-  };
+      </div>
+    </>
+  );
+};
 
-  export default ArticleDetail;
+export default ArticleDetail;

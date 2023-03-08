@@ -1,5 +1,4 @@
 .form {
-
   &__submit {
     background-color: var(--accent-color);
     border: none;
@@ -75,7 +74,6 @@
   }
 }
 
-
 .ql-editor {
   padding: 1rem;
   min-height: 200px;
@@ -85,16 +83,12 @@
   border-top-left-radius: 10px;
   border: 2px solid rgb(229, 232, 235);
 }
-.ql-container.ql-snow{
+.ql-container.ql-snow {
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   border: 2px solid rgb(229, 232, 235);
-
-
-
 }
 .ql-editor {
-
   border-bottom-right-radius: inherit;
   border-bottom-left-radius: inherit;
 
@@ -106,7 +100,6 @@
     box-shadow: inset 0 0 0 1.5px #007aff;
   }
 }
-
 
 .ql-snow .ql-editor pre {
   padding: 1rem 1.5rem;
