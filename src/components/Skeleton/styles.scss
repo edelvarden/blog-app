@@ -1,0 +1,27 @@
+.skeleton {
+    border-radius: 12px;
+    width: 100%;
+    min-height: 20px;
+    animation: pulse 2s linear infinite;
+    background-image: linear-gradient(
+        -90deg,
+        #e7edf1,
+        #f8f9fc,
+        #e7edf1
+    );
+    background-size: 400% 400%;
+    margin-bottom: 1em;
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  

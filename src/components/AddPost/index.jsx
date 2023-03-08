@@ -1,9 +1,10 @@
-import { useRef, useState, useEffect, lazy, Suspense } from 'react';
-import 'react-quill/dist/quill.snow.css';
-import './styles.scss';
 import hljs from 'highlight.js/lib/core';
 import javascript from 'highlight.js/lib/languages/javascript';
 import 'highlight.js/styles/atom-one-dark.css';
+import { lazy, Suspense, useState } from 'react';
+import Skeleton from '../Skeleton';
+import 'react-quill/dist/quill.snow.css';
+import './styles.scss';
 
 hljs.registerLanguage('javascript', javascript);
 hljs.highlightAll();
@@ -26,7 +27,9 @@ const syntaxOptions = {
 };
 
 const FormLabel = ({ text }) => (
-  <label className="form__label">{text}</label>
+  <label className="form__label">
+    {text}
+  </label>
 );
 
 const FormInput = ({ id, value, onChange, required }) => (
@@ -66,29 +69,33 @@ const AddPost = ({ onClose, onSave }) => {
   }
 
   return (
-    <form className="form" onSubmit={handleSubmit}>
-      <FormLabel text="Title" />
-      <FormInput
-        id="postTitle"
-        value={postTitle}
-        onChange={(e) => setPostTitle(e.target.value)}
-        required
-      />
+    <Suspense fallback={
+      <>
+        <Skeleton height={50}/>
+        <Skeleton height={250} />
+      </>
+    }>
+      <form className="form" onSubmit={handleSubmit}>
+        <FormLabel text="Title" />
+        <FormInput
+          id="postTitle"
+          value={postTitle}
+          onChange={(e) => setPostTitle(e.target.value)}
+          required
+        />
 
-      <FormLabel text="Content" />
-
-      <Suspense fallback={<div>Loading editor...</div>}>
+        <FormLabel text="Content" />
         <LazyReactQuill
           theme={'snow'}
           value={postContent}
           onChange={setPostContent}
           modules={{ toolbar: toolbarOptions, syntax: syntaxOptions }}
         />
-      </Suspense>
 
-      <FormTextareaButtons />
-      <FormSubmitButton text="Publish" />
-    </form>
+        <FormTextareaButtons />
+        <FormSubmitButton text="Publish" />
+      </form>
+    </Suspense>
   );
 };
 
