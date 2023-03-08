@@ -1,11 +1,10 @@
-import { useState, lazy, Suspense } from 'react';
-import ReactQuill from 'react-quill';
+import { useRef, useState, useEffect, lazy, Suspense } from 'react';
 import 'react-quill/dist/quill.snow.css';
 import './styles.scss';
-
 import hljs from 'highlight.js/lib/core';
 import javascript from 'highlight.js/lib/languages/javascript';
 import 'highlight.js/styles/atom-one-dark.css';
+
 hljs.registerLanguage('javascript', javascript);
 hljs.highlightAll();
 
@@ -52,8 +51,10 @@ const FormSubmitButton = ({ text }) => (
   </button>
 );
 
-// Use React.lazy to lazily import the component
-const LazyReactQuill = lazy(() => import('react-quill'));
+// define a lazy-loaded version of ReactQuill component
+const LazyReactQuill = lazy(() =>
+  import(/* webpackChunkName: "quill" */ 'react-quill')
+);
 
 const AddPost = ({ onClose, onSave }) => {
   const [postTitle, setPostTitle] = useState('');
@@ -61,33 +62,32 @@ const AddPost = ({ onClose, onSave }) => {
 
   function handleSubmit(event) {
     event.preventDefault();
-    // onSave({ title: postTitle, content: postContent });
     console.log(postContent);
   }
 
   return (
     <form className="form" onSubmit={handleSubmit}>
-      {/* Wrap the component with React.Suspense */}
-      <Suspense fallback={<div>Loading...</div>}>
-        <FormLabel text="Title" />
-        <FormInput
-          id="postTitle"
-          value={postTitle}
-          onChange={(e) => setPostTitle(e.target.value)}
-          required
-        />
+      <FormLabel text="Title" />
+      <FormInput
+        id="postTitle"
+        value={postTitle}
+        onChange={(e) => setPostTitle(e.target.value)}
+        required
+      />
 
-        <FormLabel text="Content" />
-        {/* Replace the component with the lazy component */}
+      <FormLabel text="Content" />
+
+      <Suspense fallback={<div>Loading editor...</div>}>
         <LazyReactQuill
           theme={'snow'}
           value={postContent}
           onChange={setPostContent}
           modules={{ toolbar: toolbarOptions, syntax: syntaxOptions }}
         />
-        <FormTextareaButtons />
-        <FormSubmitButton text="Publish" />
       </Suspense>
+
+      <FormTextareaButtons />
+      <FormSubmitButton text="Publish" />
     </form>
   );
 };

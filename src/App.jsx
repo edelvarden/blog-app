@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
+
 import articles from './articles.json';
 import Contact from './components/Contact';
 import Container from "./components/Container";
@@ -17,26 +18,46 @@ const routeTitles = {
 };
 
 const App = () => {
-
   const location = useLocation();
 
   useEffect(() => {
     document.title = `${routeTitles[location.pathname] || "404 Page Not Found"}`;
   }, [location.pathname]);
 
-  const renderRoutes = (articles) => articles?.map(({ id, title, excerpt }, index) =>
-    <Route key={index} exact path={`/articles/${id}`} element={<ArticleContent title={title} excerpt={excerpt} link={`/articles/${id}`} />} />
-  );
+  const ArticleDetail = ({ title, excerpt }) => {
+    useEffect(() => {
+      document.title = `${title}`;
+    }, [title]);
+
+    return (
+      <>
+        <h1>{title}</h1>
+        <section>
+          <div dangerouslySetInnerHTML={{ __html: excerpt }} />
+        </section>
+      </>
+    );
+  };
+
+  const renderRoutes = () =>
+    articles?.length > 0 &&
+    articles.map((article) => (
+      <Route
+        key={article.id}
+        exact
+        path={`/articles/${article.id}`}
+        element={<ArticleDetail title={article.title} excerpt={article.excerpt} />}
+      />
+    ));
 
   return (
-    <div className="App">
-      <Header
-        routes={routeTitles} />
-      <main>
-        <div>
+    <>
+      <div className="App">
+        <Header routes={routeTitles} />
+        <main>
           <Container>
             <Routes>
-              {renderRoutes(articles)}
+              {renderRoutes()}
               <Route exact path="/" element={<Home articles={articles} />} />
               <Route exact path="/create" element={<Create />} />
               <Route exact path="/contact" element={<Contact />} />
@@ -45,25 +66,10 @@ const App = () => {
 
             <ToTopButton />
           </Container>
-        </div>
-      </main>
-      <Footer />
-    </div>
-  );
-};
-
-const ArticleContent = ({ title, excerpt }) => {
-  useEffect(() => {
-    document.title = `${title}`;
-  }, [title]);
-
-  return (
-    <article>
-      <h1>{title}</h1>
-      <section>
-        <div dangerouslySetInnerHTML={{ __html: excerpt }} />
-      </section>
-    </article>
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 };
 
