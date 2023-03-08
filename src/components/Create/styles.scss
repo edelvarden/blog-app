@@ -1,4 +1,6 @@
-.create__content {
-    max-width: 720px;
-    margin: 0 auto;
+.create{
+    &__container {
+        max-width: var(--container-width);
+        margin: 0 auto;
+    }
 }

@@ -1,6 +1,6 @@
 .contact{
     &__container {
-        max-width: 720px;
+        max-width: var(--container-width);
         margin: 0 auto;
     }
 }
