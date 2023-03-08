@@ -54,7 +54,7 @@ const App = () => {
   return (
     <div className="App">
       <Header routes={routeTitles} />
-      <main>
+      <main style={{minHeight: '100vh'}}>
         <Container>
           <Routes>
             {renderRoutes()}

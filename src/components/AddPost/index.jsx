@@ -1,9 +1,8 @@
 import hljs from 'highlight.js/lib/core';
 import javascript from 'highlight.js/lib/languages/javascript';
-import 'highlight.js/styles/atom-one-dark.css';
 import { lazy, Suspense, useState } from 'react';
-import Skeleton from '../Skeleton';
 import 'react-quill/dist/quill.snow.css';
+import Skeleton from '../Skeleton';
 import './styles.scss';
 
 hljs.registerLanguage('javascript', javascript);
@@ -22,34 +21,32 @@ const toolbarOptions = [
 ];
 
 const syntaxOptions = {
-  highlight: (text) => hljs.highlightAuto(text).value,
+  highlight: text => hljs.highlightAuto(text).value,
   theme: 'default',
 };
 
 const FormLabel = ({ text }) => (
-  <label className="form__label">
-    {text}
-  </label>
+  <label className='form__label'>{text}</label>
 );
 
 const FormInput = ({ id, value, onChange, required }) => (
   <input
-    className="form__input"
-    type="text"
+    className='form__input'
+    type='text'
     id={id}
     value={value}
     onChange={onChange}
     required={required}
-    autoComplete="off"
+    autoComplete='off'
   />
 );
 
 const FormTextareaButtons = () => (
-  <div className="form__textarea-buttons"></div>
+  <div className='form__textarea-buttons'></div>
 );
 
 const FormSubmitButton = ({ text }) => (
-  <button className="form__submit" type="submit">
+  <button className='form__submit' type='submit'>
     {text}
   </button>
 );
@@ -63,37 +60,36 @@ const AddPost = ({ onClose, onSave }) => {
   const [postTitle, setPostTitle] = useState('');
   const [postContent, setPostContent] = useState('');
 
-  function handleSubmit(event) {
+  const handleSubmit = event => {
     event.preventDefault();
     console.log(postContent);
-  }
+  };
 
   return (
-    <Suspense fallback={
-      <>
-        <Skeleton height={50}/>
-        <Skeleton height={250} />
-      </>
+    <Suspense fallback={<>
+      <Skeleton height={50} />
+      <Skeleton height={250} />
+    </>
     }>
-      <form className="form" onSubmit={handleSubmit}>
-        <FormLabel text="Title" />
+      <form className='form' onSubmit={handleSubmit}>
+        <FormLabel text='Title' />
         <FormInput
-          id="postTitle"
+          id='postTitle'
           value={postTitle}
-          onChange={(e) => setPostTitle(e.target.value)}
+          onChange={e => setPostTitle(e.target.value)}
           required
         />
 
-        <FormLabel text="Content" />
+        <FormLabel text='Content' />
         <LazyReactQuill
-          theme={'snow'}
+          theme='snow'
           value={postContent}
           onChange={setPostContent}
           modules={{ toolbar: toolbarOptions, syntax: syntaxOptions }}
         />
 
         <FormTextareaButtons />
-        <FormSubmitButton text="Publish" />
+        <FormSubmitButton text='Publish' />
       </form>
     </Suspense>
   );

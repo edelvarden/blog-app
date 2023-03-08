@@ -1,21 +1,20 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import ArticleCard from "../ArticleCard";
 import styles from "./styles.module.scss";
 
 const Home = ({ articles }) => {
   const [visibleArticles, setVisibleArticles] = useState(5);
-  const [loadedArticles, setLoadedArticles] = useState(0);
   const lazyLoaderRef = useRef(null);
 
-  useEffect(() => {
-    const handleObserver = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting && visibleArticles < articles?.length) {
-          setVisibleArticles((prev) => prev + 10);
-        }
-      });
-    };
+  const handleObserver = useCallback((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && visibleArticles < articles?.length) {
+        setVisibleArticles(visibleArticles + 10);
+      }
+    });
+  }, [articles, visibleArticles]);
 
+  useEffect(() => {
     const observer = new IntersectionObserver(handleObserver, {
       root: null,
       rootMargin: "20px",
@@ -29,19 +28,19 @@ const Home = ({ articles }) => {
     return () => {
       observer.disconnect();
     };
-  }, [articles, visibleArticles]);
+  }, [handleObserver, lazyLoaderRef]);
 
   const renderArticles = () =>
-    (articles || [])
-      .slice(loadedArticles, visibleArticles)
-      .map(({ id, image, title, excerpt }, index) => (
+    articles
+      ?.slice(0, visibleArticles)
+      .map(({ id, image, title, excerpt }) => (
         <li key={id} className={styles.item}>
           <ArticleCard
             id={id}
             image={`/articles/${id}/${image}`}
             title={title}
             excerpt={excerpt}
-          />
+            />
         </li>
       ));
 
@@ -57,9 +56,9 @@ const Home = ({ articles }) => {
 
       <ul className={styles.list}>{renderArticles()}</ul>
 
-      {visibleArticles >= (articles?.length || 0) && renderNoMoreArticles()}
+      {visibleArticles >= (articles?.length || 0) ? renderNoMoreArticles() : null}
 
-      <div ref={lazyLoaderRef}></div>
+      <div ref={lazyLoaderRef} />
     </>
   );
 };
