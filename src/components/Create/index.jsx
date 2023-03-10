@@ -4,7 +4,7 @@ const Create = () => {
   return (
     <>
       <div className="create__container">
-        <h1>Create</h1>
+        <h1 className='create__title'>Create</h1>
         <AddPost />
       </div>
     </>

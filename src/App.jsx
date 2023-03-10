@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import articles from './articles.json';
 import Container from './components/Container';
@@ -6,8 +6,10 @@ import Error404 from './components/Error404';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './components/Home';
-import Loader from './components/Loader';
 import ToTopButton from './components/ToTopButton';
+import Create from './components/Create';
+import Contact from './components/Contact';
+import ArticleDetail from './components/ArticleDetail';
 
 const routeTitles = {
   '/': 'Home',
@@ -15,9 +17,7 @@ const routeTitles = {
   '/contact': 'Contact',
 };
 
-const Create = lazy(() => import('./components/Create'));
-const Contact = lazy(() => import('./components/Contact'));
-const ArticleDetail = lazy(() => import('./components/ArticleDetail'));
+const homeRoute = <Route path="/" element={<Home articles={articles} />} />;
 
 const App = () => {
   const { pathname } = useLocation();
@@ -26,52 +26,37 @@ const App = () => {
     document.title = `${routeTitles[pathname] || '404 Page Not Found'}`;
   }, [pathname]);
 
-  const renderRoutes = useMemo(() => (
-    articles?.length > 0 &&
-    articles.map(({ id, title, excerpt }) => (
-      <Route
-        key={id}
-        exact
-        path={`/articles/${id}`}
-        element={
-          <Suspense fallback={<Loader />}>
-            <ArticleDetail title={title} excerpt={excerpt} />
-          </Suspense>
-        }
-      />
-    ))
-  ), [articles]);
+  const renderRoutes = useMemo(
+    () =>
+      articles?.length > 0 &&
+      articles.map(({ id, title, date, excerpt }) => (
+        <Route
+          key={id}
+          exact
+          path={`/articles/${id}`}
+          element={<ArticleDetail title={title} date={date} excerpt={excerpt} />}
+        />
+      )),
+    [articles]
+  );
+
+  const routes = useMemo(() => (
+    <>
+      {renderRoutes}
+      {homeRoute}
+      <Route path="/home" element={homeRoute.element} />
+      <Route exact path="/create" element={<Create />} />
+      <Route exact path="/contact" element={<Contact />} />
+      <Route path="/*" element={<Error404 />} />
+    </>
+  ), [renderRoutes]);
 
   return (
     <div className="App">
       <Header routes={routeTitles} />
       <main style={{ minHeight: '100vh' }}>
         <Container>
-          <Routes>
-            {renderRoutes}
-            <Route exact path="/" element={<Home articles={articles} />} />
-            <Route exact path="/home" element={<Home articles={articles} />} />
-            <Route
-              exact
-              path="/create"
-              element={
-                <Suspense fallback={<Loader />}>
-                  <Create />
-                </Suspense>
-              }
-            />
-            <Route
-              exact
-              path="/contact"
-              element={
-                <Suspense fallback={<Loader />}>
-                  <Contact />
-                </Suspense>
-              }
-            />
-            <Route path="/*" element={<Error404 />} />
-          </Routes>
-
+          <Routes>{routes}</Routes>
           <ToTopButton />
         </Container>
       </main>

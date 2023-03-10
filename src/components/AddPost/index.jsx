@@ -1,6 +1,6 @@
 import hljs from 'highlight.js/lib/core';
 import javascript from 'highlight.js/lib/languages/javascript';
-import { lazy, Suspense, useState } from 'react';
+import { useCallback, lazy, Suspense, useState, memo } from 'react';
 import 'react-quill/dist/quill.snow.css';
 import Skeleton from '../Skeleton';
 import './styles.scss';
@@ -28,7 +28,7 @@ const FormLabel = ({ text }) => (
   <label className='form__label'>{text}</label>
 );
 
-const FormInput = ({ id, value, onChange, required }) => (
+const FormInput = memo(({ id, value, onChange, required }) => (
   <input
     className='form__input'
     type='text'
@@ -38,7 +38,7 @@ const FormInput = ({ id, value, onChange, required }) => (
     required={required}
     autoComplete='off'
   />
-);
+));
 
 const FormTextareaButtons = () => (
   <div className='form__textarea-buttons'></div>
@@ -50,22 +50,26 @@ const FormSubmitButton = ({ text }) => (
   </button>
 );
 
-// define a lazy-loaded version of ReactQuill component
 const LazyReactQuill = lazy(() =>
-  import(/* webpackChunkName: "quill" */ 'react-quill')
+  import(
+    /* webpackChunkName: "quill" */ 'react-quill'
+  )
 );
 
-const AddPost = ({ onClose, onSave }) => {
-  const [postTitle, setPostTitle] = useState('');
-  const [postContent, setPostContent] = useState('');
-
-  const handleSubmit = event => {
-    event.preventDefault();
-    console.log(postContent);
-  };
-
+const PostContent = memo(({ postContent, setPostContent }) => {
   return (
-    <Suspense fallback={<div className="skeleton-wrapper"><Skeleton height={50}/><Skeleton height={250}/></div>}>
+    <LazyReactQuill
+      theme='snow'
+      value={postContent}
+      onChange={setPostContent}
+      modules={{ toolbar: toolbarOptions, syntax: syntaxOptions }}
+    />
+  );
+});
+
+const AddPostForm = memo(
+  ({ postTitle, setPostTitle, postContent, setPostContent, handleSubmit }) => {
+    return (
       <form className='form' onSubmit={handleSubmit}>
         <FormLabel text='Title' />
         <FormInput
@@ -76,16 +80,36 @@ const AddPost = ({ onClose, onSave }) => {
         />
 
         <FormLabel text='Content' />
-        <LazyReactQuill
-          theme='snow'
-          value={postContent}
-          onChange={setPostContent}
-          modules={{ toolbar: toolbarOptions, syntax: syntaxOptions }}
-        />
+        <PostContent postContent={postContent} setPostContent={setPostContent} />
 
         <FormTextareaButtons />
         <FormSubmitButton text='Publish' />
       </form>
+    );
+  }
+);
+
+const AddPost = ({ onClose, onSave }) => {
+  const [postTitle, setPostTitle] = useState('');
+  const [postContent, setPostContent] = useState('');
+
+  const memoizedHandleSubmit = useCallback(
+    event => {
+      event.preventDefault();
+      console.log(postContent);
+    },
+    [postContent]
+  );
+
+  return (
+    <Suspense fallback={<div className='skeleton-wrapper'><Skeleton height={50} /><Skeleton height={250} /></div>}>
+      <AddPostForm
+        postTitle={postTitle}
+        setPostTitle={setPostTitle}
+        postContent={postContent}
+        setPostContent={setPostContent}
+        handleSubmit={memoizedHandleSubmit}
+      />
     </Suspense>
   );
 };

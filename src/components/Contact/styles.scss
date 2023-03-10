@@ -3,4 +3,7 @@
         max-width: var(--container-width);
         margin: 0 auto;
     }
+    &__title {
+        text-align: center;
+    }
 }
