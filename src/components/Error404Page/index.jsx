@@ -1,5 +1,5 @@
 import styles from "./styles.module.scss";
-const Error404 = () => {
+const Error404Page = () => {
     return (
         <>
             <div className={styles.body}>
@@ -10,4 +10,4 @@ const Error404 = () => {
     );
 };
 
-export default Error404;
+export default Error404Page;

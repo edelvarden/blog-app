@@ -1,7 +1,7 @@
 import BlogList from "../BlogList";
 import "./styles.scss";
 
-const Home = ({ articles }) => {
+const HomePage = ({ articles }) => {
 
   return (
     <>
@@ -14,4 +14,4 @@ const Home = ({ articles }) => {
   );
 };
 
-export default Home;
+export default HomePage;

@@ -1,5 +1,5 @@
 import "./styles.scss";
-const Contact = () => {
+const ContactPage = () => {
   return (
     <>
       <div className="contact__container">
@@ -25,4 +25,4 @@ const Contact = () => {
   );
 }
 
-export default Contact;
+export default ContactPage;

@@ -1,6 +1,6 @@
 import AddPost from '../AddPost';
 import "./styles.scss";
-const Create = () => {
+const CreatePage = () => {
   return (
     <>
       <div className="create__container">
@@ -11,4 +11,4 @@ const Create = () => {
   );
 }
 
-export default Create;
+export default CreatePage;

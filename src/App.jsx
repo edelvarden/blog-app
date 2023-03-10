@@ -1,66 +1,74 @@
 import { useEffect, useMemo } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import articles from './articles.json';
+import BlogContent from './components/BlogContent';
 import Container from './components/Container';
-import Error404 from './components/Error404';
+import ContactPage from './components/ContactPage';
+import CreatePage from './components/CreatePage';
+import Error404Page from './components/Error404Page';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import Home from './components/Home';
+import HomePage from './components/HomePage';
 import ToTopButton from './components/ToTopButton';
-import Create from './components/Create';
-import Contact from './components/Contact';
-import BlogContent from './components/BlogContent';
 
-const routeTitles = {
-  '/': 'Home',
-  '/create': 'Create',
-  '/contact': 'Contact',
-};
-
-const homeRoute = <Route path="/" element={<Home articles={articles} />} />;
+const routeTitles = [
+  {
+    path: '/',
+    name: 'Home',
+    component: HomePage,
+    props: { articles },
+  },
+  {
+    path: '/create',
+    name: 'Create',
+    component: CreatePage,
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: ContactPage,
+  },
+];
 
 const App = () => {
   const { pathname } = useLocation();
 
-  useEffect(() => {
-    document.title = `${routeTitles[pathname] || '404 Page Not Found'}`;
-  }, [pathname]);
+  const routeComponents = useMemo(
+    () =>
+      routeTitles.map(({ path, component: Component, props }, key) => (
+        <Route exact path={path} key={key} element={<Component {...props} />} />
+      )),
+    [routeTitles]
+  );
+
+  const renderRoutes = useMemo(() => {
+    if (!articles || articles.length === 0) return null;
+
+    return articles.map(({ id, title, date, content, image }) => (
+      <Route
+        key={id}
+        path={`/articles/${id}`}
+        element={<BlogContent title={title} image={image} date={date} content={content} />}
+      />
+    ));
+  }, [articles]);
 
   useEffect(() => {
+    const title = (routeTitles.find((r) => r.path === pathname) || {}).name || '404 Page Not Found';
+    document.title = title;
     window.scrollTo(0, 0); // scroll to top on routing
   }, [pathname]);
 
-  const renderRoutes = useMemo(
-    () =>
-      articles?.length > 0 &&
-      articles.map(({ id, title, date, content, image }) => (
-        <Route
-          key={id}
-          exact
-          path={`/articles/${id}`}
-          element={<BlogContent title={title} image={image} date={date} content={content} />}
-        />
-      )),
-    [articles]
-  );
-
-  const routes = useMemo(() => (
-    <>
-      {renderRoutes}
-      {homeRoute}
-      <Route path="/home" element={homeRoute.element} />
-      <Route exact path="/create" element={<Create />} />
-      <Route exact path="/contact" element={<Contact />} />
-      <Route path="/*" element={<Error404 />} />
-    </>
-  ), [renderRoutes]);
-
   return (
     <div className="App">
-      <Header routes={routeTitles} />
+      <Header path={pathname} routes={routeTitles} />
       <main style={{ minHeight: '100vh' }}>
         <Container>
-          <Routes>{routes}</Routes>
+          <Routes>
+            {renderRoutes}
+            {routeComponents}
+            <Route path="*" element={<Error404Page />} />
+          </Routes>
           <ToTopButton />
         </Container>
       </main>
