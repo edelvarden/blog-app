@@ -33,12 +33,12 @@ const App = () => {
   const renderRoutes = useMemo(
     () =>
       articles?.length > 0 &&
-      articles.map(({ id, title, date, content }) => (
+      articles.map(({ id, title, date, content, image }) => (
         <Route
           key={id}
           exact
           path={`/articles/${id}`}
-          element={<BlogContent title={title} date={date} content={content} />}
+          element={<BlogContent title={title} image={image} date={date} content={content} />}
         />
       )),
     [articles]

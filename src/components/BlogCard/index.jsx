@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useDateFormatter from "./../../hooks/useDateFormatter";
 import "./styles.scss";
 import placeholderImage from "/placeholder.webp";
 
@@ -11,16 +12,6 @@ const ArticleCard = ({ id, image, title, date, excerpt }) => {
   };
 
   const showImage = isImageLoaded ? "block" : "none";
-
-  const getDateFormatted = (d) => {
-    const dateObj = new Date(d);
-    const options = {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    };
-    return dateObj.toLocaleDateString("en-US", options);
-  };
 
   return (
     <article className="card">
@@ -40,7 +31,7 @@ const ArticleCard = ({ id, image, title, date, excerpt }) => {
           <h2 className="card__title">{title}</h2>
           {date && (
             <time className="card__date" dateTime={date}>
-              {getDateFormatted(date)}
+              {useDateFormatter(date)}
             </time>
           )}
           <p className="card__excerpt">{excerpt}</p>
