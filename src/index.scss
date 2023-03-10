@@ -14,7 +14,6 @@ html, body, #root{
 
 body {
   overflow-y: scroll; // fix scrollbar page moving
-  font-family: "Roboto", sans-serif;
 }
 
 // change selection color
@@ -24,15 +23,18 @@ body {
 }
 
 :root {
+  --font-family: "Roboto", sans-serif;
   --font-size: 105%;
   --line-height: 1.5;
   --letter-spacing: 0.02em;
 }
 
 body {
+  font-family: var(--font-family);
   font-size: var(--font-size);
   line-height: var(--line-height);
   letter-spacing: var(--letter-spacing);
+  -webkit-font-smoothing: antialiased;
 }
 
 h1 {
@@ -53,6 +55,7 @@ h2 {
 }
 
 p {
+  line-height: 200%;
   font-weight: 400;
   margin-bottom: 1em;
 }

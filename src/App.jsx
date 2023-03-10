@@ -26,6 +26,10 @@ const App = () => {
     document.title = `${routeTitles[pathname] || '404 Page Not Found'}`;
   }, [pathname]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0); // scroll to top on routing
+  }, [pathname]);
+
   const renderRoutes = useMemo(
     () =>
       articles?.length > 0 &&

@@ -1,79 +1,96 @@
 $animation-margin: 8px;
 
-.article {
-  background-color: var(--secondary-bgcolor);
-  border-radius: 12px;
-  box-shadow: rgb(0 0 0 / 8%) 0px 4px 16px;
-  height: 100%;
-  margin-top: $animation-margin;
-  overflow: hidden;
+.card {
   position: relative;
+  height: 100%;
+  overflow: hidden;
+  margin-top: $animation-margin;
+  background-color: var(--secondary-bgcolor);
+  border-radius: 18px;
+  box-shadow: rgb(0 0 0 / 8%) 0px 4px 16px;
   transition: box-shadow 0.25s ease-in-out 0s, transform 0.25s ease 0s;
 
   &:hover {
     box-shadow: rgb(0 0 0 / 14%) 0px 4px 16px;
     transform: translateY(-$animation-margin);
 
-    .article__image::before {
+    &__image::before {
       opacity: 0.5;
       transition: opacity 0.25s ease-in-out 0.15s;
     }
   }
 
-  &__content {
+  &__link {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     overflow: hidden;
+    text-decoration: none;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     padding: 1em 2em;
+    overflow: hidden;
   }
 
   &__image {
-    background-color: lightgray;
     position: relative;
-    overflow: hidden;
     width: 100%;
+    padding-top: 55%;
+    overflow: hidden;
+    background-color: lightgray;
 
     img {
       position: absolute;
-      left: 0%;
-      top: 0%;
-      right: 0%;
-      bottom: 0%;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
       width: 100%;
       height: 100%;
       max-width: 100%;
-      border: 1px none #000;
+      border: none;
       object-fit: cover;
     }
   }
-  &__paragraph, &__title{
+
+  &__title {
+    font-size: 1.5rem;
+    line-height: 1.4em;
+    font-weight: 700;
+    color: var(--primary-color);
+    -webkit-line-clamp: 3; /* Limit the number of lines to 3 */
+    margin-top: 0;
+    margin-bottom: 0.5em;
+  }
+
+  &__date {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    color: var(--secondary-color);
+    margin-bottom: 0.43em;
+  }
+
+  &__excerpt,
+  &__title {
     display: -webkit-box; /* For Safari and older versions of Chrome and Firefox */
     -webkit-box-orient: vertical; /* Overflow direction for webkit */
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  &__paragraph {
-    color: var(--secondary-color);
-    -webkit-line-clamp: 3; /* Limit the number of lines to 3 */
+  &__excerpt {
     font-size: 1rem;
     line-height: 1.5;
-    margin-top: auto;
     min-height: 4.5rem; /* Minimum height of 3 lines with 1.5rem line height */
-  }
-
-  &__title {
-    color: var(--primary-color);
-    -webkit-line-clamp: 2; /* Limit the number of lines to 2 */
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-bottom: 0.25em;
-    margin-top: 0.5em;
-  }
-
-  &__link {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: minmax(236px, 1fr) auto;
-    height: 100%;
-    text-decoration: none;
+    color: var(--secondary-color);
+    margin-top: auto;
+    margin-bottom: 0;
+    -webkit-line-clamp: 4; /* Limit the number of lines to 4 */
   }
 }

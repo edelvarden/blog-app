@@ -1,36 +1,49 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./styles.scss";
+import placeholderImage from "/placeholder.webp";
 
-const ArticleCard = ({ id, image, title, date, excerpt: rawHtml }) => {
-
-  console.log(date);
+const ArticleCard = ({ id, image, title, date, excerpt }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
-  const [displayImage, setDisplayImage] = useState("none");
-  const preview = rawHtml.includes("<p>")
-    ? rawHtml.split("<p>").splice(1).join("").replace("</p>", "") // extract text from first <p>
-    : rawHtml.split(" ").splice(0, 30).join(" ") + "..."; // apply some logic to get a preview without HTML tags
 
   const handleImageLoad = () => {
     setIsImageLoaded(true);
-    setDisplayImage("block");
+  };
+
+  const showImage = isImageLoaded ? "block" : "none";
+
+  const getDateFormatted = (d) => {
+    const dateObj = new Date(d);
+    const options = {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    };
+    return dateObj.toLocaleDateString("en-US", options);
   };
 
   return (
-    <article className="article">
-      <Link className="article__link" to={`/articles/${id}`}>
-        <div className="article__image">
+    <article className="card">
+      <Link className="card__link" to={`/articles/${id}`}>
+        <div className="card__image" style={{ display: showImage }}>
           <img
             src={image}
             alt={title}
             onLoad={handleImageLoad}
-            style={{ display: displayImage }}
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = placeholderImage;
+            }}
           />
         </div>
-        <div className="article__content">
-          <h2 className="article__title">{title}</h2>
-          <span className="article__date">{date}</span>
-          <p className="article__paragraph">{preview}</p>
+        <div className="card__content">
+          <h2 className="card__title">{title}</h2>
+          {date && (
+            <time className="card__date" dateTime={date}>
+              {getDateFormatted(date)}
+            </time>
+          )}
+          <p className="card__excerpt">{excerpt}</p>
         </div>
       </Link>
     </article>
