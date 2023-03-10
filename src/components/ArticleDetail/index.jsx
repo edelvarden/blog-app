@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import "./styles.scss";
-const ArticleDetail = ({ title, excerpt }) => {
+const ArticleDetail = ({ title, content }) => {
   useEffect(() => {
     document.title = `${title}`;
   }, [title]);
@@ -10,7 +10,7 @@ const ArticleDetail = ({ title, excerpt }) => {
       <div className='article__container'>
         <h1>{title}</h1>
         <section>
-          <div dangerouslySetInnerHTML={{ __html: excerpt }} />
+          <div dangerouslySetInnerHTML={{ __html: content }} />
         </section>
       </div>
     </>

@@ -29,7 +29,7 @@ const ArticleCard = ({ id, image, title, date, excerpt: rawHtml }) => {
         </div>
         <div className="article__content">
           <h2 className="article__title">{title}</h2>
-          <p className="article__date">{date}</p>
+          <span className="article__date">{date}</span>
           <p className="article__paragraph">{preview}</p>
         </div>
       </Link>
