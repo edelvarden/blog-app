@@ -21,16 +21,16 @@ const BlogContent = ({ title, date, content, image }) => {
       <p className="blog-content__date">{`Published ${useDateFormatter(date)}`}</p>
       <h1 className="blog-content__title">{title}</h1>
       <div className="blog-content__image" style={{ display: showImage }}>
-          <img
-            src={image}
-            alt={title}
-            onLoad={handleImageLoad}
-            onError={(e) => {
-              e.target.onerror = null;
-              e.target.src = placeholderImage;
-            }}
-          />
-        </div>
+        <img
+          src={image}
+          alt={title}
+          onLoad={handleImageLoad}
+          onError={() => {
+            setIsImageLoaded(true);
+            setImage(placeholderImage)
+          }}
+        />
+      </div>
       <section className="blog-content__section">
         <div
           className="blog-content__content"

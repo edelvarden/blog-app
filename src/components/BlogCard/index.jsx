@@ -7,9 +7,7 @@ import placeholderImage from "/placeholder.webp";
 const ArticleCard = ({ id, image, title, date, excerpt }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
-  const handleImageLoad = () => {
-    setIsImageLoaded(true);
-  };
+  const handleImageLoad = () => setIsImageLoaded(true);
 
   const showImage = isImageLoaded ? "block" : "none";
 

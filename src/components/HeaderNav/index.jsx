@@ -7,8 +7,8 @@ const HeaderNav = ({ path, routes }) => {
   return (
     <nav className="nav">
       <ul className="nav__list">
-        {routes.map(({ path, name, id }) => (
-          <li className="nav__item" key={id}>
+        {routes.map(({ path, name, id }, index) => (
+          <li className="nav__item" key={index}>
             <Link
               className={`nav__link${pathName === path ? " active" : ""}`}
               to={path}
