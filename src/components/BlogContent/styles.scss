@@ -1,57 +1,56 @@
 .blog-content {
-    padding-top: 2em;
-    max-width: 728px;
-    margin: 0 auto;
+  max-width: 728px;
+  margin: 0 auto;
+  padding-top: 2em;
 
-    &__date {
-        margin-right: 0.25em;
-        margin-bottom: 0.125em;
-        color: var(--secondary-color);
-        font-size: 1em;
-        line-height: 175%;
-        font-weight: 400;
+  &__date {
+    color: var(--secondary-color);
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 175%;
+    margin-bottom: 0.125em;
+    margin-right: 0.25em;
+  }
+
+  &__title {
+    color: var(--main-color);
+    font-size: 2.8em;
+    font-weight: 700;
+    margin: 0px auto 0.5em;
+    max-width: 800px;
+    text-align: left;
+  }
+
+  &__image {
+    background-color: lightgray;
+    margin-bottom: 5.5em;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 950px;
+    overflow: hidden;
+    padding-top: 54%;
+    position: relative;
+    width: 100%;
+
+    img {
+      border: none;
+      height: 100%;
+      left: 0;
+      max-width: 100%;
+      object-fit: cover;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
     }
+  }
 
-    &__title {
-        max-width: 800px;
-        margin: 0px auto 0.5em;
-        color: var(--main-color);
-        font-size: 2.8em;
-        text-align: left;
-        font-weight: 700;
-    }
+  &__content p {
+    font-size: 1.125em;
+    margin-bottom: 1em;
+  }
 
-    &__image {
-        position: relative;
-        width: 100%;
-        padding-top: 55%;
-        overflow: hidden;
-        background-color: lightgray;
-        max-width: 950px;
-        margin-right: auto;
-        margin-bottom: 5.5em;
-        margin-left: auto;
-        padding-top: 54%;
-    
-        img {
-          position: absolute;
-          left: 0;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          width: 100%;
-          height: 100%;
-          max-width: 100%;
-          border: none;
-          object-fit: cover;
-        }
-      }
-
-      &__content p {
-        font-size: 1.125em;
-        margin-bottom: 1em;
-      }
-      &__content h2 {
-        margin-bottom: 1em;
-      }
+  &__content h2 {
+    margin-bottom: 1em;
+  }
 }
