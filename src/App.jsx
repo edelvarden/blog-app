@@ -30,33 +30,27 @@ const routeTitles = [
   },
 ];
 
-const App = () => {
-  const { pathname } = useLocation();
+function renderRoutes(articles) {
+  if (!articles || articles.length === 0) return null;
 
-  const routeComponents = useMemo(
-    () =>
-      routeTitles.map(({ path, component: Component, props }, key) => (
-        <Route exact path={path} key={key} element={<Component {...props} />} />
-      )),
-    [routeTitles]
-  );
-
-  const renderRoutes = useMemo(() => {
-    if (!articles || articles.length === 0) return null;
-
-    return articles.map(({ id, title, date, content, image }) => (
+  return articles.map(({ id, title, date, content, image }) => (
       <Route
         key={id}
         path={`/articles/${id}`}
         element={<BlogContent title={title} image={image} date={date} content={content} />}
       />
-    ));
-  }, [articles]);
+    )
+  );
+}
+
+const App = () => {
+  const { pathname } = useLocation();
+  const renderArticlesRoutes = useMemo(() => renderRoutes(articles), [articles]);
 
   useEffect(() => {
     const title = (routeTitles.find((r) => r.path === pathname) || {}).name || '404 Page Not Found';
     document.title = title;
-    window.scrollTo(0, 0); // scroll to top on routing
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth' }); // scroll to top on routing with smooth effect
   }, [pathname]);
 
   return (
@@ -65,8 +59,10 @@ const App = () => {
       <main style={{ minHeight: '100vh' }}>
         <Container>
           <Routes>
-            {renderRoutes}
-            {routeComponents}
+            {renderArticlesRoutes}
+            {routeTitles.map(({path, component: Component, props}, key) => (
+              <Route exact path={path} key={key} element={<Component {...props} />} />
+            ))}
             <Route path="*" element={<Error404Page />} />
           </Routes>
           <ToTopButton />
