@@ -27,7 +27,7 @@ const BlogContent = ({ title, date, content, image }) => {
           onLoad={handleImageLoad}
           onError={() => {
             setIsImageLoaded(true);
-            setImage(placeholderImage)
+            setIsImageLoaded(placeholderImage);
           }}
         />
       </div>
