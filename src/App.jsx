@@ -9,7 +9,7 @@ import Home from './components/Home';
 import ToTopButton from './components/ToTopButton';
 import Create from './components/Create';
 import Contact from './components/Contact';
-import ArticleDetail from './components/ArticleDetail';
+import BlogContent from './components/BlogContent';
 
 const routeTitles = {
   '/': 'Home',
@@ -38,7 +38,7 @@ const App = () => {
           key={id}
           exact
           path={`/articles/${id}`}
-          element={<ArticleDetail title={title} date={date} content={content} />}
+          element={<BlogContent title={title} date={date} content={content} />}
         />
       )),
     [articles]

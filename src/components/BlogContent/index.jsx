@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import "./styles.scss";
-const ArticleDetail = ({ title, content }) => {
+const BlogContent = ({ title, content }) => {
   useEffect(() => {
     document.title = `${title}`;
   }, [title]);
@@ -17,4 +17,4 @@ const ArticleDetail = ({ title, content }) => {
   );
 };
 
-export default ArticleDetail;
+export default BlogContent;
