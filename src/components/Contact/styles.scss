@@ -1,9 +1,80 @@
-.contact{
-    &__container {
-        max-width: var(--container-width);
-        margin: 0 auto;
-    }
-    &__title {
-        text-align: center;
-    }
+.contact {
+  &__container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+  }
+  &__title {
+    text-align: center;
+  }
+
+  /* contact form */
+  &__form {
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background-color: #f3f3f3;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* contact form container */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 200px);
+}
+
+.contact-form h2 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* input fields */
+.form-input {
+  height: 40px;
+  padding: 10px;
+  margin-bottom: 20px;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border 0.2s ease-in-out;
+}
+.form-input:focus,
+.form-textarea:focus {
+  border: 1px solid #3699ff;
+}
+
+/* submit button */
+.form-submit {
+  background-color: #3699ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 20px;
+}
+.form-submit:hover {
+  background-color: #2472dd;
+}
+
+/* message textarea */
+.form-textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+  transition: border 0.2s ease-in-out;
+  min-height: 100px;
+  width: 100%;
 }
