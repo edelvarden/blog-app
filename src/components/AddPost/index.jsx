@@ -20,15 +20,13 @@ const toolbarOptions = [
 ];
 
 const syntaxOptions = {
-  highlight: text => hljs.highlightAuto(text).value,
+  highlight: (text) => hljs.highlightAuto(text).value,
   theme: 'default',
 };
 
-const FormLabel = ({ text }) => (
-  <label className='form__label'>{text}</label>
-);
+const FormLabel = ({ text }) => <label className='form__label'>{text}</label>;
 
-const FormInput = memo(({ id, value, onChange, required }) => (
+const Input = memo(({ id, value, onChange, required }) => (
   <input
     className='form__input'
     type='text'
@@ -40,61 +38,52 @@ const FormInput = memo(({ id, value, onChange, required }) => (
   />
 ));
 
-const FormTextareaButtons = () => (
-  <div className='form__textarea-buttons'></div>
-);
+const TextareaButtons = () => <div className='form__textarea-buttons'></div>;
 
-const FormSubmitButton = ({ text }) => (
+const SubmitButton = ({ text }) => (
   <button className='form__submit' type='submit'>
     {text}
   </button>
 );
 
-const LazyReactQuill = lazy(() =>
-  import(
-    /* webpackChunkName: "quill" */ 'react-quill'
-  )
-);
+const LazyReactQuill = lazy(() => import(/* webpackChunkName: "quill" */ 'react-quill'));
 
-const PostContent = memo(({ postContent, setPostContent }) => {
-  return (
-    <LazyReactQuill
-      theme='snow'
-      value={postContent}
-      onChange={setPostContent}
-      modules={{ toolbar: toolbarOptions, syntax: syntaxOptions }}
+const PostContent = memo(({ postContent, setPostContent }) => (
+  <LazyReactQuill
+    theme='snow'
+    value={postContent}
+    onChange={setPostContent}
+    modules={{ toolbar: toolbarOptions, syntax: syntaxOptions }}
+  />
+));
+
+const Form = memo(({ onSubmit, children }) => <form className='form' onSubmit={onSubmit}>{children}</form>);
+
+const InputField = memo(({ labelText, inputId, value, onChange, required }) => (
+  <>
+    <FormLabel text={labelText} />
+    <Input
+      id={inputId}
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      required={required}
     />
-  );
-});
+  </>
+));
 
-const AddPostForm = memo(
-  ({ postTitle, setPostTitle, postContent, setPostContent, handleSubmit }) => {
-    return (
-      <form className='form' onSubmit={handleSubmit}>
-        <FormLabel text='Title' />
-        <FormInput
-          id='postTitle'
-          value={postTitle}
-          onChange={e => setPostTitle(e.target.value)}
-          required
-        />
-
-        <FormLabel text='Content' />
-        <PostContent postContent={postContent} setPostContent={setPostContent} />
-
-        <FormTextareaButtons />
-        <FormSubmitButton text='Publish' />
-      </form>
-    );
-  }
-);
+const TextareaField = memo(({ labelText, value, onChange }) => (
+  <>
+    <FormLabel text={labelText} />
+    <PostContent postContent={value} setPostContent={onChange} />
+  </>
+));
 
 const AddPost = ({ onClose, onSave }) => {
   const [postTitle, setPostTitle] = useState('');
   const [postContent, setPostContent] = useState('');
 
-  const memoizedHandleSubmit = useCallback(
-    event => {
+  const handleSubmit = useCallback(
+    (event) => {
       event.preventDefault();
       console.log(postContent);
     },
@@ -103,13 +92,12 @@ const AddPost = ({ onClose, onSave }) => {
 
   return (
     <Suspense fallback={<div className='skeleton-wrapper'><Skeleton height={50} /><Skeleton height={250} /></div>}>
-      <AddPostForm
-        postTitle={postTitle}
-        setPostTitle={setPostTitle}
-        postContent={postContent}
-        setPostContent={setPostContent}
-        handleSubmit={memoizedHandleSubmit}
-      />
+      <Form onSubmit={handleSubmit}>
+        <InputField labelText="Title" inputId="postTitle" value={postTitle} onChange={setPostTitle} required />
+        <TextareaField labelText="Content" value={postContent} onChange={setPostContent} />
+        <TextareaButtons />
+        <SubmitButton text='Publish' />
+      </Form>
     </Suspense>
   );
 };

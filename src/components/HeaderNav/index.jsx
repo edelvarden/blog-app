@@ -3,23 +3,17 @@ import './styles.scss';
 import { useState } from "react";
 
 const HeaderNav = ({ path, routes }) => {
-
-  const [showNav, setShowNav] = useState(false);
-
-  const toggleNav = () => {
-    setShowNav(!showNav);
-  };
-
+  const pathName = path;
   return (
     <nav className="nav">
       <ul className="nav__list">
-        {routes.map((item, index) => (
-          <li className="nav__item" key={index}>
+        {routes.map(({ path, name, id }) => (
+          <li className="nav__item" key={id}>
             <Link
-              className={`nav__link${item.path === path ? " active" : ""}`}
-              to={item.path}
+              className={`nav__link${pathName === path ? " active" : ""}`}
+              to={path}
             >
-              {item.name}
+              {name}
             </Link>
           </li>
         ))}
