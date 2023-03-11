@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import BlogCard from "../BlogCard";
 import "./styles.scss";
 
-const BlogList = ({ articles }) => {
+const BlogList = ({ articles, numArticlesToShow = 3, renderCard = (props) => null }) => {
   const lazyLoaderRef = useRef(null);
 
-  const [visibleArticles, setVisibleArticles] = useState(articles?.slice(0, 3) || []);
+  const [visibleArticles, setVisibleArticles] = useState(articles?.slice(0, numArticlesToShow) || []);
 
   const lastVisibleArticleRef = useRef(null);
 
@@ -21,7 +21,7 @@ const BlogList = ({ articles }) => {
           lastVisibleArticleRef.current !== articles?.[articles.length - 1]
         ) {
           setVisibleArticles((prevVisibleArticles) =>
-            articles.slice(0, prevVisibleArticles.length + 3)
+            articles.slice(0, prevVisibleArticles.length + numArticlesToShow)
           );
         }
       });
@@ -40,28 +40,28 @@ const BlogList = ({ articles }) => {
     return () => {
       observer.disconnect();
     };
-  }, [articles]);
+  }, [articles, numArticlesToShow]);
 
   const renderArticles = () =>
-    visibleArticles.map(
-      ({ id, image, title, date, excerpt }, index) =>
-        (
-          <li
-            key={id}
-            className={`list__item ${
-              index === visibleArticles?.length - 1 ? "last-list-item" : ""
-            }`}
-          >
-            <BlogCard
-              id={id}
-              image={`/articles/${id}/${image}`}
-              title={title}
-              date={date}
-              excerpt={excerpt}
-            />
-          </li>
-        )
-    );
+    visibleArticles.map((article, index) => {
+      const props = {
+        id: article.id,
+        image: `/articles/${article.id}/${article.image}`,
+        title: article.title,
+        date: article.date,
+        excerpt: article.excerpt,
+      };
+      return (
+        <li
+          key={article.id}
+          className={`list__item ${
+            index === visibleArticles?.length - 1 ? "last-list-item" : ""
+          }`}
+        >
+          {renderCard(props) ?? <BlogCard {...props} />}
+        </li>
+      );
+    });
 
   return (
     <>
