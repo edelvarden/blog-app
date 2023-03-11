@@ -1,4 +1,4 @@
-import { useEffect, useState, memo } from "react";
+import { memo, useCallback, useEffect, useState } from "react";
 import useDateFormatter from "../../hooks/useDateFormatter";
 import FormButton from "../FormButton";
 import PostEditor from "../PostEditor";
@@ -15,22 +15,22 @@ const BlogContent = memo(({ id, title, date, content, image }) => {
   const [blogTitle, setBlogTitle] = useState(title);
   const [blogContent, setBlogContent] = useState(content);
 
-  const handleEditClick = () => {
+  const handleEditClick = useCallback(() => {
     setState(BlogContentState.EDIT);
     document.body.classList.add("edit-mode");
-  };
+  }, [setState]);
 
-  const handlePostSave = (data) => {
+  const handlePostSave = useCallback((data) => {
     setBlogTitle(data.title);
     setBlogContent(data.body);
     setState(BlogContentState.VIEW);
     document.body.classList.remove("edit-mode");
-  };
+  }, [setBlogTitle, setBlogContent, setState]);
 
-  const handleCancel = () => {
+  const handleCancel = useCallback(() => {
     setState(BlogContentState.VIEW);
     document.body.classList.remove("edit-mode");
-  };
+  }, [setState]);
 
   useEffect(() => {
     document.title = `${blogTitle}`;
@@ -48,7 +48,7 @@ const BlogContent = memo(({ id, title, date, content, image }) => {
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  });
+  }, [state, handleCancel]);
 
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
@@ -72,14 +72,12 @@ const BlogContent = memo(({ id, title, date, content, image }) => {
         </div>
       )}
       <div className="blog-content__header">
-        {date && (
-          <>
-            <span className="blog-content__date">
-              {"Published "}
-              <time dateTime={date}>{useDateFormatter(date)}</time>
-            </span>
-          </>
-        )}
+        {date ? (
+          <span className="blog-content__date">
+            {"Published "}
+            <time dateTime={date}>{useDateFormatter(date)}</time>
+          </span>
+        ) : null}
         <FormButton text={"Edit"} onClick={handleEditClick} />
       </div>
       <h1 className="blog-content__title">{blogTitle}</h1>
