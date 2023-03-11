@@ -6,13 +6,12 @@ import FormSubmit from "../FormSubmit";
 import FormTextArea from "../FormTextArea";
 
 const ContactPage = () => {
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    if (name && email && message) {
+    if (email && message) {
       // TODO: Add form submission logic here
     }
   };
