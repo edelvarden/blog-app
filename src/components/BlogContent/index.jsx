@@ -24,10 +24,9 @@ const BlogContent = ({ title, date, content, image }) => {
         />
       </div>
       <section className="blog-content__section">
-        <div
-          className="blog-content__content"
+        <div className="blog-content__content"
           dangerouslySetInnerHTML={{ __html: content }}
-        />
+          ></div>
       </section>
     </div>
   );

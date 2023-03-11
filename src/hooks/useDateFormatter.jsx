@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const useDateFormatter = (initialDate) => {
+export const useDateFormatter = (initialDate) => {
   const [formattedDate, setFormattedDate] = useState('');
 
   useEffect(() => {

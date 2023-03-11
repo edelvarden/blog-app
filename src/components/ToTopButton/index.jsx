@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import './styles.scss';
 
 const ToTopButton = () => {
@@ -7,22 +7,20 @@ const ToTopButton = () => {
   const handleScroll = () => {
     window.pageYOffset > 500 ? setIsVisible(true) : setIsVisible(false);
   };
-  
+
   const handleClick = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <button
       className="toTopBtn"
-      style={{ display: isVisible ? "block" : "none" }}
+      style={{ display: isVisible ? 'block' : 'none' }}
       onClick={handleClick}
       aria-label="Back to top"
     >

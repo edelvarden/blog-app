@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import './styles.scss';
-import { useState } from "react";
 
-const HeaderNav = ({ path, routes }) => {
-  const pathName = path;
+const HeaderNav = ({ routes }) => {
+  const { pathname: pathName } = useLocation();
+
   return (
     <nav className="nav">
       <ul className="nav__list">
-        {routes.map(({ path, name, id }, index) => (
-          <li className="nav__item" key={index}>
+        {routes.map(({ path, name, id }, key) => (
+          <li className="nav__item" key={key}>
             <Link
               className={`nav__link${pathName === path ? " active" : ""}`}
               to={path}

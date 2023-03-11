@@ -1,4 +1,4 @@
-import { useEffect, useMemo, Suspense, lazy } from 'react';
+import { useEffect, useMemo } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import articles from './articles.json';
 import Container from './components/Container';
@@ -44,9 +44,7 @@ const App = () => {
             {renderArticlesRoutes}
             {routeTitles.map(({ path, component: Component, props }, key) => (
               <Route exact key={key} path={path} element={
-                <Suspense >
                   <Component {...props} />
-                </Suspense>
               } />
             ))}
           </Routes>

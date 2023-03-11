@@ -1,5 +1,5 @@
 import hljs from 'highlight.js/lib/core';
-import { useCallback, lazy, Suspense, useState, memo } from 'react';
+import { lazy, memo, Suspense, useCallback, useState } from 'react';
 import 'react-quill/dist/quill.snow.css';
 import Skeleton from '../Skeleton';
 import './styles.scss';
@@ -17,8 +17,7 @@ const toolbarOptions = [
 ];
 
 const syntaxOptions = {
-  highlight: (text) => hljs.highlightAuto(text).value,
-  theme: 'default',
+  highlight: (text) => hljs.highlightAuto(text).value
 };
 
 const LazyReactQuill = lazy(() => import(/* webpackChunkName: "quill" */ 'react-quill'));
@@ -89,11 +88,11 @@ const AddPost = ({ onClose, onSave }) => {
       console.log(postContent);
       onSave();
     },
-    [postContent, onSave]
+    [postContent, onSave],
   );
 
   return (
-    <Suspense fallback={<Skeleton height={300} />}>
+    <Suspense fallback={<><Skeleton height={50} /><Skeleton height={250} /></>}>
       <Form onSubmit={handleSubmit}>
         <InputField labelText="Title" inputId="postTitle" value={postTitle} onChange={setPostTitle} required />
         <TextareaField labelText="Content" value={postContent} onChange={setPostContent} />

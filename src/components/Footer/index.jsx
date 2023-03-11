@@ -8,7 +8,9 @@ const Footer = () => {
     <footer className="footer">
       <Container>
         <div className="footer__content">
-          <p className="footer__copy">&copy; {currentYear} My Blog. All Rights Reserved.</p>
+          <p className="footer__copy">
+            &copy; {currentYear} My Blog. All Rights Reserved.
+          </p>
         </div>
       </Container>
     </footer>

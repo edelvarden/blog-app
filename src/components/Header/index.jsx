@@ -7,7 +7,7 @@ const Header = ({ path, routes }) => {
     <header className="header">
       <Container>
         <div className="header__body">
-            <HeaderNav path={path} routes={routes} />
+            <HeaderNav {...{ path, routes }} />
         </div>
       </Container>
     </header>
