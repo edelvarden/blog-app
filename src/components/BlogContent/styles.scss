@@ -2,6 +2,14 @@
   max-width: 728px;
   margin: 0 auto;
 
+  &__header {
+    display: flex;
+    align-items: center;
+  }
+  &__header :first-child {
+    margin-right: auto;
+  }
+
   &__date {
     color: var(--secondary-color);
     font-size: 1em;
@@ -57,5 +65,31 @@
 
   &__content h2 {
     margin-bottom: 1em;
+  }
+}
+
+.edit-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 2em;
+  border-radius: 18px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+
+  &:not(.edit) {
+    .edit-form {
+      display: none;
+    }
   }
 }

@@ -2,7 +2,7 @@
 import { lazy, Suspense, useCallback, useState } from 'react';
 import Form from '../Form';
 import FormInput from "../FormInput";
-import FormSubmit from "../FormSubmit";
+import FormButton from "../FormButton";
 import Skeleton from '../Skeleton';
 import './styles.scss';
 
@@ -26,7 +26,7 @@ const AddPost = ({ onClose, onSave }) => {
       <Form onSubmit={handleSubmit}>
         <FormInput labelText="Title" inputId="postTitle" value={postTitle} onChange={setPostTitle} required />
         <FormRichEdit labelText="Content" value={postContent} onChange={setPostContent} />
-        <FormSubmit text='Publish' />
+        <FormButton text='Publish' type={'submit'} />
       </Form>
     </Suspense>
   );

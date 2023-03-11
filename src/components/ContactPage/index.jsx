@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Form from '../Form';
 import FormInput from "../FormInput";
-import FormSubmit from "../FormSubmit";
+import FormButton from "../FormButton";
 import FormTextArea from "../FormTextArea";
 import "./styles.scss";
 
@@ -23,7 +23,7 @@ const ContactPage = () => {
         <Form onSubmit={handleFormSubmit}>
           <FormInput labelText="Email" inputId="email" value={email} onChange={setEmail} required />
           <FormTextArea labelText="Message" value={message} onChange={setMessage} />
-          <FormSubmit text="Send" />
+          <FormButton text="Send" />
         </Form>
       </div>
     </section>
