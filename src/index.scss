@@ -16,6 +16,9 @@ body,
 
 body {
   overflow-y: scroll; // fix scrollbar page moving
+  &.edit-mode {
+    overflow: hidden;
+  }
 }
 
 // change selection color
