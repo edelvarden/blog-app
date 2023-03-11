@@ -6,7 +6,7 @@ const Header = ({ path, routes }) => {
   return (
     <header className="header">
       <Container>
-        <div className="header__content">
+        <div className="header__body">
             <HeaderNav path={path} routes={routes} />
         </div>
       </Container>

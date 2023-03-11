@@ -1,0 +1,17 @@
+.footer {
+  background-color: val(card-bgcolor);
+  padding: 2em;
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  &__copy {
+    color: val(secondary-font-color);
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+}

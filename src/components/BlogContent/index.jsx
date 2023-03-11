@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import useDateFormatter from "./../../hooks/useDateFormatter";
 import './styles.scss';
-import placeholderImage from "/placeholder.webp";
 
 const BlogContent = ({ title, date, content, image }) => {
   useEffect(() => {
@@ -10,25 +9,18 @@ const BlogContent = ({ title, date, content, image }) => {
 
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
-  const handleImageLoad = () => {
-    setIsImageLoaded(true);
-  };
-
-  const showImage = isImageLoaded ? "block" : "none";
+  const handleImageLoad = () => setIsImageLoaded(true);
 
   return (
     <div className="blog-content">
       <p className="blog-content__date">{`Published ${useDateFormatter(date)}`}</p>
       <h1 className="blog-content__title">{title}</h1>
-      <div className="blog-content__image" style={{ display: showImage }}>
+      <div className="blog-content__image">
         <img
+          className={isImageLoaded ? "loaded" : ""}
           src={image}
           alt={title}
           onLoad={handleImageLoad}
-          onError={() => {
-            setIsImageLoaded(true);
-            setIsImageLoaded(placeholderImage);
-          }}
         />
       </div>
       <section className="blog-content__section">

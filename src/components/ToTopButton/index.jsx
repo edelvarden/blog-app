@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import styles from './styles.module.scss';
+import './styles.scss';
 
 const ToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -7,7 +7,7 @@ const ToTopButton = () => {
   const handleScroll = () => {
     window.pageYOffset > 500 ? setIsVisible(true) : setIsVisible(false);
   };
-
+  
   const handleClick = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -21,7 +21,7 @@ const ToTopButton = () => {
 
   return (
     <button
-      className={styles.toTopBtn}
+      className="toTopBtn"
       style={{ display: isVisible ? "block" : "none" }}
       onClick={handleClick}
       aria-label="Back to top"

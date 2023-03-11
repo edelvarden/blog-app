@@ -45,6 +45,10 @@ $animation-margin: 8px;
     background-color: lightgray;
 
     img {
+      &.loaded{
+        display: block;
+      }
+      display: none;
       position: absolute;
       left: 0;
       top: 0;

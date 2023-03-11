@@ -1,11 +1,8 @@
 import hljs from 'highlight.js/lib/core';
-import javascript from 'highlight.js/lib/languages/javascript';
 import { useCallback, lazy, Suspense, useState, memo } from 'react';
 import 'react-quill/dist/quill.snow.css';
 import Skeleton from '../Skeleton';
 import './styles.scss';
-
-hljs.registerLanguage('javascript', javascript);
 
 const toolbarOptions = [
   { header: '2' },
@@ -16,13 +13,15 @@ const toolbarOptions = [
   { list: 'ordered' },
   { list: 'bullet' },
   { link: true },
-  { 'code-block': 'code' },
+  // { 'code-block': 'code' },
 ];
 
 const syntaxOptions = {
   highlight: (text) => hljs.highlightAuto(text).value,
   theme: 'default',
 };
+
+const LazyReactQuill = lazy(() => import(/* webpackChunkName: "quill" */ 'react-quill'));
 
 const FormLabel = ({ text }) => <label className='form__label'>{text}</label>;
 
@@ -38,15 +37,13 @@ const Input = memo(({ id, value, onChange, required }) => (
   />
 ));
 
-const TextareaButtons = () => <div className='form__textarea-buttons'></div>;
+const TextareaButtons = memo(() => <div className='form__textarea-buttons'></div>);
 
-const SubmitButton = ({ text }) => (
+const SubmitButton = memo(({ text }) => (
   <button className='form__submit' type='submit'>
     {text}
   </button>
-);
-
-const LazyReactQuill = lazy(() => import(/* webpackChunkName: "quill" */ 'react-quill'));
+));
 
 const PostContent = memo(({ postContent, setPostContent }) => (
   <LazyReactQuill
@@ -57,7 +54,11 @@ const PostContent = memo(({ postContent, setPostContent }) => (
   />
 ));
 
-const Form = memo(({ onSubmit, children }) => <form className='form' onSubmit={onSubmit}>{children}</form>);
+const Form = memo(({ onSubmit, children }) => (
+  <form className='form' onSubmit={onSubmit}>
+    {children}
+  </form>
+));
 
 const InputField = memo(({ labelText, inputId, value, onChange, required }) => (
   <>
@@ -86,12 +87,13 @@ const AddPost = ({ onClose, onSave }) => {
     (event) => {
       event.preventDefault();
       console.log(postContent);
+      onSave();
     },
-    [postContent]
+    [postContent, onSave]
   );
 
   return (
-    <Suspense fallback={<div className='skeleton-wrapper'><Skeleton height={50} /><Skeleton height={250} /></div>}>
+    <Suspense fallback={<Skeleton height={300} />}>
       <Form onSubmit={handleSubmit}>
         <InputField labelText="Title" inputId="postTitle" value={postTitle} onChange={setPostTitle} required />
         <TextareaField labelText="Content" value={postContent} onChange={setPostContent} />

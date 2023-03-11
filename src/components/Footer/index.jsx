@@ -1,11 +1,14 @@
 import Container from "../Container";
-import styles from "./styles.module.scss";
+import "./styles.scss";
+
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className={styles.footer}>
+    <footer className="footer">
       <Container>
-        <div className={styles.body}>
-          <p className={styles.text}>&copy; 2023 My Blog. All Rights Reserved.</p>
+        <div className="footer__content">
+          <p className="footer__copy">&copy; {currentYear} My Blog. All Rights Reserved.</p>
         </div>
       </Container>
     </footer>
