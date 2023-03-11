@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import "./styles.scss";
 import Form from '../Form';
 import FormInput from "../FormInput";
 import FormSubmit from "../FormSubmit";
 import FormTextArea from "../FormTextArea";
+import "./styles.scss";
 
 const ContactPage = () => {
   const [email, setEmail] = useState("");

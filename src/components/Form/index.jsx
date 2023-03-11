@@ -1,7 +1,7 @@
-import {form} from "./styles.module.scss";
+import { form } from "./styles.module.scss";
 const Form = ({ onSubmit, children }) => (
-    <form className={form} onSubmit={onSubmit}>
-      {children}
-    </form>
-  );
-  export default Form ;
+  <form className={form} onSubmit={onSubmit}>
+    {children}
+  </form>
+);
+export default Form;

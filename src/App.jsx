@@ -1,13 +1,13 @@
 import { useEffect, useMemo } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import articles from './articles.json';
+import BlogContent from './components/BlogContent';
+import ContactPage from './components/ContactPage';
 import Container from './components/Container';
+import CreatePage from './components/CreatePage';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import HomePage from './components/HomePage';
-import BlogContent from './components/BlogContent';
-import CreatePage from './components/CreatePage'
-import ContactPage from './components/ContactPage'
 import ToTopButton from './components/ToTopButton';
 
 const App = () => {
@@ -30,7 +30,7 @@ const App = () => {
   );
 
   useEffect(() => {
-    const title = (routeTitles.find(({path}) => path === pathname) || {}).name || '404 Page Not Found';
+    const title = (routeTitles.find(({ path }) => path === pathname) || {}).name || '404 Page Not Found';
     document.title = title;
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, [pathname]);
@@ -44,7 +44,7 @@ const App = () => {
             {renderArticlesRoutes}
             {routeTitles.map(({ path, component: Component, props }, key) => (
               <Route exact key={key} path={path} element={
-                  <Component {...props} />
+                <Component {...props} />
               } />
             ))}
           </Routes>

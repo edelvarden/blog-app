@@ -8,7 +8,7 @@ const HomePage = ({ articles }) => {
       <div className="home">
         <h1 className="home__title">Home</h1>
 
-        <BlogList articles={articles}/>
+        <BlogList articles={articles} />
       </div>
     </>
   );

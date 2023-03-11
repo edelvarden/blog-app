@@ -1,10 +1,10 @@
 
 import { lazy, Suspense, useCallback, useState } from 'react';
-import Skeleton from '../Skeleton';
-import './styles.scss';
 import Form from '../Form';
 import FormInput from "../FormInput";
 import FormSubmit from "../FormSubmit";
+import Skeleton from '../Skeleton';
+import './styles.scss';
 
 const FormRichEdit = lazy(() => import('../FormRichEdit'));
 

@@ -1,10 +1,10 @@
-import { useEffect, useRef, useState, useMemo } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import BlogCard from "../BlogCard";
 import "./styles.scss";
 
 const BlogList = ({ articles, numArticlesToShow = 3, renderCard = (props) => null }) => {
   const [visibleArticles, setVisibleArticles] = useState(() => articles?.slice(0, numArticlesToShow) || []);
-  
+
   const lastArticleRef = useRef();
 
   const intersectionObserver = useMemo(
@@ -35,25 +35,25 @@ const BlogList = ({ articles, numArticlesToShow = 3, renderCard = (props) => nul
   }, [intersectionObserver]);
 
   const renderArticles = useMemo(() =>
-      visibleArticles.map((article, index) => {
-        const props = {
-          id: article.id,
-          image: `/articles/${article.id}/${article.image}`,
-          category: article.category,
-          title: article.title,
-          date: article.date,
-          excerpt: article.excerpt
-        };
+    visibleArticles.map((article, index) => {
+      const props = {
+        id: article.id,
+        image: `/articles/${article.id}/${article.image}`,
+        category: article.category,
+        title: article.title,
+        date: article.date,
+        excerpt: article.excerpt
+      };
 
-        return (
-          <li
-            key={article.id}
-            className={`list__item ${index === visibleArticles.length - 1 ? "last-list-item" : ""}`}
-          >
-            {renderCard(props) ?? <BlogCard {...props} />}
-          </li>
-        );
-      }),
+      return (
+        <li
+          key={article.id}
+          className={`list__item ${index === visibleArticles.length - 1 ? "last-list-item" : ""}`}
+        >
+          {renderCard(props) ?? <BlogCard {...props} />}
+        </li>
+      );
+    }),
     [visibleArticles, renderCard]
   );
 

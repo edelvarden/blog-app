@@ -1,19 +1,19 @@
 .textarea {
-    border-radius: 10px;
-    border: 2px solid rgb(229, 232, 235);
-    font-size: 16px;
-    min-height: 200px;
-    max-height: 200px;
-    outline: none;
-    padding: 10px;
-    resize: none;
-    width: 100%;
+  border-radius: 10px;
+  border: 2px solid rgb(229, 232, 235);
+  font-size: 16px;
+  min-height: 200px;
+  max-height: 200px;
+  outline: none;
+  padding: 10px;
+  resize: none;
+  width: 100%;
 
-    &::placeholder {
-      color: #999;
-    }
-
-    &:focus {
-      box-shadow: inset 0 0 0 1.5px #007aff;
-    }
+  &::placeholder {
+    color: #999;
   }
+
+  &:focus {
+    box-shadow: inset 0 0 0 1.5px #007aff;
+  }
+}

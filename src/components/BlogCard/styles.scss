@@ -45,7 +45,7 @@ $animation-margin: 8px;
     background-color: lightgray;
 
     img {
-      &.loaded{
+      &.loaded {
         display: block;
       }
       display: none;
@@ -62,13 +62,13 @@ $animation-margin: 8px;
     }
   }
 
-  &__category{
+  &__category {
     display: flex;
     margin-bottom: 0.75em;
     align-items: center;
     grid-column-gap: 1em;
   }
-  &__category-item{
+  &__category-item {
     display: flex;
     color: #fff;
     color: var(--accent-color);

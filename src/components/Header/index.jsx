@@ -1,13 +1,13 @@
 import Container from "../Container";
-import "./styles.scss";
 import HeaderNav from "./../HeaderNav";
+import "./styles.scss";
 
 const Header = ({ path, routes }) => {
   return (
     <header className="header">
       <Container>
         <div className="header__body">
-            <HeaderNav {...{ path, routes }} />
+          <HeaderNav {...{ path, routes }} />
         </div>
       </Container>
     </header>
