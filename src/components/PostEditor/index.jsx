@@ -9,11 +9,11 @@ const PostEditor = ({ blogTitle = '', content = '', onSave, onCancel }) => {
   const [body, setBody] = useState(content);
 
   useEffect(() => {
-    setTitle(blogTitle);
-    setBody(content);
+    setTitle(blogTitle || '');
+    setBody(content || '');
   }, [blogTitle, content]);
 
-  const handleTitleChange = (e) => setTitle(e.target.value);
+  const handleTitleChange = (value) => setTitle(value);
 
   const handleBodyChange = (value) => setBody(value);
 
@@ -34,5 +34,6 @@ const PostEditor = ({ blogTitle = '', content = '', onSave, onCancel }) => {
     </div>
   );
 };
+
 
 export default PostEditor;
