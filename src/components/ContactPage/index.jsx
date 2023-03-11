@@ -22,7 +22,7 @@ const ContactPage = () => {
         <h1 className="contact__title">Contact</h1>
         <Form onSubmit={handleFormSubmit}>
           <FormInput labelText="Email" inputId="email" value={email} onChange={setEmail} required />
-          <FormTextArea labelText="Message:" value={message} onChange={setMessage} />
+          <FormTextArea labelText="Message" value={message} onChange={setMessage} />
           <FormSubmit text="Send" />
         </Form>
       </div>
