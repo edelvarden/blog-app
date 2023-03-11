@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import useDateFormatter from "./../../hooks/useDateFormatter";
 import "./styles.scss";
 
-const ArticleCard = ({ id, image, title, date, excerpt }) => {
+const BlogCard = ({ id, image, title, date, excerpt }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   const handleImageLoad = () => setIsImageLoaded(true);
@@ -33,4 +33,4 @@ const ArticleCard = ({ id, image, title, date, excerpt }) => {
   );
 };
 
-export default ArticleCard;
+export default BlogCard;

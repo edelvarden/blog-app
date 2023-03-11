@@ -62,10 +62,6 @@ const BlogList = ({ articles, numArticlesToShow = 3, renderCard = (props) => nul
         {renderArticles}
         <div ref={lastArticleRef}></div>
       </ul>
-
-      {visibleArticles.length === articles.length && (
-        <div className="no-more-articles">No more articles to load.</div>
-      )}
     </>
   );
 };

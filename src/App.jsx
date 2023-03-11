@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import articles from './articles.json';
 import Container from './components/Container';
@@ -24,7 +24,7 @@ const App = () => {
       <Route
         key={id}
         path={`/articles/${id}`}
-        element={<BlogContent title={title} image={image} date={date} content={content} />}
+        element={<BlogContent id={id} title={title} image={image} date={date} content={content} />}
       />
     )), [articles]
   );
@@ -38,7 +38,7 @@ const App = () => {
   return (
     <div className="App">
       <Header path={pathname} routes={routeTitles} />
-      <main style={{ minHeight: '100vh' }}>
+      <main style={{ minHeight: '100vh', paddingTop: '2em' }}>
         <Container>
           <Routes>
             {renderArticlesRoutes}

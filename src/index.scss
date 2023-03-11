@@ -23,8 +23,8 @@ body {
 }
 
 :root {
-  --font-family: "Poppins", sans-serif;
-  --font-size: 105%;
+  --font-family: "Poppins", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-size: 110%;
   --line-height: 1.5;
   --letter-spacing: 0.02em;
 }
@@ -35,10 +35,11 @@ body {
   line-height: var(--line-height);
   letter-spacing: var(--letter-spacing);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1 {
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 1px;
   font-size: 3em;
   line-height: 1.2;
@@ -48,7 +49,7 @@ h1 {
 
 
 h2 {
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 1px;
   font-size: 2em;
   line-height: 1.2;

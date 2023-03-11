@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import useDateFormatter from "./../../hooks/useDateFormatter";
 import './styles.scss';
 
-const BlogContent = ({ title, date, content, image }) => {
+const BlogContent = ({ id, title, date, content, image }) => {
   useEffect(() => {
     document.title = `${title}`;
   }, [title]);
@@ -18,7 +18,7 @@ const BlogContent = ({ title, date, content, image }) => {
       <div className="blog-content__image">
         <img
           className={isImageLoaded ? "loaded" : ""}
-          src={image}
+          src={`/articles/${id}/${image}`}
           alt={title}
           onLoad={handleImageLoad}
         />

@@ -1,452 +1,74 @@
 [
   {
     "id": 1,
-    "title": "First Article",
-    "author": "John Doe",
-    "date": "2022-03-01",
-    "excerpt": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "content": "<h2>Title</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",
-    "image": "main.webp"
+    "title": "The Pomodoro Technique",
+    "author": "Admin",
+    "date": "2023-01-23",
+    "excerpt": "Pomodoro Technique is a time management method that involves working continuously for certain increments of time while taking short breaks. This article provides an overview of the Pomodoro Technique and how to implement it to improve productivity.",
+    "content": "<p>Pomodoro technique is a time management method developed by Francesco Cirillo in the late 1980s. It involves alternating periods of work with short breaks to increase productivity and concentration. The technique gets its name from the tomato-shaped kitchen timer that Cirillo used to time his work sessions when he was a student.</p><h2>How Does the Technique Work?</h2><p>The Pomodoro technique involves the following steps:</p><ol><li><strong>Choose a task</strong>. Pick a task that needs to be done and write it down. </li><li><strong>Set the timer</strong>. Set a timer for 25 minutes – this is called a “Pomodoro”. During this time, you should focus solely on the task at hand. Work on the task. </li><li><strong>Work on the task</strong> until the timer goes off. If you finish the task before the timer ends, use the remaining time to review your work or take a break. </li><li><strong>Take a break</strong>. When the timer goes off, take a 5-minute break to rest, relax, or do something fun. </li><li><strong>Repeat</strong>. After the break, start another Pomodoro session by working on the same task or selecting a new one. </li><li><strong>Longer Breaks</strong>. After completing four Pomodoros, take a longer break of 15-30 minutes to reward yourself for your hard work.</li></ol><p>By breaking tasks into shorter intervals and taking regular breaks, the Pomodoro technique helps you stay focused and avoid burnout.</p><h2>Benefits of Pomodoro Technique</h2><p>The Pomodoro technique has several benefits for those who incorporate it into their workflow, such as:</p><ol><li><strong>Improved productivity.</strong>&nbsp;By setting clear goals, breaking tasks into smaller chunks and taking frequent rests, Pomodoro technique allows you to accomplish more in less time.</li><li><strong>Better time management.</strong>&nbsp;The technique forces you to prioritize tasks and manage your time properly.</li><li><strong>Improved Focus.</strong>&nbsp;The method helps you maintain your attention on a task without getting distracted by other things.</li><li><strong>Reduced stress.</strong>&nbsp;Regular breaks help to reduce stress, sudden anxiety and work-related burnouts.</li><li><strong>Increased motivation.</strong>&nbsp;Seeing progress over short intervals keeps you motivated and energized throughout the day.</li></ol><p><br></p>",
+    "image": "main.png"
   },
   {
     "id": 2,
-    "title": "Second Article",
-    "author": "Jane Smith",
-    "date": "2022-03-02",
-    "excerpt": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "content": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "image": "general.webp"
+    "title": "The \"Ugly Frog Method\": A Strategic Approach to Time Management",
+    "author": "Admin",
+    "date": "2023-02-02",
+    "excerpt": "Learn about the \"Ugly Frog Method\" for prioritizing tasks and getting work done more efficiently. By breaking down tasks by difficulty and importance, you can focus on the most challenging tasks first and avoid procrastination.",
+    "content": "<p>Time management is a crucial life skill that can help one complete tasks efficiently and have more free time. It allows individuals to prioritize their activities and use their time in the most productive way possible. Unfortunately, not everyone has mastered this art of using time to their advantage.</p><p>Fortunately, there are several time management techniques available, and in this article, we will discuss one of them - \"The Ugly Frog Method.\"</p><p><br></p><h2>Understanding the Ugly Frog Method</h2><p>This technique involves dividing tasks according to their difficulty level and focusing on completing the hardest tasks upfront, allowing individuals to build momentum, thus reducing procrastination.</p><p>Here is a step-by-step guideline to implementing the Ugly frog method:</p><p><br></p><h2>Step 1: Creating a List of Tasks</h2><p>Write down all the tasks you need to accomplish in a journal, planner, or your favorite productivity app. Ensure you have accounted for everything from work-related activities, home chores, personal activities, etc.</p><p><br></p><h2>Step 2: Prioritizing Your Tasks</h2><p>Categorize each task based on its complexity, assigning it with a letter grade (A, B, C, D, E). A represents the most critical and difficult task, and E represents the least important and easiest job. Organize your list so that the top priorities are at the top of the list.</p><p><br></p><h2>Step 3: Start with the Most Difficult Task</h2><p>Start by tackling the hardest and most challenging items first in the list. By completing the most robust elements first, one begins to tackle the other tasks with increased confidence, motivation, and momentum.</p><p><br></p><h2>Step 4: Move To Less Demanding Tasks</h2><p>Once finished with the hardest task move to the next grade of work, such as B. Keep working downwards until you have completed your entire list. Ensure your focus always lies on completing the most challenging items first while saving easier tasks for later.</p><p><br></p><h2>Benefits of the Ugly Frog Method</h2><p>The Ugly Frog Method introduces an entirely new way of thinking about how you allocate your time towards specific activities. By putting the most vital and challenging tasks at the front of the line, it stresses efficiency, effectiveness, and minimizes any unnecessary delay.</p><p>Other benefits of this technique include:</p><ol><li><strong>Boosting Productivity</strong>&nbsp;– targeting heavy duties that demand high-level brain activity enables us to be productive during those hours when our concentration is highest.</li><li><strong>Reducing Stress</strong>&nbsp;– By completing more daunting tasks early on making the later tasks easier can cause less anxiety and stress.</li><li><strong>Achieving Goals Faster</strong>&nbsp;– Achieving more significant goals in life requires a strategic plan to accomplish them, and focusing on the toughest duties will enable us to achieve our endgame faster.</li></ol><p>Plus, this technique helps develop a habit of prioritizing tasks correctly, making productivity much more comfortable and lead to improved success in both personal and professional endeavors.</p><p><br></p><h2>Final Thoughts</h2><p>In all, the Ugly Frog method is an effective approach that can make managing your time a lot more comfortable, bringing structure into your schedule and increasing productivity. This method requires some practice to master but can significantly improve overall quality of work and results over time.</p><p>Remember, successful people understand how to make efficient use of their time, leading to increased performance and better quality of life. Try setting daily, weekly, or monthly goals using the Ugly Frog Method to enhance your time management abilities today!</p>",
+    "image": "main.jpg"
   },
   {
     "id": 3,
-    "title": "Third Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
+    "title": "The Eisenhower Matrix: How to Prioritize Your Time",
+    "author": "Admin",
+    "date": "2023-03-03",
+    "excerpt": "The Eisenhower Matrix, also known as the Urgent-Important Matrix, is a tool used to prioritize tasks based on their urgency and importance. Developed by former U.S. President Dwight D. Eisenhower, this framework helps individuals focus their efforts on the most significant activities while avoiding distractions.",
+    "content": "<p>Time management is a key ingredient to be productive and efficient. There are many productivity techniques available to us, but one of the most helpful is the Eisenhower Matrix.</p><p>The concept was developed by former US President, Dwight D. Eisenhower. He once said, \"I have two kinds of problems: the urgent and the important. The urgent are not important, and the important are never urgent.\" Eisenhower believed that decision-making comes down to prioritizing tasks by their level of importance and urgency.</p><p>So, how does the matrix work?</p><p><br></p><h2>The Matrix Explained</h2><p>The Eisenhower Matrix categorizes tasks into four quadrants based on their urgency and importance.</p><ol><li><strong>Important and Urgent (Quadrant 1):</strong>&nbsp;Tasks here must be completed immediately and cannot be avoided. They are usually tasks that are deadlines-driven or require immediate attention.</li><li><strong>Important but Not Urgent (Quadrant 2):</strong>&nbsp;These tasks should be given top priority because they’ll lead to long-term personal or professional growth. But since they are not deadline-driven, they often get pushed aside.</li><li><strong>Urgent but Not Important (Quadrant 3):</strong>&nbsp;The tasks in this quadrant usually involve distractions and can easily be delegated. It’s essential to avoid spending too much time here.</li><li><strong>Not Important and Not Urgent (Quadrant 4):</strong>&nbsp;These tasks are non-essential and usually waste time. They should be eliminated when possible or done during our&nbsp;down-time.</li></ol><p><br></p><h2>How to use the Matrix?</h2><p>Using the Eisenhower Matrix is simple:</p><ol><li><strong>List all your tasks:</strong>&nbsp;Gather a list of everything you need to accomplish.</li><li><strong>Categorize each task:</strong>&nbsp;Place each task in one of the four quadrants. When categorizing, ask yourself: “Is this task important?” and “Is this task urgent?”</li><li><strong>Prioritize tasks accordingly:</strong>&nbsp;Start with tasks in Quadrant 1 (urgent and important) – these tasks need your immediate attention. Once you’ve completed them, move onto Quadrant 2 (important).&nbsp;</li><li><strong>Delegate or eliminate what you can:</strong>&nbsp;Look at Quadrant 3 (urgent but not important) and delegate these tasks wherever possible. And for Quadrant 4 (not important and not urgent), try to eliminate them entirely or do them in your downtime.</li></ol><p>By following the Eisenhower Matrix, you can prioritize your tasks, remain focused, and reduce stress levels. You'll also have more time for the tasks that lead to long-term success.</p><p><br></p><h2>Conclusion</h2><p>The Eisenhower Matrix is an excellent productivity technique that allows you to stay on top of your tasks, manage your time effectively, and achieve your goals. So next time you’re planning your day, remember: focus on what's important, minimize distractions, and prioritize like a president.</p>",
+    "image": "main.png"
   },
   {
     "id": 4,
-    "title": "4 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
+    "title": "The Found Time Technique: How to Make the Most of Small Tasks",
+    "author": "Admin",
+    "date": "2023-03-06",
+    "excerpt": "\"Found Time\" technique involves creating a list of small tasks that can be done in less than 15 minutes but are not urgent or a priority. By preparing the necessary resources to complete these tasks and having them handy, you can take advantage of any spare moments in your day to tackle them. This technique helps you make productive use of what would otherwise be idle time, allowing you to get more done with your day without feeling drained or overwhelmed.",
+    "content": "<p>Have you ever found yourself staring at your schedule, realizing that you have some free time, but nothing planned to do with it? If you want to make the most of every minute of your day, then try using the found time technique.</p><p>The found time technique is all about making a productive use of your small gaps in-between the other commitments. Small tasks can pile up and become a large load on your shoulder. That's why found time could serve as an ointment that keeps those smaller errands from piling up.</p><p><br></p><h2>What is the Found Time Technique?</h2><p>The found time technique is simply setting aside a list of 15-20 small errands or tasks that usually take no more than 15 minutes, but often seem challenging to work in. Then keeping this list up-to-date and ready for any potential found time throughout your day, like waiting for public transportation or when waiting for a meeting to start.</p><p>The purpose of creating a list of specific tasks ahead of time is to eliminate decision-making when found time arises. You won’t need to debate which simple task should be done next; grab your list and go right to its task.</p><p>Another essential element is the preparation beforehand. Collecting everything that you may need during the execution, can help you complete it quickly. For instance, if you plan to listen to lectures or podcasts, keep a list saved beforehand or download them so they'll readily available, even if offline.</p><p><br></p><h2>Implementing the Found Time Technique</h2><p>To implement the found time technique into your routine, follow these steps:</p><ol><li>Generate a list of tasks that will take 15 minutes or less, but are still important and contribute to your productivity.</li><li>Ensure that you have all the necessary materials or equipment required to complete the tasks ready.</li><li>Whenever a gap or spare time emerges, instantly refer to your list of small tasks and get started on them. This applies on various occasions, from grocery lineups to elevator rides.</li><li>As soon as you completed one of the assignments on your list, cross it off and add another new one.</li></ol><p>This method encourages breaking up the work during the day and distributing it over a reasonable period, boosting productivity and addressing overwhelming workload concerns.</p><p><br></p><h2>Conclusion</h2><p>Implementing found time in your schedule can act as a remedy for being stuck on unproductive procrastinations of smaller jobs. Instead, make use of every moment in between your fixed engagements. By following the easy steps above, you'll create the habit of doing these minor tasks during your newly gained downtime.</p>",
+    "image": "main.png"
   },
   {
     "id": 5,
-    "title": "5 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
+    "title": "The Power of 10-Minute Technique for Increased Productivity",
+    "author": "Admin",
+    "date": "2022-03-10",
+    "excerpt": "\"The 10-minute Technique\" involves dedicating 10 minutes of your day consistently to a task that is usually left unfinished due to time constraints. By breaking down the task into smaller sub-tasks and practicing it every day without fail, this technique can help you accomplish the difficult project quickly and efficiently.",
+    "content": "<p>The 10-minute technique might seem difficult to keep up with since it requires daily attention, but the benefits are definitely worth it. By investing just a little bit of time into what you’ve been avoiding, you are taking control of your life and inching closer to achieving your goals.</p><p>Another advantage of this technique is its ability to minimize stress. When we ignore tasks or let them pile up, it can create a sense of overwhelm and eventually stress. The 10-minute technique helps break down these tasks into smaller, manageable steps, which alleviates the pressure we put on ourselves.</p><p>Planning and dividing bigger tasks into sub-tasks is also a valuable skill in itself. Breaking down a project provides a way to measure progress and get rid of procrastination. It enables us to see our achievements along the way and help allocate more time to crucial stages, making sure they are given their due importance.</p><p>Sometimes motivation is scarce, and it's hard to get started on something that you don't have any interest in. But if you commit to the 10-minute routine every day, you will eventually find joy in doing those things you initially dreaded. It's an excellent opportunity to try out new hobbies or learn new skills, and you might surprise yourself with how much you enjoy doing things you never thought possible.</p><p><br></p><h2>Conclusion</h2><p>In conclusion, implementing the 10-minute technique into your routine can be hugely beneficial, no matter your lifestyle. You might think 10 minutes aren't enough to make significant progress, but as the saying goes, ”a journey of a thousand miles begins with a single step”. A small amount of commitment may lead towards significant results in the future.</p>",
+    "image": "main.png"
   },
   {
     "id": 6,
-    "title": "6 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
+    "title": "The 10-3-2-1-0 Formula for Success in Your Personal and Professional Life",
+    "author": "Admin",
+    "date": "2023-03-09",
+    "excerpt": "The 10-3-2-1-0 formula is a technique that provides a healthy routine for work and personal time. It requires one to avoid caffeine, food, and alcohol three, two, and one hour before sleep, respectively, and to stop working two hours before bed, then avoid electronic devices an hour before sleeping. Additionally, the recipe indicates not pressing the snooze button on the alarm clock.",
+    "content": "<p>We all know how hard it can be to achieve a work-life balance that works well for our overall wellbeing. The fast-paced, ever-changing, and always-on digital culture we live in only adds to the difficulty of doing so. But what if there was a simple formula to help you balance your personal and professional life success? Meet the 10-3-2-1-0 formula.</p><p>The 10-3-2-1-0 formula, coined by Dr. Sarah Ballantyne, is a simple, evidence-based framework that suggests a set of rules to ensure that we have enough time in our day for both work and play. The formula consists of five key elements that should be considered when creating your daily schedule.</p><p>Here’s a breakdown of what each element means:</p><ul><li>10 hours before bed: Avoid caffeinated beverages like coffee.</li><li>3 hours before bed: Don’t eat heavy meals or drink alcohol.</li><li>2 hours before bed: Disconnect from work-related activities.</li><li>1 hour before bed: Stay away from electronic devices such as phones, laptops, and tablets.</li><li>0 snooze buttons: Limit yourself to pressing the ‘snooze’ button on your alarm clock zero times.</li></ul><p>By following the 10-3-2-1-0 plan, you can improve your productivity, strengthen your relationships, and lead a happier, healthier lifestyle. Here’s how to put this into practice:</p><p><br></p><h2>Planning your day</h2><p>Start your day with a clear agenda and map out your to-do list based on urgency and priority level. Set realistic goals for the day and make sure to schedule time for breaks and downtime.</p><p><br></p><h2>Caffeine intake</h2><p>Limiting caffeine intake to ten hours before bedtime ensures that its stimulating effects have worn off before it's time to sleep. Make sure you include other sources of hydration throughout your day.</p><p><br></p><h2>Eating and drinking</h2><p>Heavy and rich meals and alcoholic beverages at night can negatively impact your sleep quality. Schedule such meals earlier in the evening, and avoid consuming these items around three hours before bedtime.</p><p><br></p><h2>Disconnecting from work</h2><p>It’s important to disconnect from working two hours before bedtime to allow your mind and body to relax. Try to fit in relaxing activities such as taking a bath, meditating, reading, or watching television shows that do not stimulate your brain too much.</p><p><br></p><h2>Digital Detox</h2><p>The blue light from electronics such as smartphones, tablets, and computers affects melatonin production leading to poor sleep quality. Establish an electronics-free zone in your home during the last 60 minutes leading to bedtime, including putting your phone on silent or airplane mode.</p><h2><br></h2><h2>Shunning snooze buttons</h2><p>Sleep quality becomes poor when you hit snooze since it interrupts deep sleep. Once you wake up, try to stretch, take a shower, or engage in another activity that promotes alertness instead of going back to sleep.</p><p><br></p><h2>Conclusion</h2><p>In conclusion, adopting the 10-3-2-1-0 principle will work wonders to promote healthier sleep, increase productivity, and lead a more fulfilling life by balancing productivity and rest. Finally, master each phase of the formula to enjoy long-lasting benefits in all areas of your life.</p>",
+    "image": "main.png"
   },
   {
     "id": 7,
-    "title": "7 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
+    "title": "The MECE Principle - Structuring Information and Problem-Solving",
+    "author": "Admin",
+    "date": "2022-03-11",
+    "excerpt": "The MECE principle is a framework used to structure information and problem-solving. The name is an acronym for \"Mutually Exclusive and Collectively Exhaustive.\" This principle involves creating a list in which segments do not overlap and each element occupies a place in only one segment.",
+    "content": "<p>The MECE principle, also known as the \"Mutually Exclusive, Collectively Exhaustive\" principle, is used to structure information and solve problems. It refers to creating a list in which segments do not overlap and each element occupies only one place in one segment (such as dividing people into age groups - under 18, 19-24, 25-35, 36-45, and 46-60).</p><p>This method can be used by journalists or consultants to organize ideas clearly and comprehensively. The primary concept of the MECE principle is to break down complex ideas into smaller components with distinct but exhaustive characteristics. This approach helps analyze each component independently and later combine them to achieve a comprehensive understanding.</p><p>McKinsey &amp; Company teaches its employees this methodology in the early stages of their careers making it a useful tool for all kinds of activities, including searching for information, communicating with clients, developing business plans, or preparing conference reports.</p><p>The MECE principle can be graphically presented as a tree where the trunk represents general terms, whereas the branches signify the more specific and distinct elements. Different types of trees are used in this approach such as problem trees, decision trees, and hypothesis trees that help to systematically examine every single facet of an idea.</p><p>Several steps need to be followed when applying the MECE principle: first, understand the problem you want to overcome. Second, formulate the task explicitly and understandably. Third, list all available solutions to solve the problem. Fourth, review each option individually, noting any pros and cons. Finally, select the most suitable option (and present it to your client).</p><p><br></p><h2>Conclusion</h2><p>In conclusion, adopting the MECE principle can help break down the complexity of ideas into more manageable components to facilitate better problem-solving. Whether using it to structure business plans, communicate ideas, or provide clarity during team meetings, applying this rule will always lead to a clearer and more focused path forward.</p>",
+    "image": "main.png"
   },
   {
     "id": 8,
-    "title": "8 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 9,
-    "title": "9 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 10,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 11,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 12,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 13,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 14,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 15,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 16,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 17,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 18,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 19,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 20,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
-  },
-  {
-    "id": 21,
-    "title": "10 Article",
-    "author": "Bob Johnson",
-    "date": "2022-03-03",
-    "excerpt": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "general.webp"
+    "title": "Understanding the Pareto Principle",
+    "author": "Admin",
+    "date": "2022-03-11",
+    "excerpt": "The Pareto Principle suggests that in many situations, a small number of inputs or causes are responsible for the majority of results or outputs. This principle can be applied to various fields, such as economics, engineering, software development, and personal productivity. By understanding this principle, individuals and organizations can focus on the vital few factors that truly drive their success and minimize effort spent on the trivial many.",
+    "content": "<p>The Pareto Principle comes from Vilfredo Pareto's observation that 80% of Italy's land was owned by just 20% of its population. This principle has also been applied to business, economics, and life in general. The principle suggests that most results in any given situation are attributed to a minority of inputs.</p><p>For example, in a sales context the principle could be applied to say that 80% of revenue comes from only 20% of customers. In a product development context, 80% of complaints may come from just 20% of defects in your product. The idea is that even though some factors may seem equally important, a small proportion of them contributes significantly to overall results.</p><p>Applying the Pareto Principle</p><p>One way to apply this principle is to identify the top 20% of the inputs or factors that are resulting in 80% of the desired outcome. This could involve identifying the top-performing customers, products, or strategies. Once these inputs have been identified, the company or individual can focus their efforts on optimizing and improving them further. By doing so, they can maximize productivity and increase efficiency, without wasting unnecessary effort on less productive inputs.</p><p><br></p><h2>Benefits of the Pareto Principle</h2><p>One of the benefits of adopting the Pareto Principle is that it allows individuals and businesses to allocate resources more effectively. By focusing on the most significant inputs, one can put their efforts and resources where it's likely to have the greatest impact, ultimately leading to better results. The principle also encourages reflections on how past efforts have contributed to current outcomes, allowing individuals and companies to make informed decisions based on empirical evidence.</p><p><br></p><h2>Conclusion</h2><p>In conclusion, the Pareto Principle is an essential concept for anyone looking to be productive, whether professionally or personally. By identifying the 20% of inputs that are contributing to 80% of the results, individuals and businesses can focus their time, energy, and resources effectively. With practice, applying the Pareto principle can lead to significant improvements in productivity, efficiency, and decision-making.</p>",
+    "image": "main.png"
   }
 ]
