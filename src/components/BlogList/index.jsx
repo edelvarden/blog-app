@@ -39,6 +39,7 @@ const BlogList = ({ articles, numArticlesToShow = 3, renderCard = (props) => nul
         const props = {
           id: article.id,
           image: `/articles/${article.id}/${article.image}`,
+          category: article.category,
           title: article.title,
           date: article.date,
           excerpt: article.excerpt
