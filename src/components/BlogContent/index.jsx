@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo } from "react";
 import useDateFormatter from "../../hooks/useDateFormatter";
 import FormButton from "../FormButton";
 import PostEditor from "../PostEditor";
@@ -10,7 +10,7 @@ const BlogContentState = {
   EDIT: "edit",
 };
 
-const BlogContent = React.memo(({ id, title, date, content, image }) => {
+const BlogContent = memo(({ id, title, date, content, image }) => {
   const [state, setState] = useState(BlogContentState.VIEW);
   const [blogTitle, setBlogTitle] = useState(title);
   const [blogContent, setBlogContent] = useState(content);

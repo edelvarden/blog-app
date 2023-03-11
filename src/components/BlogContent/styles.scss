@@ -21,7 +21,6 @@
 
   &__title {
     color: var(--main-color);
-    font-size: 2.8em;
     font-weight: 700;
     margin: 0px auto 0.5em;
     max-width: 800px;
@@ -91,10 +90,13 @@
       position: relative;
       z-index: 1;
       max-width: 728px;
-      width: calc(100% - 40px);
       padding: 2em;
       border-radius: 18px;
       background-color: #fff;
+
+      @media screen and (max-width: 480px) {
+        padding: 1em;
+      }
 
       &__container {
         margin-top: 30px;

@@ -9,22 +9,18 @@ const PostEditor = ({ blogTitle = '', content = '', onSave, onCancel }) => {
   const [body, setBody] = useState(content);
 
   useEffect(() => {
-    setTitle(blogTitle || '');
-    setBody(content || '');
-  }, []);
+    setTitle(blogTitle);
+    setBody(content);
+  }, [blogTitle, content]);
 
   const handleTitleChange = (e) => setTitle(e.target.value);
 
   const handleBodyChange = (value) => setBody(value);
 
   const handleSubmit = () => {
-    console.log(
-      {
-        title: title,
-        content: body
-      }
-    );
-    onSave({ title, body });
+    const data = { title, body };
+    console.log(data);
+    onSave(data);
   };
 
   return (
