@@ -1,6 +1,37 @@
 import { useState } from 'react';
 import "./styles.scss";
 
+const Label = ({ text }) => <label className="form__label">{text}</label>;
+
+const Input = ({ id, value, onChange, required }) => (
+  <input
+    className="form__input"
+    type="text"
+    id={id}
+    value={value}
+    onChange={onChange}
+    required={required}
+    autoComplete="off"
+  />
+);
+
+const TextareaButtons = () => <div className="form__textarea-buttons"></div>;
+
+const SubmitButton = ({ text }) => (
+  <button className="form__submit" type="submit">
+    {text}
+  </button>
+);
+
+const Form = ({ onSubmit, children }) => <form className="form" onSubmit={onSubmit}>{children}</form>;
+
+const InputField = ({ labelText, inputId, value, onChange, required = false }) => (
+  <>
+    <Label text={labelText} />
+    <Input id={inputId} value={value} onChange={e => onChange(e.target.value)} required={required} />
+  </>
+);
+
 const ContactPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -13,56 +44,32 @@ const ContactPage = () => {
     }
   };
 
+  const TextareaField = ({ labelText, value, onChange }) => (
+    <>
+      <Label text={labelText} />
+      <div>
+        <textarea className='form__textarea' />
+      </div>
+    </>
+  );
+
   return (
     <section className="contact">
-      <h1 className="contact__title">Contact</h1>
-      <p>
-        Have any questions or comments? We'd love to hear from you! Fill out the
-        form below and we'll get back to you as soon as possible.
-      </p>
+      <div className='contact__container'>
+        <h1 className="contact__title">Contact</h1>
+        <p>
+          Have any questions or comments? We'd love to hear from you! Fill out the
+          form below and we'll get back to you as soon as possible.
+        </p>
 
-      <form className="contact__form" onSubmit={handleFormSubmit}>
-        <div className="form-group">
-          <label htmlFor="name">Name:</label>
-          <input
-            className="form-input"
-            type="text"
-            id="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="email">Email:</label>
-          <input
-            className="form-input"
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-          />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="message">Message:</label>
-          <textarea
-            className="form-textarea"
-            id="message"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            required
-            minLength={10}
-          ></textarea>
-        </div>
-
-        <button className="form__submit" type="submit">
-          Send
-        </button>
-      </form>
+        <Form onSubmit={handleFormSubmit}>
+          <InputField labelText="Name:" inputId="name" value={name} onChange={setName} required />
+          <InputField labelText="Email:" inputId="email" value={email} onChange={setEmail} required />
+          <TextareaField labelText="Message:" value={message} onChange={setMessage} />
+          <TextareaButtons />
+          <SubmitButton text="Send" />
+        </Form>
+      </div>
     </section>
   );
 };
