@@ -14,7 +14,7 @@ const App = () => {
   const { pathname } = useLocation();
 
   const routeTitles = [
-    { path: '/', name: 'Home', component: HomePage, props: { articles } },
+    { path: '/', name: 'Blog', component: HomePage, props: { articles } },
     { path: '/create', name: 'Create', component: CreatePage },
     { path: '/contact', name: 'Contact', component: ContactPage },
   ];
