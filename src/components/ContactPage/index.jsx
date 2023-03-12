@@ -16,13 +16,16 @@ const ContactPage = () => {
     }
   };
 
+  const handleEmailChange = (value) => setEmail(value);
+  const handleMessageChange = (value) => setMessage(value);
+
   return (
     <section className="contact">
       <div className='contact__container'>
         <h1 className="contact__title">Contact</h1>
         <Form onSubmit={handleFormSubmit}>
-          <FormInput labelText="Email" inputId="email" value={email} onChange={setEmail} required />
-          <FormTextArea labelText="Message" value={message} onChange={setMessage} />
+          <FormInput labelText="Email" inputId="email" value={email} onChange={handleEmailChange} required />
+          <FormTextArea labelText="Message" value={message} onChange={handleMessageChange} />
           <FormButton text="Send" />
         </Form>
       </div>

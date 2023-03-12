@@ -1,7 +1,6 @@
-import { useEffect, useMemo } from 'react';
+import { lazy, Suspense, useEffect, useMemo } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import articles from './articles.json';
-import BlogContent from './components/BlogContent';
 import ContactPage from './components/ContactPage';
 import Container from './components/Container';
 import CreatePage from './components/CreatePage';
@@ -9,6 +8,9 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import HomePage from './components/HomePage';
 import ToTopButton from './components/ToTopButton';
+import Loader from './components/Loader';
+
+const LazyBlogContent = lazy(() => import('./components/BlogContent'));
 
 const App = () => {
   const { pathname } = useLocation();
@@ -24,9 +26,20 @@ const App = () => {
       <Route
         key={id}
         path={`/articles/${id}`}
-        element={<BlogContent id={id} title={title} image={image} date={date} content={content} />}
+        element={
+          <Suspense fallback={<Loader/>}>
+            <LazyBlogContent
+              id={id}
+              title={title}
+              image={image}
+              date={date}
+              content={content}
+            />
+          </Suspense>
+        }
       />
-    )), [articles]
+    )),
+    [articles]
   );
 
   useEffect(() => {

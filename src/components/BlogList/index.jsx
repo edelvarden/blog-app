@@ -1,69 +1,62 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import BlogCard from "../BlogCard";
 import "./styles.scss";
 
-const BlogList = ({ articles, numArticlesToShow = 3, renderCard = (props) => null }) => {
-  const [visibleArticles, setVisibleArticles] = useState(() => articles?.slice(0, numArticlesToShow) || []);
+const POSTS_PER_PAGE = 6;
+const THRESHOLD = 1;
 
-  const lastArticleRef = useRef();
+const BlogList = ({ articles }) => {
+  const [page, setPage] = useState(1);
+  const observerRef = useRef(null);
 
-  const intersectionObserver = useMemo(
-    () =>
-      new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting && visibleArticles.length < articles.length) {
-            setVisibleArticles((prevVisibleArticles) =>
-              articles.slice(0, prevVisibleArticles.length + numArticlesToShow)
-            );
-          }
-        },
-        { rootMargin: "20px" }
-      ),
-    [articles, visibleArticles.length]
-  );
+  const visibleArticles = articles.slice(0, page * POSTS_PER_PAGE);
+
+  const renderArticles = visibleArticles.map((article) => (
+    <li key={article.id} className="list__item">
+      <BlogCard
+        id={article.id}
+        image={`/articles/${article.id}/${article.image}`}
+        category={article.category}
+        title={article.title}
+        date={article.date}
+        excerpt={article.excerpt}
+      />
+    </li>
+  ));
+
+  const options = {
+    rootMargin: "0px",
+    threshold: THRESHOLD,
+  };
+
+  const handleObserver = ([entry]) => {
+    if (entry.isIntersecting) {
+      setPage((prevPage) => prevPage + 1);
+    }
+  };
 
   useEffect(() => {
-    const observer = intersectionObserver;
-
-    if (lastArticleRef.current) {
-      observer.observe(lastArticleRef.current);
-    }
+    observerRef.current = new IntersectionObserver(handleObserver, options);
 
     return () => {
-      observer.disconnect();
-    }
-  }, [intersectionObserver]);
+      observerRef.current.disconnect();
+    };
+  }, []);
 
-  const renderArticles = useMemo(() =>
-    visibleArticles.map((article, index) => {
-      const props = {
-        id: article.id,
-        image: `/articles/${article.id}/${article.image}`,
-        category: article.category,
-        title: article.title,
-        date: article.date,
-        excerpt: article.excerpt
-      };
+  useEffect(() => {
+    const endOfPageElem = document.querySelector("#end-of-page");
+    observerRef.current.observe(endOfPageElem);
 
-      return (
-        <li
-          key={article.id}
-          className={`list__item ${index === visibleArticles.length - 1 ? "last-list-item" : ""}`}
-        >
-          {renderCard(props) ?? <BlogCard {...props} />}
-        </li>
-      );
-    }),
-    [visibleArticles, renderCard]
-  );
+    return () => {
+      observerRef.current.unobserve(endOfPageElem);
+    };
+  }, [observerRef, articles.length]);
 
   return (
-    <>
-      <ul className="list">
-        {renderArticles}
-        <div ref={lastArticleRef}></div>
-      </ul>
-    </>
+    <ul className="list">
+      {renderArticles}
+      <div id="end-of-page" />
+    </ul>
   );
 };
 
