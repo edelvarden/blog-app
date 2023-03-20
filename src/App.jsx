@@ -1,19 +1,23 @@
 import { lazy, Suspense, useEffect, useMemo } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import articles from './articles.json';
-import ContactPage from './components/ContactPage';
-import Container from './components/Container';
-import CreatePage from './components/CreatePage';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import HomePage from './components/HomePage';
-import ToTopButton from './components/ToTopButton';
-import Loader from './components/Loader';
+import ContactPage from 'components/ContactPage';
+import Container from 'components/Container';
+import CreatePage from 'components/CreatePage';
+import Footer from 'components/Footer';
+import Header from 'components/Header';
+import HomePage from 'components/HomePage';
+import ToTopButton from 'components/ToTopButton';
+import Loader from 'components/Loader';
+
+import hljs from './hljs';
 
 const LazyBlogContent = lazy(() => import('./components/BlogContent'));
 
 const App = () => {
   const { pathname } = useLocation();
+
+  hljs.initHighlightingOnLoad();
 
   const routeTitles = [
     { path: '/', name: 'Blog', component: HomePage, props: { articles } },

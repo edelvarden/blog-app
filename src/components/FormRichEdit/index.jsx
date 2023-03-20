@@ -1,4 +1,4 @@
-import hljs from 'highlight.js/lib/core';
+import hljs from './../../hljs';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import FormLabel from '../FormLabel';
@@ -13,7 +13,7 @@ const toolbarOptions = [
     { list: 'ordered' },
     { list: 'bullet' },
     { link: true },
-    // { 'code-block': 'code' },
+    { 'code-block': 'code' },
 ];
 
 const syntaxOptions = {
