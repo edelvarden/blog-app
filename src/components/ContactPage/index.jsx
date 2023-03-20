@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import Form from '../Form';
-import FormInput from "../FormInput";
-import FormButton from "../FormButton";
-import FormTextArea from "../FormTextArea";
+import Form from 'components/Form';
+import FormInput from "components/FormInput";
+import FormButton from "components/FormButton";
+import FormTextArea from "components/FormTextArea";
 import "./styles.scss";
 
 const ContactPage = () => {

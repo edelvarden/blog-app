@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import BlogCard from "../BlogCard";
+import BlogCard from "components/BlogCard";
 import "./styles.scss";
 
 const POSTS_PER_PAGE = 6;

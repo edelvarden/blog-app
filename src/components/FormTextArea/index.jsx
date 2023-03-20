@@ -1,4 +1,4 @@
-import Label from "../FormLabel";
+import Label from "components/FormLabel";
 import { textarea } from "./styles.module.scss";
 const FormTextArea = ({ labelText, value, onChange }) => (
     <>

@@ -1,4 +1,4 @@
-import BlogList from "../BlogList";
+import BlogList from "components/BlogList";
 import "./styles.scss";
 
 const HomePage = ({ articles }) => {

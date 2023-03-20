@@ -1,7 +1,7 @@
 import hljs from './../../hljs';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import FormLabel from '../FormLabel';
+import FormLabel from 'components/FormLabel';
 import './styles.scss';
 
 const toolbarOptions = [

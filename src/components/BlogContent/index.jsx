@@ -1,7 +1,7 @@
 import { memo, useCallback, useEffect, useState } from "react";
-import useDateFormatter from "../../hooks/useDateFormatter";
-import FormButton from "../FormButton";
-import PostEditor from "../PostEditor";
+import useDateFormatter from "hooks/useDateFormatter";
+import FormButton from "components/FormButton";
+import PostEditor from "components/PostEditor";
 import "./styles.scss";
 
 // Enumerate the different states of the component

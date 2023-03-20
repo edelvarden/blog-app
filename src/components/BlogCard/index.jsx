@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import useDateFormatter from "./../../hooks/useDateFormatter";
+import useDateFormatter from "hooks/useDateFormatter";
 import "./styles.scss";
 
 const BlogCard = ({ id, image, title, category, date, excerpt }) => {

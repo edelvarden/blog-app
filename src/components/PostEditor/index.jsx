@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import FormRichEdit from './../FormRichEdit';
-import FormButton from '../FormButton';
-import FormInput from './../FormInput';
+import FormRichEdit from 'components/FormRichEdit';
+import FormButton from 'components/FormButton';
+import FormInput from 'components/FormInput';
 import './styles.scss';
 
 const PostEditor = ({ blogTitle = '', content = '', onSave, onCancel }) => {

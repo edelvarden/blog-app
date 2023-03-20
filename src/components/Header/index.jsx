@@ -1,5 +1,5 @@
-import Container from "../Container";
-import HeaderNav from "./../HeaderNav";
+import Container from "components/Container";
+import HeaderNav from "components/HeaderNav";
 import "./styles.scss";
 
 const Header = ({ path, routes }) => {

@@ -1,4 +1,4 @@
-import Label from "../FormLabel";
+import Label from "components/FormLabel";
 import { input } from "./styles.module.scss";
 
 const Input = ({ id, value, onChange, required }) => (

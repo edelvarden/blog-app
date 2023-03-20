@@ -1,4 +1,4 @@
-import AddPost from '../AddPost';
+import AddPost from 'components/AddPost';
 import "./styles.scss";
 const CreatePage = () => {
   return (
