@@ -1,24 +1,16 @@
-import FormButton from "components/FormButton";
-import ArticleEdit from "components/ArticleEdit";
 import useDateFormatter from "hooks/useDateFormatter";
 import { memo, useEffect, useState } from "react";
 import "./styles.scss";
-
 // Enumerate the different states of the component
 const BlogContentState = {
   VIEW: "view",
   EDIT: "edit",
 };
 
-const BlogContent = memo(({ id, title, date, content, image }) => {
+const BlogContent = memo(({ id, title, date, excerpt, content, image }) => {
   const [state, setState] = useState(BlogContentState.VIEW);
   const [blogTitle, setBlogTitle] = useState(title);
   const [blogContent, setBlogContent] = useState(content);
-
-  const handleEditClick = () => {
-    setState(BlogContentState.EDIT);
-    document.body.classList.add("edit-mode");
-  };
 
   const handlePostSave = (data) => {
     setBlogTitle(data.title);
@@ -55,22 +47,7 @@ const BlogContent = memo(({ id, title, date, content, image }) => {
   const handleImageLoad = () => setIsImageLoaded(true);
 
   return (
-    <div className={`blog-content ${state === BlogContentState.EDIT ? "edit" : ""}`}>
-      {state === BlogContentState.EDIT && (
-        <div className="edit-form">
-          <div className="edit-form__overlay" onClick={handleCancel} />
-          <div className="edit-form__content">
-            <div className="edit-form__container">
-              <ArticleEdit
-                blogTitle={blogTitle}
-                content={blogContent}
-                onSave={handlePostSave}
-                onCancel={handleCancel}
-              />
-            </div>
-          </div>
-        </div>
-      )}
+    <>
       <div className="blog-content__header">
         {date ? (
           <span className="blog-content__date">
@@ -78,7 +55,6 @@ const BlogContent = memo(({ id, title, date, content, image }) => {
             <time dateTime={date}>{useDateFormatter(date)}</time>
           </span>
         ) : null}
-        <FormButton text={"Edit"} onClick={handleEditClick} />
       </div>
       <h1 className="blog-content__title">{blogTitle}</h1>
       <div className="blog-content__image">
@@ -95,7 +71,7 @@ const BlogContent = memo(({ id, title, date, content, image }) => {
           dangerouslySetInnerHTML={{ __html: blogContent }}
         ></div>
       </section>
-    </div>
+    </>
   );
 });
 

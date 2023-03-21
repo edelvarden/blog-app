@@ -1,14 +1,12 @@
 import { ChevronDownIcon } from "@chakra-ui/icons";
-import { Box, Button, Menu, MenuButton, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure } from "@chakra-ui/react";
+import { Box, Button, Menu, MenuButton } from "@chakra-ui/react";
 import Container from "components/Container";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import ArticleForm from "components/ArticleForm";
 
 const Header = ({ routes }) => {
   const { pathname } = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const handleMenuOpen = () => {
     setIsMenuOpen(true);
@@ -17,6 +15,7 @@ const Header = ({ routes }) => {
   const handleMenuClose = () => {
     setIsMenuOpen(false);
   };
+
 
   // const sizes = ['xs', 'sm', 'md', 'lg', 'xl', 'full']
 
@@ -34,9 +33,7 @@ const Header = ({ routes }) => {
               </Link>
 
             ))}
-            <Button onClick={onOpen}>Create</Button>
-            <ArticleForm isOpen={isOpen} onClose={onClose} title={'Create new article'} submitLabel={'Create'}/>
-              
+
           </Menu>
         </Box>
       </Container>
