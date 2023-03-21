@@ -1,5 +1,5 @@
 import FormButton from "components/FormButton";
-import PostEditor from "components/PostEditor";
+import ArticleEdit from "components/ArticleEdit";
 import useDateFormatter from "hooks/useDateFormatter";
 import { memo, useEffect, useState } from "react";
 import "./styles.scss";
@@ -61,7 +61,7 @@ const BlogContent = memo(({ id, title, date, content, image }) => {
           <div className="edit-form__overlay" onClick={handleCancel} />
           <div className="edit-form__content">
             <div className="edit-form__container">
-              <PostEditor
+              <ArticleEdit
                 blogTitle={blogTitle}
                 content={blogContent}
                 onSave={handlePostSave}
