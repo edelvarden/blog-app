@@ -1,7 +1,7 @@
-import { memo, useCallback, useEffect, useState } from "react";
-import useDateFormatter from "hooks/useDateFormatter";
 import FormButton from "components/FormButton";
 import PostEditor from "components/PostEditor";
+import useDateFormatter from "hooks/useDateFormatter";
+import { memo, useEffect, useState } from "react";
 import "./styles.scss";
 
 // Enumerate the different states of the component
@@ -15,22 +15,22 @@ const BlogContent = memo(({ id, title, date, content, image }) => {
   const [blogTitle, setBlogTitle] = useState(title);
   const [blogContent, setBlogContent] = useState(content);
 
-  const handleEditClick = useCallback(() => {
+  const handleEditClick = () => {
     setState(BlogContentState.EDIT);
     document.body.classList.add("edit-mode");
-  }, [setState]);
+  };
 
-  const handlePostSave = useCallback((data) => {
+  const handlePostSave = (data) => {
     setBlogTitle(data.title);
     setBlogContent(data.body);
     setState(BlogContentState.VIEW);
     document.body.classList.remove("edit-mode");
-  }, [setBlogTitle, setBlogContent, setState]);
+  };
 
-  const handleCancel = useCallback(() => {
+  const handleCancel = () => {
     setState(BlogContentState.VIEW);
     document.body.classList.remove("edit-mode");
-  }, [setState]);
+  };
 
   useEffect(() => {
     document.title = `${blogTitle}`;

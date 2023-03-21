@@ -1,4 +1,3 @@
-import Label from "components/FormLabel";
 import { input } from "./styles.module.scss";
 
 const Input = ({ id, value, onChange, required }) => (
@@ -14,9 +13,8 @@ const Input = ({ id, value, onChange, required }) => (
 );
 
 
-const FormInput = ({ labelText, inputId, value, onChange, required = false }) => (
+const FormInput = ({ inputId, value, onChange, required = false }) => (
   <>
-    <Label text={labelText} />
     <Input id={inputId} value={value} onChange={e => onChange(e.target.value)} required={required} />
   </>
 );

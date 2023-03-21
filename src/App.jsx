@@ -9,6 +9,7 @@ import Header from 'components/Header';
 import HomePage from 'components/HomePage';
 import ToTopButton from 'components/ToTopButton';
 import Loader from 'components/Loader';
+import LightMode from 'components/LightMode';
 
 import hljs from './hljs';
 
@@ -57,6 +58,8 @@ const App = () => {
       <Header path={pathname} routes={routeTitles} />
       <main style={{ minHeight: '100vh', paddingTop: '2em' }}>
         <Container>
+
+        <LightMode/>
           <Routes>
             {renderArticlesRoutes}
             {routeTitles.map(({ path, component: Component, props }, key) => (

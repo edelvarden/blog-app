@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Form from 'components/Form';
+import FormLabel from "components/FormLabel";
 import FormInput from "components/FormInput";
 import FormButton from "components/FormButton";
 import FormTextArea from "components/FormTextArea";
@@ -24,8 +25,10 @@ const ContactPage = () => {
       <div className='contact__container'>
         <h1 className="contact__title">Contact</h1>
         <Form onSubmit={handleFormSubmit}>
+          <FormLabel>Email</FormLabel>
           <FormInput labelText="Email" inputId="email" value={email} onChange={handleEmailChange} required />
-          <FormTextArea labelText="Message" value={message} onChange={handleMessageChange} />
+          <FormLabel>Message</FormLabel>
+          <FormTextArea value={message} onChange={handleMessageChange} />
           <FormButton text="Send" />
         </Form>
       </div>

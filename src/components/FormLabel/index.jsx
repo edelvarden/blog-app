@@ -1,4 +1,4 @@
 import { label } from "./styles.module.scss";
 
-const Label = ({ text }) => <label className={label}>{text}</label>;
+const Label = ({ children, ...props }) => <label className={label} {...props}>{children}</label>;
 export default Label;

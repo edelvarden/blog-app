@@ -1,7 +1,6 @@
 import hljs from './../../hljs';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import FormLabel from 'components/FormLabel';
 import './styles.scss';
 
 const toolbarOptions = [
@@ -29,9 +28,8 @@ const PostContent = ({ postContent, setPostContent }) => (
     />
 );
 
-const FormRichEdit = ({ labelText, value, onChange }) => (
+const FormRichEdit = ({ value, onChange }) => (
     <>
-        <FormLabel text={labelText} />
         <PostContent postContent={value} setPostContent={onChange} />
     </>
 );
