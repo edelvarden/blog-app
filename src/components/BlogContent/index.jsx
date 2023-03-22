@@ -1,46 +1,26 @@
+import ModalWindow from "components/ModalWindow";
 import useDateFormatter from "hooks/useDateFormatter";
 import { memo, useEffect, useState } from "react";
+import { Button } from "react-bootstrap";
 import "./styles.scss";
-// Enumerate the different states of the component
-const BlogContentState = {
-  VIEW: "view",
-  EDIT: "edit",
-};
 
 const BlogContent = memo(({ id, title, date, excerpt, content, image }) => {
-  const [state, setState] = useState(BlogContentState.VIEW);
   const [blogTitle, setBlogTitle] = useState(title);
   const [blogContent, setBlogContent] = useState(content);
 
   const handlePostSave = (data) => {
     setBlogTitle(data.title);
     setBlogContent(data.body);
-    setState(BlogContentState.VIEW);
-    document.body.classList.remove("edit-mode");
   };
 
-  const handleCancel = () => {
-    setState(BlogContentState.VIEW);
-    document.body.classList.remove("edit-mode");
-  };
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   useEffect(() => {
     document.title = `${blogTitle}`;
   }, [blogTitle]);
-
-  useEffect(() => {
-    const handleKeyDown = (event) => {
-      if (event.key === "Escape" && state === BlogContentState.EDIT) {
-        handleCancel();
-      }
-    };
-
-    document.addEventListener("keydown", handleKeyDown, { passive: true });
-
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [state, handleCancel]);
 
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
@@ -48,6 +28,18 @@ const BlogContent = memo(({ id, title, date, excerpt, content, image }) => {
 
   return (
     <>
+      <Button variant="primary" onClick={handleShow}>
+        Edit
+      </Button>
+      <ModalWindow
+        isOpen={show}
+        onClose={handleClose}
+        title={"Edit article"}
+        submitLabel={"Save"}
+        postTitle={blogTitle}
+        postContent={blogContent}
+        postExcerpt={excerpt}
+      />
       <div className="blog-content__header">
         {date ? (
           <span className="blog-content__date">

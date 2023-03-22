@@ -7,12 +7,12 @@ import Header from 'components/Header';
 import HomePage from 'components/HomePage';
 import ToTopButton from 'components/ToTopButton';
 import Loader from 'components/Loader';
-import { ChakraProvider } from '@chakra-ui/react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import hljs from './hljs';
 window.hljs = hljs;
 
-const LazyBlogContent = lazy(() => import('./components/BlogContent'));
+const LazyBlogContent = lazy(() => import('components/BlogContent'));
 
 const App = () => {
   const [pathname, setPathname] = useState('/');
@@ -26,7 +26,7 @@ const App = () => {
   ], []);
 
   const renderArticlesRoutes = useMemo(() =>
-    articles.map(({ id, title, date, content, image }) => (
+    articles.map(({ id, title, date, excerpt, content, image }) => (
       <Route
         key={id}
         path={`/articles/${id}`}
@@ -35,6 +35,7 @@ const App = () => {
             <LazyBlogContent
               id={id}
               title={title}
+              excerpt={excerpt}
               image={image}
               date={date}
               content={content}
@@ -56,7 +57,6 @@ const App = () => {
   useLocation(handleLocationChange);
 
   return (
-    <ChakraProvider>
       <div className="App">
         <Header path={pathname} routes={routeTitles} />
         <main style={{ minHeight: '100vh', paddingTop: '2em' }}>
@@ -74,7 +74,6 @@ const App = () => {
         </main>
         <Footer />
       </div>
-    </ChakraProvider>
   );
 };
 

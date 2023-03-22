@@ -1,7 +1,7 @@
-import { ChevronDownIcon } from "@chakra-ui/icons";
-import { Box, Button, Menu, MenuButton } from "@chakra-ui/react";
 import Container from "components/Container";
+import ModalWindow from "components/ModalWindow";
 import { useState } from "react";
+import { Button, Dropdown, Nav, Navbar } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 
 const Header = ({ routes }) => {
@@ -16,30 +16,41 @@ const Header = ({ routes }) => {
     setIsMenuOpen(false);
   };
 
+  const [show, setShow] = useState(false);
 
-  // const sizes = ['xs', 'sm', 'md', 'lg', 'xl', 'full']
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
-    <Box as="header">
+    <Navbar expand="md">
       <Container>
-        <Box >
-          <Menu isOpen={isMenuOpen}>
-            <MenuButton as={Button} rightIcon={<ChevronDownIcon />} onMouseOver={handleMenuOpen}>
-              Menu
-            </MenuButton>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
             {routes.map(({ path, name, id }, key) => (
-              <Link key={key} {...{ to: path }}>
+              <Link
+                key={key}
+                to={path}
+                className={`nav-link ${pathname === path ? "active" : ""}`}
+              >
                 {name}
               </Link>
-
             ))}
+          </Nav>
 
-          </Menu>
-        </Box>
+
+          <Button variant="primary" onClick={handleShow}>
+            Create
+          </Button>
+          <ModalWindow
+            isOpen={show}
+            onClose={handleClose}
+            title={"Create"}
+            submitLabel={"OK"}
+          />
+        </Navbar.Collapse>
       </Container>
-    </Box>
-
-
+    </Navbar>
   );
 };
 
