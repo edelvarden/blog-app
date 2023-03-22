@@ -55,7 +55,7 @@ const BlogList = ({ articles }) => {
 
   return (
     <Container>
-      <Row xs={1} md={2} className="list g-4">
+      <Row xs={1} md={2} lg={3} className="list g-4">
         {renderArticles}
         <div id="end-of-page" />
       </Row>

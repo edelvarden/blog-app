@@ -21,14 +21,14 @@ const BlogCard = ({ id, image, title, category, date, excerpt }) => {
               className={isImageLoaded ? "loaded" : ""}
             />
           </div>
-          <Card.Body>
+          <Card.Body className="card-block__content">
             <div className="card-block__category">
               <span className="card-block__category-item">{category}</span>
             </div>
             <Card.Title className="card-block__title">{title}</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">
+            <Card.Subtitle className="card-block__date mb-2">
               {date && (
-                <time className="card-block__date" dateTime={date}>
+                <time dateTime={date}>
                   {useDateFormatter(date)}
                 </time>
               )}

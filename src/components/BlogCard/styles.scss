@@ -2,7 +2,7 @@ $animation-margin: 8px;
 
 .card-block {
   position: relative;
-  height: 100%;
+  height: 100% !important;
   overflow: hidden;
   margin-top: $animation-margin;
   background-color: var(--secondary-bgcolor);
@@ -108,7 +108,7 @@ $animation-margin: 8px;
     line-height: 1.5;
     min-height: 4.5rem; /* Minimum height of 3 lines with 1.5rem line height */
     color: var(--secondary-color);
-    margin-top: auto;
+    // margin-top: auto;
     margin-bottom: 0;
     -webkit-line-clamp: 4; /* Limit the number of lines to 4 */
   }
