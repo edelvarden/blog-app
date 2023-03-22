@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from "react";
 import BlogCard from "components/BlogCard";
-import { Container, CardGroup } from 'react-bootstrap';
+import { useEffect, useRef, useState } from "react";
+import { Container, Row } from 'react-bootstrap';
 import "./styles.scss";
 
 const POSTS_PER_PAGE = 6;
@@ -55,10 +55,10 @@ const BlogList = ({ articles }) => {
 
   return (
     <Container>
-      <CardGroup className="list">
+      <Row xs={1} md={2} className="list g-4">
         {renderArticles}
         <div id="end-of-page" />
-      </CardGroup>
+      </Row>
     </Container>
   );
 };
