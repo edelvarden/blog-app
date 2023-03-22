@@ -1,13 +1,13 @@
 .list {
   list-style-type: none;
-  display: grid;
-  margin-top: 3em;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 1.5em;
+  // display: grid;
+  // margin-top: 3em;
+  // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  // grid-gap: 1.5em;
 
-  @media screen and (max-width: 576px) {
-    grid-template-columns: 1fr;
-  }
+  // @media screen and (max-width: 576px) {
+  //   grid-template-columns: 1fr;
+  // }
 }
 
 .no-more-articles {

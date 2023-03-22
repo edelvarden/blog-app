@@ -1,6 +1,7 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
 import useDateFormatter from "hooks/useDateFormatter";
+import { useState } from "react";
+import { Card, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./styles.scss";
 
 const BlogCard = ({ id, image, title, category, date, excerpt }) => {
@@ -9,30 +10,34 @@ const BlogCard = ({ id, image, title, category, date, excerpt }) => {
   const handleImageLoad = () => setIsImageLoaded(true);
 
   return (
-    <article className="card">
-      <Link className="card__link" to={`/articles/${id}`}>
-        <div className="card__image">
-          <img
-            className={isImageLoaded ? "loaded" : ""}
-            src={image}
-            alt={title}
-            onLoad={handleImageLoad}
-          />
-        </div>
-        <div className="card__content">
-          <div className="card__category">
-            <span className="card__category-item">{category}</span>
+      <Card className="card-block" border="light">
+        <Link className="card-block__link" to={`/articles/${id}`}>
+          <div className="card-block__image">
+            <Card.Img
+              variant="top"
+              src={image}
+              alt={title}
+              onLoad={handleImageLoad}
+              className={isImageLoaded ? "loaded" : ""}
+            />
           </div>
-          <h2 className="card__title">{title}</h2>
-          {date && (
-            <time className="card__date" dateTime={date}>
-              {useDateFormatter(date)}
-            </time>
-          )}
-          <p className="card__excerpt">{excerpt}</p>
-        </div>
-      </Link>
-    </article>
+          <Card.Body>
+            <div className="card-block__category">
+              <span className="card-block__category-item">{category}</span>
+            </div>
+            <Card.Title className="card-block__title">{title}</Card.Title>
+            <Card.Subtitle className="mb-2 text-muted">
+              {date && (
+                <time className="card-block__date" dateTime={date}>
+                  {useDateFormatter(date)}
+                </time>
+              )}
+            </Card.Subtitle>
+
+            <Card.Text className="card-block__excerpt">{excerpt}</Card.Text>
+          </Card.Body>
+        </Link>
+      </Card>
   );
 };
 

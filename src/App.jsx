@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, lazy, Suspense } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import articles from './articles.json';
-import Container from 'components/Container';
+import { Container } from 'react-bootstrap';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
 import HomePage from 'components/HomePage';

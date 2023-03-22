@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import BlogCard from "components/BlogCard";
+import { Container, CardGroup } from 'react-bootstrap';
 import "./styles.scss";
 
 const POSTS_PER_PAGE = 6;
@@ -53,10 +54,12 @@ const BlogList = ({ articles }) => {
   }, [observerRef, articles.length]);
 
   return (
-    <ul className="list">
-      {renderArticles}
-      <div id="end-of-page" />
-    </ul>
+    <Container>
+      <CardGroup className="list">
+        {renderArticles}
+        <div id="end-of-page" />
+      </CardGroup>
+    </Container>
   );
 };
 

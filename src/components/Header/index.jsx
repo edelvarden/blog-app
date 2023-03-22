@@ -1,7 +1,6 @@
-import Container from "components/Container";
 import ModalWindow from "components/ModalWindow";
 import { useState } from "react";
-import { Button, Dropdown, Nav, Navbar } from "react-bootstrap";
+import { Container, Button, Nav, Navbar } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 
 const Header = ({ routes }) => {

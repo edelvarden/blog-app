@@ -1,69 +1,83 @@
 import ModalWindow from "components/ModalWindow";
 import useDateFormatter from "hooks/useDateFormatter";
 import { memo, useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import "./styles.scss";
 
 const BlogContent = memo(({ id, title, date, excerpt, content, image }) => {
-  const [blogTitle, setBlogTitle] = useState(title);
-  const [blogContent, setBlogContent] = useState(content);
-
-  const handlePostSave = (data) => {
-    setBlogTitle(data.title);
-    setBlogContent(data.body);
-  };
-
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const [postTitle, setPostTitle] = useState(title);
+  const [postExcerpt, setPostExcerpt] = useState(excerpt);
+  const [postContent, setPostContent] = useState(content);
   const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
-  useEffect(() => {
-    document.title = `${blogTitle}`;
-  }, [blogTitle]);
-
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const handlePostSave = (data) => {
+    if (data.title.length > 10 && data.excerpt.length > 10 && data.content.length > 30) {
+      setPostTitle(data.title);
+      setPostExcerpt(data.excerpt);
+      setPostContent(data.content);
+      setShow(false);
+      console.log(postTitle);
+      console.log(postContent);
+    }
+  };
 
   const handleImageLoad = () => setIsImageLoaded(true);
 
+  useEffect(() => {
+    document.title = `${postTitle}`;
+  }, [postTitle]);
+
   return (
-    <>
-      <Button variant="primary" onClick={handleShow}>
-        Edit
-      </Button>
+    <Container style={{ maxWidth: "728px" }}>
+      <Container>
+        <Row className="justify-content-between align-items-center">
+          <Col>
+            {date && (
+              <span className="blog-content__date">
+                Published <time dateTime={date}>{useDateFormatter(date)}</time>
+              </span>
+            )}
+          </Col>
+          <Col>
+            <Button variant="primary" onClick={() => setShow(true)}>
+              Edit
+            </Button>
+          </Col>
+        </Row>
+      </Container>
       <ModalWindow
         isOpen={show}
-        onClose={handleClose}
-        title={"Edit article"}
-        submitLabel={"Save"}
-        postTitle={blogTitle}
-        postContent={blogContent}
-        postExcerpt={excerpt}
+        onClose={() => setShow(false)}
+        title="Edit article"
+        submitLabel="Save"
+        postTitle={postTitle}
+        postContent={postContent}
+        postExcerpt={postExcerpt}
+        onSubmit={handlePostSave}
       />
-      <div className="blog-content__header">
-        {date ? (
-          <span className="blog-content__date">
-            {"Published "}
-            <time dateTime={date}>{useDateFormatter(date)}</time>
-          </span>
-        ) : null}
-      </div>
-      <h1 className="blog-content__title">{blogTitle}</h1>
-      <div className="blog-content__image">
-        <img
-          className={` ${isImageLoaded ? "loaded" : ""}`}
-          src={`/articles/${id}/${image}`}
-          alt={title}
-          onLoad={handleImageLoad}
-        />
-      </div>
       <section className="blog-content__section">
-        <div
-          className="blog-content__content"
-          dangerouslySetInnerHTML={{ __html: blogContent }}
-        ></div>
+        <Container>
+          <Row className="justify-content-center">
+            <Col style={{ maxWidth: "728px" }}>
+              <h1 className="blog-content__title">{postTitle}</h1>
+              <div className="blog-content__image">
+                <img
+                  className={` ${isImageLoaded ? "loaded" : ""}`}
+                  src={`/articles/${id}/${image}`}
+                  alt={postTitle}
+                  onLoad={handleImageLoad}
+                />
+              </div>
+              <div
+                className="blog-content__content"
+                dangerouslySetInnerHTML={{ __html: postContent }}
+              />
+            </Col>
+          </Row>
+        </Container>
       </section>
-    </>
+    </Container>
   );
 });
 
