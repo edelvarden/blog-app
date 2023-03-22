@@ -60,7 +60,6 @@ const App = () => {
       <div className="App">
         <Header path={pathname} routes={routeTitles} />
         <main style={{ minHeight: '100vh', paddingTop: '2em' }}>
-          <Container>
             <Routes>
               {renderArticlesRoutes}
               {routeTitles.map(({ path, component: Component, props }, key) => (
@@ -70,7 +69,6 @@ const App = () => {
               ))}
             </Routes>
             <ToTopButton />
-          </Container>
         </main>
         <Footer />
       </div>

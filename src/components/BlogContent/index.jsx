@@ -30,7 +30,6 @@ const BlogContent = memo(({ id, title, date, excerpt, content, image }) => {
 
   return (
     <Container style={{ maxWidth: "728px" }}>
-      <Container>
         <Row className="justify-content-between align-items-center">
           <Col>
             {date && (
@@ -45,7 +44,6 @@ const BlogContent = memo(({ id, title, date, excerpt, content, image }) => {
             </Button>
           </Col>
         </Row>
-      </Container>
       <ModalWindow
         isOpen={show}
         onClose={() => setShow(false)}
@@ -57,9 +55,8 @@ const BlogContent = memo(({ id, title, date, excerpt, content, image }) => {
         onSubmit={handlePostSave}
       />
       <section className="blog-content__section">
-        <Container>
           <Row className="justify-content-center">
-            <Col style={{ maxWidth: "728px" }}>
+            <Col>
               <h1 className="blog-content__title">{postTitle}</h1>
               <div className="blog-content__image">
                 <img
@@ -75,7 +72,6 @@ const BlogContent = memo(({ id, title, date, excerpt, content, image }) => {
               />
             </Col>
           </Row>
-        </Container>
       </section>
     </Container>
   );
