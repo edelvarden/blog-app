@@ -29,17 +29,17 @@ const ModalWindow = ({ isOpen, onClose, title, submitLabel, onSubmit, postTitle 
 
             <Form.Group controlId="postTitle">
               <Form.Label>Title</Form.Label>
-              <Form.Control type='text' value={newPostTitle} onChange={(e) => setNewPostTitle(e.target.value)} required />
+              <Form.Control style={{marginBottom: '1em'}} type='text' value={newPostTitle} onChange={(e) => setNewPostTitle(e.target.value)} required />
             </Form.Group>
 
             <Form.Group controlId="postExcerpt">
               <Form.Label>Excerpt</Form.Label>
-              <Form.Control type='text' value={newPostExcerpt} onChange={(e) => setNewPostExcerpt(e.target.value)} required />
+              <Form.Control style={{marginBottom: '1em'}} type='text' value={newPostExcerpt} onChange={(e) => setNewPostExcerpt(e.target.value)} required />
             </Form.Group>
 
             <Form.Group controlId="postContent">
               <Form.Label>Content</Form.Label>
-              <FormRichEdit value={newPostContent} onChange={(value) => setNewPostContent(value)} />
+              <FormRichEdit style={{marginBottom: '1em'}} value={newPostContent} onChange={(value) => setNewPostContent(value)} />
             </Form.Group>
 
           </Form>
