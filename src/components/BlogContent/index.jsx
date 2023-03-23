@@ -30,20 +30,20 @@ const BlogContent = memo(({ id, title, date, excerpt, content, image }) => {
 
   return (
     <Container style={{ maxWidth: "728px" }}>
-        <Row className="justify-content-between align-items-center">
-          <Col>
-            {date && (
-              <span className="blog-content__date">
-                Published <time dateTime={date}>{useDateFormatter(date)}</time>
-              </span>
-            )}
-          </Col>
-          <Col>
-            <Button variant="primary" onClick={() => setShow(true)}>
-              Edit
-            </Button>
-          </Col>
-        </Row>
+      <div className="d-flex justify-content-between align-items-center">
+
+        {date && (
+          <span className="blog-content__date">
+            Published <time dateTime={date}>{useDateFormatter(date)}</time>
+          </span>
+        )}
+
+
+        <Button variant="primary" onClick={() => setShow(true)}>
+          Edit
+        </Button>
+
+      </div>
       <ModalWindow
         isOpen={show}
         onClose={() => setShow(false)}
@@ -55,23 +55,23 @@ const BlogContent = memo(({ id, title, date, excerpt, content, image }) => {
         onSubmit={handlePostSave}
       />
       <section className="blog-content__section">
-          <Row className="justify-content-center">
-            <Col>
-              <h1 className="blog-content__title">{postTitle}</h1>
-              <div className="blog-content__image">
-                <img
-                  className={` ${isImageLoaded ? "loaded" : ""}`}
-                  src={`/articles/${id}/${image}`}
-                  alt={postTitle}
-                  onLoad={handleImageLoad}
-                />
-              </div>
-              <div
-                className="blog-content__content"
-                dangerouslySetInnerHTML={{ __html: postContent }}
+        <Row className="justify-content-center">
+          <Col>
+            <h1 className="blog-content__title">{postTitle}</h1>
+            <div className="blog-content__image">
+              <img
+                className={` ${isImageLoaded ? "loaded" : ""}`}
+                src={`/articles/${id}/${image}`}
+                alt={postTitle}
+                onLoad={handleImageLoad}
               />
-            </Col>
-          </Row>
+            </div>
+            <div
+              className="blog-content__content"
+              dangerouslySetInnerHTML={{ __html: postContent }}
+            />
+          </Col>
+        </Row>
       </section>
     </Container>
   );

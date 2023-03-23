@@ -1,6 +1,6 @@
 import ModalWindow from "components/ModalWindow";
 import { useState } from "react";
-import { Container, Button, Nav, Navbar } from "react-bootstrap";
+import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 
 const Header = ({ routes }) => {
