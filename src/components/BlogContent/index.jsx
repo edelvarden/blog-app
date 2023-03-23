@@ -6,6 +6,7 @@ import "./styles.scss";
 
 const BlogContent = memo(({ id, title, date, excerpt, content, image }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const [postImage, setPostImage] = useState(`/articles/${id}/${image}`);
   const [postTitle, setPostTitle] = useState(title);
   const [postExcerpt, setPostExcerpt] = useState(excerpt);
   const [postContent, setPostContent] = useState(content);
@@ -13,6 +14,7 @@ const BlogContent = memo(({ id, title, date, excerpt, content, image }) => {
 
   const handlePostSave = (data) => {
     if (data.title.length > 10 && data.excerpt.length > 10 && data.content.length > 30) {
+      setPostImage(data.image);
       setPostTitle(data.title);
       setPostExcerpt(data.excerpt);
       setPostContent(data.content);
@@ -49,7 +51,7 @@ const BlogContent = memo(({ id, title, date, excerpt, content, image }) => {
         onClose={() => setShow(false)}
         title="Edit article"
         submitLabel="Save"
-        postImage={`/articles/${id}/${image}`}
+        postImage={postImage}
         postTitle={postTitle}
         postContent={postContent}
         postExcerpt={postExcerpt}
@@ -62,7 +64,7 @@ const BlogContent = memo(({ id, title, date, excerpt, content, image }) => {
             <div className="blog-content__image">
               <img
                 className={` ${isImageLoaded ? "loaded" : ""}`}
-                src={`/articles/${id}/${image}`}
+                src={postImage}
                 alt={postTitle}
                 onLoad={handleImageLoad}
               />
