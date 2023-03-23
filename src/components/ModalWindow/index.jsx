@@ -9,14 +9,36 @@ const ModalWindow = ({ isOpen, onClose, title, submitLabel, onSubmit, postImage 
   const [newPostContent, setNewPostContent] = useState(postContent);
   const [imagePreview, setImagePreview] = useState(postImage);
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
     const postData = {
       title: newPostTitle,
       excerpt: newPostExcerpt,
       content: newPostContent,
     };
+
     onSubmit(postData);
   };
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+
+    // Convert image to webp format
+    createImageBitmap(file).then(function (bitmap) {
+      const canvas = document.createElement('canvas');
+      canvas.width = bitmap.width;
+      canvas.height = bitmap.height;
+      canvas.getContext('2d').drawImage(bitmap, 0, 0);
+
+      canvas.toBlob((blob) => {
+        const convertedFile = new File([blob], `${file.name.split('.').shift()}.webp`, { type: 'image/webp' });
+
+        // do something with the converted file, such as uploading it to a server
+        setImagePreview(URL.createObjectURL(convertedFile));
+      }, 'image/webp', 1);
+    });
+  }
 
 
   return (
@@ -30,8 +52,8 @@ const ModalWindow = ({ isOpen, onClose, title, submitLabel, onSubmit, postImage 
 
             <Form.Group controlId="postImage">
               <Form.Label>Image</Form.Label>
-              <Form.Control style={{ marginBottom: '1em' }} type='file' accept="image/*" onChange={(e) => setImagePreview(URL.createObjectURL(e.target.files[0]))} required />
-              {imagePreview && <div className='card-block__image' style={{marginBottom: '1em'}}><img style={{display: "block"}} src={imagePreview} alt="preview" /></div>}
+              <Form.Control style={{ marginBottom: '1em' }} type='file' accept="image/*" onChange={handleImageChange} required />
+              {imagePreview && <div className='card-block__image' style={{ marginBottom: '1em' }}><img style={{ display: "block" }} src={imagePreview} alt="preview" /></div>}
             </Form.Group>
 
             <Form.Group controlId="postTitle">
