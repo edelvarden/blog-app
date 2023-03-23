@@ -49,6 +49,7 @@ const BlogContent = memo(({ id, title, date, excerpt, content, image }) => {
         onClose={() => setShow(false)}
         title="Edit article"
         submitLabel="Save"
+        postImage={`/articles/${id}/${image}`}
         postTitle={postTitle}
         postContent={postContent}
         postExcerpt={postExcerpt}
