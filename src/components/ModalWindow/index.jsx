@@ -34,18 +34,8 @@ const ModalWindow = ({ isOpen, onClose, title, submitLabel, onSubmit, postImage 
     const file = e.target.files[0];
 
     // Convert image to webp format
-    createImageBitmap(file).then(function (bitmap) {
-      const canvas = document.createElement('canvas');
-      canvas.width = bitmap.width;
-      canvas.height = bitmap.height;
-      canvas.getContext('2d').drawImage(bitmap, 0, 0);
-
-      canvas.toBlob((blob) => {
-        const convertedFile = new File([blob], `${file.name.split('.').shift()}.webp`, { type: 'image/webp' });
-
-        // Do something with the converted file, such as uploading it to a server
-        setImagePreview(URL.createObjectURL(convertedFile));
-      }, 'image/webp', 1);
+    convertImageToWebP(file).then(convertedFile => {
+      setImagePreview(URL.createObjectURL(convertedFile));
     });
   }
 
@@ -61,7 +51,7 @@ const ModalWindow = ({ isOpen, onClose, title, submitLabel, onSubmit, postImage 
           <Form noValidate validated={validated} onSubmit={handleSubmit}>
             <Form.Group controlId="postImage" style={{ marginBottom: '1em' }}>
               <Form.Label>Image</Form.Label>
-              <Form.Control type='file' accept="image/*" onChange={handleImageChange} required />
+              <Form.Control type='file' accept="image/*" onChange={handleImageChange} />
               {imagePreview && <div className='card-block__image' style={{ marginBottom: '1em', border: '1px solid #ced4da', borderRadius: '10px', overflow: 'hidden' }}><img style={{ display: "block" }} src={imagePreview} alt="preview" /></div>}
               <Form.Control.Feedback type="invalid">
                 Please upload an image preview.
@@ -97,7 +87,7 @@ const ModalWindow = ({ isOpen, onClose, title, submitLabel, onSubmit, postImage 
           <Button variant="secondary" onClick={onClose}>
             Cancel
           </Button>
-          <Button variant="primary" type="submit" onClick={handleSubmit}>
+          <Button variant="primary" type="submit" onClick={handleSubmit} disabled={!(newPostTitle.length > 10 && newPostContent.length > 30)}>
             {submitLabel}
           </Button>
         </Modal.Footer>
@@ -105,5 +95,21 @@ const ModalWindow = ({ isOpen, onClose, title, submitLabel, onSubmit, postImage 
     </>
   );
 };
+
+const convertImageToWebP = async (file) => {
+  const bitmap = await createImageBitmap(file);
+  const canvas = document.createElement('canvas');
+  
+  canvas.width = bitmap.width;
+  canvas.height = bitmap.height;
+  canvas.getContext('2d').drawImage(bitmap, 0, 0);
+
+  return await new Promise((resolve, reject) => {
+    canvas.toBlob((blob) => {
+      const convertedFile = new File([blob], `${file.name.split('.').shift()}.webp`, { type: 'image/webp' });
+      resolve(convertedFile);
+    }, 'image/webp', 1);
+  });
+}
 
 export default ModalWindow;
