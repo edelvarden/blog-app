@@ -1,5 +1,5 @@
 import FormRichEdit from 'components/FormRichEdit';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Button, Form, Modal } from "react-bootstrap";
 
 const ModalWindow = ({ isOpen, onClose, title, submitLabel, onSubmit, postImage = null, postTitle = '', postExcerpt = '', postContent = '' }) => {
@@ -40,6 +40,8 @@ const ModalWindow = ({ isOpen, onClose, title, submitLabel, onSubmit, postImage 
     });
   }
 
+  const richEdit =  useMemo(() => <FormRichEdit style={{ marginBottom: '1em' }} value={newPostContent} onChange={(value) => setNewPostContent(value)} />);
+
   return (
     <>
       <Modal show={isOpen} onHide={onClose} size='xl'>
@@ -66,7 +68,7 @@ const ModalWindow = ({ isOpen, onClose, title, submitLabel, onSubmit, postImage 
 
             <Form.Group controlId="postContent">
               <Form.Label>Content</Form.Label>
-              <FormRichEdit style={{ marginBottom: '1em' }} value={newPostContent} onChange={(value) => setNewPostContent(value)} />
+              {richEdit}
             </Form.Group>
           </Form>
         </Modal.Body>
