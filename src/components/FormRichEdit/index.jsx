@@ -11,24 +11,21 @@ const toolbarOptions = [
     { list: 'ordered' },
     { list: 'bullet' },
     { link: true },
-    { 'code-block': 'code' },
+    { 'code-block': true }
 ];
 
-const PostContent = ({ postContent, setPostContent, placeholder }) => (
+const FormRichEdit = ({ value, onChange, placeholder, ...props }) => (
     <ReactQuill
         theme='snow'
-        value={postContent}
-        onChange={setPostContent}
-        modules={{ toolbar: toolbarOptions }}
+        value={value}
+        onChange={onChange}
+        modules={{
+            toolbar: toolbarOptions,
+        }}
         placeholder={placeholder}
         required
+        {...props}
     />
-);
-
-const FormRichEdit = ({ value, onChange, placeholder }) => (
-    <>
-        <PostContent postContent={value} setPostContent={onChange} placeholder={placeholder} />
-    </>
 );
 
 export default FormRichEdit;

@@ -10,7 +10,6 @@ import Loader from 'components/Loader';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import hljs from './hljs';
-window.hljs = hljs;
 
 const LazyBlogContent = lazy(() => import('components/BlogContent'));
 
@@ -18,7 +17,7 @@ const App = () => {
   const [pathname, setPathname] = useState('/');
  
   useEffect(() => {
-    hljs.initHighlightingOnLoad();
+    hljs.highlightAll();
   }, []);
 
   const routeTitles = useMemo(() => [

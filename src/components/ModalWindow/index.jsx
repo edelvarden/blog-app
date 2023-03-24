@@ -59,25 +59,37 @@ const ModalWindow = ({ isOpen, onClose, title, submitLabel, onSubmit, postImage 
         </Modal.Header>
         <Modal.Body>
           <Form noValidate validated={validated} onSubmit={handleSubmit}>
-            <Form.Group controlId="postImage">
+            <Form.Group controlId="postImage" style={{ marginBottom: '1em' }}>
               <Form.Label>Image</Form.Label>
-              <Form.Control style={{ marginBottom: '1em' }} type='file' accept="image/*" onChange={handleImageChange} required />
+              <Form.Control type='file' accept="image/*" onChange={handleImageChange} required />
               {imagePreview && <div className='card-block__image' style={{ marginBottom: '1em', border: '1px solid #ced4da', borderRadius: '10px', overflow: 'hidden' }}><img style={{ display: "block" }} src={imagePreview} alt="preview" /></div>}
+              <Form.Control.Feedback type="invalid">
+                Please upload an image preview.
+              </Form.Control.Feedback>
             </Form.Group>
 
-            <Form.Group controlId="postTitle">
+            <Form.Group controlId="postTitle" style={{ marginBottom: '1em' }}>
               <Form.Label>Title</Form.Label>
-              <Form.Control autoComplete="off" style={{ marginBottom: '1em' }} type='text' value={newPostTitle} onChange={(e) => setNewPostTitle(e.target.value)} required placeholder={'My loud article headline'} minLength={10} maxLength={100} />
+              <Form.Control autoComplete="off" type='text' value={newPostTitle} onChange={(e) => setNewPostTitle(e.target.value)} required placeholder={'My loud article headline'} minLength={10} maxLength={100} />
+              <Form.Control.Feedback type="invalid">
+                Please make the title longer.
+              </Form.Control.Feedback>
             </Form.Group>
 
-            <Form.Group controlId="postExcerpt">
+            <Form.Group controlId="postExcerpt" style={{ marginBottom: '1em' }}>
               <Form.Label>Excerpt</Form.Label>
-              <Form.Control autoComplete="off" style={{ marginBottom: '1em' }} type='text' value={newPostExcerpt} onChange={(e) => setNewPostExcerpt(e.target.value)} required placeholder={'My short description of the article'} minLength={10} maxLength={100} />
+              <Form.Control autoComplete="off" type='text' value={newPostExcerpt} onChange={(e) => setNewPostExcerpt(e.target.value)} required placeholder={'My short description of the article'} minLength={10} maxLength={100} />
+              <Form.Control.Feedback type="invalid">
+                Please make the excerpt longer.
+              </Form.Control.Feedback>
             </Form.Group>
 
-            <Form.Group controlId="postContent">
+            <Form.Group controlId="postContent" style={{ marginBottom: '1em' }}>
               <Form.Label>Content</Form.Label>
               {richEdit}
+              <Form.Control.Feedback type="invalid">
+                Please make the content longer.
+              </Form.Control.Feedback>
             </Form.Group>
           </Form>
         </Modal.Body>
