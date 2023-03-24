@@ -1,5 +1,5 @@
 import FormRichEdit from 'components/FormRichEdit';
-import { useState, useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { Button, Form, Modal } from "react-bootstrap";
 
 const ModalWindow = ({ isOpen, onClose, title, submitLabel, onSubmit, postImage = null, postTitle = '', postExcerpt = '', postContent = '' }) => {
@@ -7,18 +7,27 @@ const ModalWindow = ({ isOpen, onClose, title, submitLabel, onSubmit, postImage 
   const [newPostExcerpt, setNewPostExcerpt] = useState(postExcerpt);
   const [newPostContent, setNewPostContent] = useState(postContent);
   const [imagePreview, setImagePreview] = useState(postImage);
+  const [validated, setValidated] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    if (form.checkValidity() === false) {
+      e.stopPropagation();
+    }
 
-    const postData = {
-      image: imagePreview,
-      title: newPostTitle,
-      excerpt: newPostExcerpt,
-      content: newPostContent,
-    };
+    setValidated(true);
 
-    onSubmit(postData);
+    if (validated && newPostTitle.length > 10 && newPostContent.length > 30) {
+      const postData = {
+        image: imagePreview,
+        title: newPostTitle,
+        excerpt: newPostExcerpt,
+        content: newPostContent,
+      };
+
+      onSubmit(postData);
+    }
   };
 
   const handleImageChange = (e) => {
@@ -34,13 +43,13 @@ const ModalWindow = ({ isOpen, onClose, title, submitLabel, onSubmit, postImage 
       canvas.toBlob((blob) => {
         const convertedFile = new File([blob], `${file.name.split('.').shift()}.webp`, { type: 'image/webp' });
 
-        // do something with the converted file, such as uploading it to a server
+        // Do something with the converted file, such as uploading it to a server
         setImagePreview(URL.createObjectURL(convertedFile));
       }, 'image/webp', 1);
     });
   }
 
-  const richEdit =  useMemo(() => <FormRichEdit style={{ marginBottom: '1em' }} value={newPostContent} onChange={(value) => setNewPostContent(value)} />);
+  const richEdit = useMemo(() => <FormRichEdit style={{ marginBottom: '1em' }} value={newPostContent} onChange={(value) => setNewPostContent(value)} placeholder={'Share your thoughts about this topic'} />);
 
   return (
     <>
@@ -49,7 +58,7 @@ const ModalWindow = ({ isOpen, onClose, title, submitLabel, onSubmit, postImage 
           <Modal.Title>{title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form noValidate validated={validated} onSubmit={handleSubmit}>
             <Form.Group controlId="postImage">
               <Form.Label>Image</Form.Label>
               <Form.Control style={{ marginBottom: '1em' }} type='file' accept="image/*" onChange={handleImageChange} required />
@@ -58,12 +67,12 @@ const ModalWindow = ({ isOpen, onClose, title, submitLabel, onSubmit, postImage 
 
             <Form.Group controlId="postTitle">
               <Form.Label>Title</Form.Label>
-              <Form.Control autoComplete="off" style={{ marginBottom: '1em' }} type='text' value={newPostTitle} onChange={(e) => setNewPostTitle(e.target.value)} required />
+              <Form.Control autoComplete="off" style={{ marginBottom: '1em' }} type='text' value={newPostTitle} onChange={(e) => setNewPostTitle(e.target.value)} required placeholder={'My loud article headline'} minLength={10} maxLength={100} />
             </Form.Group>
 
             <Form.Group controlId="postExcerpt">
               <Form.Label>Excerpt</Form.Label>
-              <Form.Control autoComplete="off" style={{ marginBottom: '1em' }} type='text' value={newPostExcerpt} onChange={(e) => setNewPostExcerpt(e.target.value)} required />
+              <Form.Control autoComplete="off" style={{ marginBottom: '1em' }} type='text' value={newPostExcerpt} onChange={(e) => setNewPostExcerpt(e.target.value)} required placeholder={'My short description of the article'} minLength={10} maxLength={100} />
             </Form.Group>
 
             <Form.Group controlId="postContent">
@@ -76,7 +85,7 @@ const ModalWindow = ({ isOpen, onClose, title, submitLabel, onSubmit, postImage 
           <Button variant="secondary" onClick={onClose}>
             Cancel
           </Button>
-          <Button variant="primary" onClick={handleSubmit}>
+          <Button variant="primary" type="submit" onClick={handleSubmit}>
             {submitLabel}
           </Button>
         </Modal.Footer>

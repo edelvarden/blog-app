@@ -14,18 +14,20 @@ const toolbarOptions = [
     { 'code-block': 'code' },
 ];
 
-const PostContent = ({ postContent, setPostContent }) => (
+const PostContent = ({ postContent, setPostContent, placeholder }) => (
     <ReactQuill
         theme='snow'
         value={postContent}
         onChange={setPostContent}
         modules={{ toolbar: toolbarOptions }}
+        placeholder={placeholder}
+        required
     />
 );
 
-const FormRichEdit = ({ value, onChange }) => (
+const FormRichEdit = ({ value, onChange, placeholder }) => (
     <>
-        <PostContent postContent={value} setPostContent={onChange} />
+        <PostContent postContent={value} setPostContent={onChange} placeholder={placeholder} />
     </>
 );
 

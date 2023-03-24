@@ -6,6 +6,11 @@ $border-radius: .375rem;
   min-height: 200px;
   max-height: 300px;
 }
+
+.ql-editor.ql-blank::before {
+  font-style: normal;
+}
+
 .ql-toolbar.ql-snow {
   border-top-right-radius: $border-radius;
   border-top-left-radius: $border-radius;
