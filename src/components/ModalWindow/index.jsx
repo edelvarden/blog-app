@@ -84,10 +84,10 @@ const ModalWindow = ({ isOpen, onClose, title, submitLabel, onSubmit, postImage 
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={onClose}>
+          <Button variant="secondary" onClick={() => {onClose()}}>
             Cancel
           </Button>
-          <Button variant="primary" type="submit" onClick={handleSubmit} disabled={!(newPostTitle.length > 10 && newPostContent.length > 30)}>
+          <Button variant="primary" type="submit" onClick={handleSubmit}>
             {submitLabel}
           </Button>
         </Modal.Footer>
@@ -99,7 +99,7 @@ const ModalWindow = ({ isOpen, onClose, title, submitLabel, onSubmit, postImage 
 const convertImageToWebP = async (file) => {
   const bitmap = await createImageBitmap(file);
   const canvas = document.createElement('canvas');
-  
+
   canvas.width = bitmap.width;
   canvas.height = bitmap.height;
   canvas.getContext('2d').drawImage(bitmap, 0, 0);
