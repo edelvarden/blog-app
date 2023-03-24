@@ -28,6 +28,7 @@ const BlogContent = memo(({ id, title, date, excerpt, content, image }) => {
 
   useEffect(() => {
     document.title = `${postTitle}`;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [postTitle]);
 
   return (

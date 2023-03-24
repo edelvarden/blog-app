@@ -1,7 +1,13 @@
 import BlogList from "components/BlogList";
+import { useEffect } from 'react';
 import "./styles.scss";
 
 const HomePage = ({ articles }) => {
+
+  useEffect(() => {
+    document.title = 'Blog';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   return (
     <>

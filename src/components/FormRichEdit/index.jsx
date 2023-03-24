@@ -14,18 +14,21 @@ const toolbarOptions = [
     { 'code-block': true }
 ];
 
-const FormRichEdit = ({ value, onChange, placeholder, ...props }) => (
-    <ReactQuill
-        theme='snow'
-        value={value}
-        onChange={onChange}
-        modules={{
-            toolbar: toolbarOptions,
-        }}
-        placeholder={placeholder}
-        required
-        {...props}
-    />
-);
+const FormRichEdit = ({ value, onChange, placeholder, ...props }) => {
+    return (<>
+        <ReactQuill
+            theme='snow'
+            value={value}
+            onChange={onChange}
+            modules={{
+                // syntax: true,
+                toolbar: toolbarOptions,
+            }}
+            placeholder={placeholder}
+            required
+            {...props}
+        />
+    </>)
+};
 
 export default FormRichEdit;
