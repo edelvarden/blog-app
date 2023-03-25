@@ -51,7 +51,7 @@ const ModalWindow = ({ isOpen, onClose, title, submitLabel, onSubmit, postImage 
             <Form.Group controlId="postImage" className="form__group">
               <Form.Label>Image</Form.Label>
               <div className="form__image-picker">
-              {imagePreview && <div className='form__image-preview'><img style={{ display: "block" }} src={imagePreview} alt="preview" /></div>}
+              {<div className='form__image-preview'><img style={{ display: imagePreview ? "block" : 'none' }} src={imagePreview} alt="preview" /></div>}
                 <Form.Control type='file' accept="image/*" onChange={handleImageChange} />
               </div>
               <Form.Control.Feedback type="invalid">
