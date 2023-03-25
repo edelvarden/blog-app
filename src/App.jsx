@@ -8,10 +8,10 @@ import Loader from 'components/Loader';
 import ToTopButton from 'components/ToTopButton';
 import { lazy, Suspense, useEffect, useMemo, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import useGetAllArticles from 'hooks/useGetAllArticles';
+import useGetArticles from 'hooks/useGetArticles';
 
 const App = () => {
-  const articles = useGetAllArticles();
+  const articles = useGetArticles();
   const [routeTitles] = useState([
     { path: '/', name: 'Blog', component: HomePage, props: { articles } },
   ]);
