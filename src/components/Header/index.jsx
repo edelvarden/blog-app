@@ -6,20 +6,11 @@ import "./styles.scss";
 
 const Header = ({ routes }) => {
   const { pathname } = useLocation();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleMenuOpen = () => {
-    setIsMenuOpen(true);
-  };
+  const [isCreateMode, setIsCreateMode] = useState(false);
 
-  const handleMenuClose = () => {
-    setIsMenuOpen(false);
-  };
-
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleClose = () => setIsCreateMode(false);
+  const handleShow = () => setIsCreateMode(true);
 
   return (
     <Navbar expand="md" className="header">
@@ -43,7 +34,7 @@ const Header = ({ routes }) => {
             Create
           </Button>
           <ModalWindow
-            isOpen={show}
+            isOpen={isCreateMode}
             onClose={handleClose}
             title={"Create"}
             submitLabel={"OK"}

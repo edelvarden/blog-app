@@ -4,13 +4,13 @@ import { memo, useEffect, useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import "./styles.scss";
 
-const BlogContent = memo(({ id, title, date, excerpt, content, image }) => {
+const BlogContent = memo(({ id, title, date, excerpt, content, image, editMode }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   const [postImage, setPostImage] = useState(`/articles/${id}/${image}`);
   const [postTitle, setPostTitle] = useState(title);
   const [postExcerpt, setPostExcerpt] = useState(excerpt);
   const [postContent, setPostContent] = useState(content);
-  const [show, setShow] = useState(false);
+  const [isEditMode, setIsEditMode] = useState(false);
 
   const handlePostSave = (data) => {
     if (data.title.length > 10 && data.excerpt.length > 10 && data.content.length > 30) {
@@ -18,7 +18,7 @@ const BlogContent = memo(({ id, title, date, excerpt, content, image }) => {
       setPostTitle(data.title);
       setPostExcerpt(data.excerpt);
       setPostContent(data.content);
-      setShow(false);
+      setIsEditMode(false);
       console.log(postTitle);
       console.log(postContent);
     }
@@ -43,12 +43,9 @@ const BlogContent = memo(({ id, title, date, excerpt, content, image }) => {
 
       </div>
 
-      <Button variant="primary" onClick={() => setShow(true)}>
-          Edit
-      </Button>
       <ModalWindow
-        isOpen={show}
-        onClose={() => setShow(false)}
+        isOpen={isEditMode}
+        onClose={() => setIsEditMode(false)}
         title="Edit article"
         submitLabel="Save"
         postImage={postImage}

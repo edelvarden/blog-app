@@ -7,13 +7,12 @@ import HomePage from 'components/HomePage';
 import Loader from 'components/Loader';
 import ToTopButton from 'components/ToTopButton';
 import { lazy, Suspense, useEffect, useMemo, useState } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import articles from './articles.json';
 
 const LazyBlogContent = lazy(() => import('components/BlogContent'));
 
 const App = () => {
-  const [pathname, setPathname] = useState('/');
 
   useEffect(() => {
     hljs.highlightAll();
@@ -48,7 +47,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header path={pathname} routes={routeTitles} />
+      <Header path={'/'} routes={routeTitles} />
       <main style={{ minHeight: '100vh', paddingTop: '2em' }}>
         <Routes>
           {renderArticlesRoutes}
