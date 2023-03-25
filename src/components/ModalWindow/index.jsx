@@ -1,6 +1,7 @@
 import FormRichEdit from 'components/FormRichEdit';
 import { useMemo, useState } from 'react';
 import { Button, Form, Modal } from "react-bootstrap";
+import './styles.scss';
 
 const ModalWindow = ({ isOpen, onClose, title, submitLabel, onSubmit, postImage = null, postTitle = '', postExcerpt = '', postContent = '' }) => {
   const [newPostTitle, setNewPostTitle] = useState(postTitle);
@@ -47,16 +48,18 @@ const ModalWindow = ({ isOpen, onClose, title, submitLabel, onSubmit, postImage 
         </Modal.Header>
         <Modal.Body>
           <Form noValidate validated={validated} onSubmit={handleSubmit}>
-            <Form.Group controlId="postImage" style={{ marginBottom: '1em' }}>
+            <Form.Group controlId="postImage" className="form__group">
               <Form.Label>Image</Form.Label>
-              <Form.Control type='file' accept="image/*" onChange={handleImageChange} />
-              {imagePreview && <div className='card-block__image' style={{ marginBottom: '1em', border: '1px solid #ced4da', borderRadius: '10px', overflow: 'hidden' }}><img style={{ display: "block" }} src={imagePreview} alt="preview" /></div>}
+              <div className="form__image-picker">
+              {imagePreview && <div className='form__image-preview'><img style={{ display: "block" }} src={imagePreview} alt="preview" /></div>}
+                <Form.Control type='file' accept="image/*" onChange={handleImageChange} />
+              </div>
               <Form.Control.Feedback type="invalid">
                 Please upload an image preview.
               </Form.Control.Feedback>
             </Form.Group>
 
-            <Form.Group controlId="postTitle" style={{ marginBottom: '1em' }}>
+            <Form.Group controlId="postTitle" className="form__group">
               <Form.Label>Title</Form.Label>
               <Form.Control autoComplete="off" type='text' value={newPostTitle} onChange={(e) => setNewPostTitle(e.target.value)} required placeholder={'My loud article headline'} minLength={10} maxLength={100} />
               <Form.Control.Feedback type="invalid">
@@ -64,7 +67,7 @@ const ModalWindow = ({ isOpen, onClose, title, submitLabel, onSubmit, postImage 
               </Form.Control.Feedback>
             </Form.Group>
 
-            <Form.Group controlId="postExcerpt" style={{ marginBottom: '1em' }}>
+            <Form.Group controlId="postExcerpt" className="form__group">
               <Form.Label>Excerpt</Form.Label>
               <Form.Control autoComplete="off" type='text' value={newPostExcerpt} onChange={(e) => setNewPostExcerpt(e.target.value)} required placeholder={'My short description of the article'} minLength={10} maxLength={100} />
               <Form.Control.Feedback type="invalid">
@@ -72,9 +75,9 @@ const ModalWindow = ({ isOpen, onClose, title, submitLabel, onSubmit, postImage 
               </Form.Control.Feedback>
             </Form.Group>
 
-            <Form.Group controlId="postContent" style={{ marginBottom: '1em' }}>
+            <Form.Group controlId="postContent" className="form__group">
               <Form.Label>Content</Form.Label>
-              <FormRichEdit style={{ marginBottom: '1em' }} value={newPostContent} onChange={(value) => setNewPostContent(value)} placeholder={'Share your thoughts about this topic'} />
+              <FormRichEdit className="form__group" value={newPostContent} onChange={(value) => setNewPostContent(value)} placeholder={'Share your thoughts about this topic'} />
               <Form.Control.Feedback type="invalid">
                 Please make the content longer.
               </Form.Control.Feedback>

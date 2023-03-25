@@ -12,4 +12,9 @@
     display: flex;
     justify-content: space-between;
   }
+
+  &__nav {
+    display: grid;
+    gap: 0.5em;
+  }
 }

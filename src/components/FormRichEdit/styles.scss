@@ -9,12 +9,14 @@ $border-radius: .375rem;
 
 .ql-editor.ql-blank::before {
   font-style: normal;
+  color: var(--secondary-color);
 }
 
 .ql-toolbar.ql-snow {
   border-top-right-radius: $border-radius;
   border-top-left-radius: $border-radius;
   border: 1px solid #ced4da;
+  background-color: #fff;
 }
 
 .ql-container {

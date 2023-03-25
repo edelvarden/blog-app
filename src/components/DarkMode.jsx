@@ -1,21 +1,39 @@
 import { useState } from 'react';
+import { Button } from "react-bootstrap";
+import toLightModeIcon from 'assets/lightMode.svg'
+import toDarkModeIcon from 'assets/darkMode.svg'
+
 
 const DarkMode = () => {
   const pref = localStorage.getItem('darkModePreference');
   const byBrowser = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [isDark, setIsDark] = useState(pref === 'dark' || byBrowser);
-
+  
+  let darkModeClass = '';
+  if (isDark) {
+    darkModeClass = 'dark-mode';
+  } else {
+    darkModeClass = 'light-mode';
+  }
+  document.querySelector('body').className = darkModeClass;
+  
+  const [icon, setIcon] = useState(isDark ? toLightModeIcon : toDarkModeIcon);
   const toggleMode = () => {
     const newMode = isDark ? 'light' : 'dark';
     localStorage.setItem('darkModePreference', newMode);
     setIsDark(!isDark);
+    setIcon(isDark ? toDarkModeIcon : toLightModeIcon);
   };
 
   return (
-    <div className={isDark ? 'dark-mode' : 'light-mode'}>
-      <button onClick={toggleMode}>Toggle mode</button>
-      {/* Rest of your app */}
-    </div>
+    <>
+      <Button
+        variant="light"
+        onClick={toggleMode}
+      >
+        <img src={icon} alt="icon" />
+      </Button>
+    </>
   );
 };
 

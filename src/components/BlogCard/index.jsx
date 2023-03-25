@@ -10,7 +10,7 @@ const BlogCard = ({ id, image, title, category, date, excerpt }) => {
   const handleImageLoad = () => setIsImageLoaded(true);
 
   return (
-    <Card className="card-block" border="light">
+    <Card className="card-block">
       <Link className="card-block__link" to={`/articles/${id}`}>
         <div className="card-block__image">
           <Card.Img

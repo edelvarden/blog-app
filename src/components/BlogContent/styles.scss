@@ -20,7 +20,7 @@
   }
 
   &__title {
-    color: var(--main-color);
+    color: var(--primary-color);
     font-weight: 700;
     margin: 0px auto 0.5em;
     max-width: 800px;
@@ -56,6 +56,10 @@
       border: none;
       object-fit: cover;
     }
+  }
+
+  &__content {
+    color: var(--primary-color);
   }
 
   &__content p {

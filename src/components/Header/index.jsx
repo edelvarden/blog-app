@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import "./styles.scss";
+import DarkMode from 'components/DarkMode';
 
 const Header = ({ routes }) => {
   const { pathname } = useLocation();
@@ -14,10 +15,12 @@ const Header = ({ routes }) => {
   const handleShow = () => setIsCreate(true);
 
   return (
+    <>
+    
     <Navbar expand="md" className="header">
       <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse id="basic-navbar-nav" className="header__nav">
           <Nav className="mr-auto">
             {routes.map(({ path, name, id }, key) => (
               <Link
@@ -30,6 +33,8 @@ const Header = ({ routes }) => {
             ))}
           </Nav>
 
+          <DarkMode/>
+
           <Button
             variant="light"
             onClick={handleShow}
@@ -37,16 +42,18 @@ const Header = ({ routes }) => {
             <img src={create} alt="create" />
             <span>Create</span>
           </Button>
-          <ModalWindow
-            isOpen={isCreate}
-            onClose={handleClose}
-            title={"Create"}
-            submitLabel={"OK"}
-          />
+
 
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    <ModalWindow
+    isOpen={isCreate}
+    onClose={handleClose}
+    title={"Create"}
+    submitLabel={"OK"}
+  />
+    </>
   );
 };
 

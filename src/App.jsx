@@ -45,7 +45,7 @@ const App = () => {
   return (
     <div className="App">
       <Header path={'/'} routes={routeTitles} />
-      <main style={{ minHeight: '100vh', paddingTop: '2em' }}>
+      <main style={{ minHeight: '100vh', padding: '2em 0' }}>
         <Routes>
           {renderArticlesRoutes}
           {routeTitles.map(({ path, component: Component, props }, key) => (
