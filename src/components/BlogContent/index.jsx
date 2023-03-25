@@ -3,15 +3,16 @@ import useDateFormatter from "hooks/useDateFormatter";
 import { memo, useEffect, useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import "./styles.scss";
+import edit from 'assets/edit.svg';
 
-const BlogContent = memo(({ id, title, date, excerpt, content, image, editMode }) => {
+const BlogContent = memo(({ id, title, date, excerpt, content, image }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   const [postImage, setPostImage] = useState(`/articles/${id}/${image}`);
   const [postTitle, setPostTitle] = useState(title);
   const [postExcerpt, setPostExcerpt] = useState(excerpt);
   const [postContent, setPostContent] = useState(content);
   const [isEditMode, setIsEditMode] = useState(false);
-
+  
   const handlePostSave = (data) => {
     if (data.title.length > 10 && data.excerpt.length > 10 && data.content.length > 30) {
       setPostImage(data.image);
@@ -34,13 +35,18 @@ const BlogContent = memo(({ id, title, date, excerpt, content, image, editMode }
   return (
     <Container style={{ maxWidth: "728px" }}>
       <div className="d-flex justify-content-between align-items-center">
-
         {date && (
           <span className="blog-content__date">
             Published <time dateTime={date}>{useDateFormatter(date)}</time>
           </span>
         )}
-
+        <Button
+          variant="light"
+          onClick={() => setIsEditMode(!isEditMode)}
+        >
+          <img src={edit} alt="edit"/>
+          <span>Edit</span>
+        </Button>
       </div>
 
       <ModalWindow
@@ -55,7 +61,7 @@ const BlogContent = memo(({ id, title, date, excerpt, content, image, editMode }
         onSubmit={handlePostSave}
       />
 
-      
+
       <section className="blog-content__section">
         <Row className="justify-content-center">
           <Col>

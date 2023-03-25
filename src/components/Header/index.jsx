@@ -1,3 +1,4 @@
+import create from 'assets/create.svg';
 import ModalWindow from "components/ModalWindow";
 import { useState } from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
@@ -7,10 +8,10 @@ import "./styles.scss";
 const Header = ({ routes }) => {
   const { pathname } = useLocation();
 
-  const [isCreateMode, setIsCreateMode] = useState(false);
+  const [isCreate, setIsCreate] = useState(false);
 
-  const handleClose = () => setIsCreateMode(false);
-  const handleShow = () => setIsCreateMode(true);
+  const handleClose = () => setIsCreate(false);
+  const handleShow = () => setIsCreate(true);
 
   return (
     <Navbar expand="md" className="header">
@@ -29,16 +30,20 @@ const Header = ({ routes }) => {
             ))}
           </Nav>
 
-
-          <Button variant="primary" onClick={handleShow}>
-            Create
+          <Button
+            variant="light"
+            onClick={handleShow}
+          >
+            <img src={create} alt="create" />
+            <span>Create</span>
           </Button>
           <ModalWindow
-            isOpen={isCreateMode}
+            isOpen={isCreate}
             onClose={handleClose}
             title={"Create"}
             submitLabel={"OK"}
           />
+
         </Navbar.Collapse>
       </Container>
     </Navbar>

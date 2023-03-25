@@ -82,7 +82,7 @@ const ModalWindow = ({ isOpen, onClose, title, submitLabel, onSubmit, postImage 
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => {onClose()}}>
+          <Button variant="light" onClick={() => {onClose()}}>
             Cancel
           </Button>
           <Button variant="primary" type="submit" onClick={handleSubmit}>

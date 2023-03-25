@@ -8,20 +8,14 @@ import Loader from 'components/Loader';
 import ToTopButton from 'components/ToTopButton';
 import { lazy, Suspense, useEffect, useMemo, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import articles from './articles.json';
-
-const LazyBlogContent = lazy(() => import('components/BlogContent'));
+import useGetAllArticles from 'hooks/useGetAllArticles';
 
 const App = () => {
-
-  useEffect(() => {
-    hljs.highlightAll();
-  }, []);
-
-  const routeTitles = useMemo(() => [
+  const articles = useGetAllArticles();
+  const [routeTitles] = useState([
     { path: '/', name: 'Blog', component: HomePage, props: { articles } },
-  ], []);
-
+  ]);
+  const LazyBlogContent = lazy(() => import('components/BlogContent'));
   const renderArticlesRoutes = useMemo(() =>
     articles.map(({ id, title, date, excerpt, content, image }) => (
       <Route
@@ -44,6 +38,9 @@ const App = () => {
     [articles]
   );
 
+  useEffect(() => {
+    hljs.highlightAll();
+  }, []);
 
   return (
     <div className="App">
