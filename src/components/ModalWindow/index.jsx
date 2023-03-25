@@ -39,8 +39,6 @@ const ModalWindow = ({ isOpen, onClose, title, submitLabel, onSubmit, postImage 
     });
   }
 
-  const richEdit = useMemo(() => <FormRichEdit style={{ marginBottom: '1em' }} value={newPostContent} onChange={(value) => setNewPostContent(value)} placeholder={'Share your thoughts about this topic'} />);
-
   return (
     <>
       <Modal show={isOpen} onHide={onClose} size='xl'>
@@ -76,7 +74,7 @@ const ModalWindow = ({ isOpen, onClose, title, submitLabel, onSubmit, postImage 
 
             <Form.Group controlId="postContent" style={{ marginBottom: '1em' }}>
               <Form.Label>Content</Form.Label>
-              {richEdit}
+              <FormRichEdit style={{ marginBottom: '1em' }} value={newPostContent} onChange={(value) => setNewPostContent(value)} placeholder={'Share your thoughts about this topic'} />
               <Form.Control.Feedback type="invalid">
                 Please make the content longer.
               </Form.Control.Feedback>

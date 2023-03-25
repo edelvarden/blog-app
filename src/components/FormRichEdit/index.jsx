@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import './styles.scss';
@@ -14,7 +15,7 @@ const toolbarOptions = [
     { 'code-block': true }
 ];
 
-const FormRichEdit = ({ value, onChange, placeholder, ...props }) => {
+const FormRichEdit = memo(({ value, onChange, placeholder, ...props }) => {
     return (<>
         <ReactQuill
             theme='snow'
@@ -29,6 +30,6 @@ const FormRichEdit = ({ value, onChange, placeholder, ...props }) => {
             {...props}
         />
     </>)
-};
+});
 
 export default FormRichEdit;

@@ -41,12 +41,11 @@ const BlogContent = memo(({ id, title, date, excerpt, content, image }) => {
           </span>
         )}
 
-
-        <Button variant="primary" onClick={() => setShow(true)}>
-          Edit
-        </Button>
-
       </div>
+
+      <Button variant="primary" onClick={() => setShow(true)}>
+          Edit
+      </Button>
       <ModalWindow
         isOpen={show}
         onClose={() => setShow(false)}
@@ -58,6 +57,8 @@ const BlogContent = memo(({ id, title, date, excerpt, content, image }) => {
         postExcerpt={postExcerpt}
         onSubmit={handlePostSave}
       />
+
+      
       <section className="blog-content__section">
         <Row className="justify-content-center">
           <Col>
