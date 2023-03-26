@@ -16,24 +16,29 @@ const App = () => {
   const LazyBlogContent = lazy(() => import("components/BlogContent"))
   const renderArticlesRoutes = useMemo(
     () =>
-      articles.map(({ id, title, date= new Date(), excerpt = '', body, image = '' }, key) => (
-        <Route
-          key={key}
-          path={`/articles/${id}`}
-          element={
-            <Suspense fallback={<Loader />}>
-              <LazyBlogContent
-                id={id}
-                title={title}
-                excerpt={excerpt}
-                image={image}
-                date={date}
-                content={body}
-              />
-            </Suspense>
-          }
-        />
-      )),
+      articles.map(
+        (
+          { id, title, date = new Date(), excerpt = "", body, image = "" },
+          key
+        ) => (
+          <Route
+            key={key}
+            path={`/articles/${id}`}
+            element={
+              <Suspense fallback={<Loader />}>
+                <LazyBlogContent
+                  id={id}
+                  title={title}
+                  excerpt={excerpt}
+                  image={image}
+                  date={date}
+                  content={body}
+                />
+              </Suspense>
+            }
+          />
+        )
+      ),
     [articles]
   )
 
@@ -43,15 +48,11 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header routes={[{path: '/', name: 'Blog'}]} />
+      <Header routes={[{ path: "/", name: "Blog" }]} />
       <main style={{ minHeight: "100vh", padding: "2em 0" }}>
         <Routes>
           {renderArticlesRoutes}
-          <Route
-              exact
-              path={'/'}
-              element={<HomePage articles={articles} />}
-            />
+          <Route exact path={"/"} element={<HomePage articles={articles} />} />
         </Routes>
         <ToTopButton />
       </main>
