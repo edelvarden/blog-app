@@ -6,21 +6,19 @@ import Header from "components/Header"
 import HomePage from "components/HomePage"
 import Loader from "components/Loader"
 import ToTopButton from "components/ToTopButton"
-import { lazy, Suspense, useEffect, useMemo, useState, memo } from "react"
+import { lazy, Suspense, useEffect, useMemo, useState } from "react"
 import { Route, Routes } from "react-router-dom"
 import useGetArticles from "hooks/useGetArticles"
 
 const App = () => {
   const articles = useGetArticles()
-  const [routeTitles] = useState([
-    { path: "/", name: "Blog", component: HomePage, props: { articles } },
-  ])
+
   const LazyBlogContent = lazy(() => import("components/BlogContent"))
   const renderArticlesRoutes = useMemo(
     () =>
-      articles.map(({ id, title, date, excerpt, content, image }) => (
+      articles.map(({ id, title, date= new Date(), excerpt = '', body, image = '' }, key) => (
         <Route
-          key={id}
+          key={key}
           path={`/articles/${id}`}
           element={
             <Suspense fallback={<Loader />}>
@@ -30,7 +28,7 @@ const App = () => {
                 excerpt={excerpt}
                 image={image}
                 date={date}
-                content={content}
+                content={body}
               />
             </Suspense>
           }
@@ -45,18 +43,15 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header path={"/"} routes={routeTitles} />
+      <Header routes={[{path: '/', name: 'Blog'}]} />
       <main style={{ minHeight: "100vh", padding: "2em 0" }}>
         <Routes>
           {renderArticlesRoutes}
-          {routeTitles.map(({ path, component: Component, props }, key) => (
-            <Route
+          <Route
               exact
-              key={key}
-              path={path}
-              element={<Component {...props} />}
+              path={'/'}
+              element={<HomePage articles={articles} />}
             />
-          ))}
         </Routes>
         <ToTopButton />
       </main>
