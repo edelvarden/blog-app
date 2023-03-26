@@ -12,7 +12,7 @@ const Header = ({ routes }) => {
 
   const handleClose = () => setIsCreate(false)
   const handleShow = () => setIsCreate(true)
-  const handleCreate = (data) => {
+  const handleCreate = data => {
     if (
       data.title.length > 10 &&
       data.excerpt.length > 10 &&
