@@ -22,7 +22,7 @@
 .nav-link {
   color: var(--secondary-color) !important;
 
-  &.active {
+  &:not(.active) {
     color: var(--primary-color) !important;
   }
 }

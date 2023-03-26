@@ -1,7 +1,7 @@
-import articles from './../articles.json';
+import articles from "./../articles.json"
 
 const useGetAllArticles = () => {
-  return articles;
-};
+  return articles
+}
 
-export default useGetAllArticles;
+export default useGetAllArticles

@@ -1,13 +1,13 @@
 .blog-content {
   max-width: 728px;
   margin: 0 auto;
-
+  
   &__header {
     display: flex;
     align-items: center;
-  }
-  &__header :first-child {
-    margin-right: auto;
+    & :first-child {
+      margin-right: auto;
+    }
   }
 
   &__date {
@@ -39,12 +39,8 @@
     width: 100%;
     border-radius: 18px;
     z-index: -1;
-
+    
     img {
-      &.loaded {
-        display: block;
-      }
-      display: none;
       position: absolute;
       left: 0;
       top: 0;
@@ -55,19 +51,21 @@
       max-width: 100%;
       border: none;
       object-fit: cover;
+      &.loaded {
+        display: block;
+      }
+      display: none;
     }
   }
 
   &__content {
     color: var(--primary-color);
-  }
-
-  &__content p {
-    font-size: 1.125em;
-    margin-bottom: 1em;
-  }
-
-  &__content h2 {
-    margin-bottom: 1em;
+    p {
+      font-size: 1.125em;
+      margin-bottom: 1em;
+    }
+    h2 {
+      margin-bottom: 1em;
+    }
   }
 }

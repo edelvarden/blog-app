@@ -24,12 +24,16 @@
   &:focus {
     box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--accent-color);
   }
+}
 
-  @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
+  .toTopBtn {
     right: 30px;
   }
+}
 
-  @media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
+  .toTopBtn {
     right: 50px;
   }
 }

@@ -80,6 +80,14 @@ $animation-margin: 8px;
     font-size: 1rem;
   }
 
+  &__title,
+  &__excerpt {
+    display: -webkit-box; /* For Safari and older versions of Chrome and Firefox */
+    -webkit-box-orient: vertical; /* Overflow direction for webkit */
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   &__title {
     font-size: 1.5rem;
     line-height: 1.4em;
@@ -96,14 +104,6 @@ $animation-margin: 8px;
     font-weight: 500;
     color: var(--secondary-color);
     margin-bottom: 0.43em;
-  }
-
-  &__excerpt,
-  &__title {
-    display: -webkit-box; /* For Safari and older versions of Chrome and Firefox */
-    -webkit-box-orient: vertical; /* Overflow direction for webkit */
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   &__excerpt {

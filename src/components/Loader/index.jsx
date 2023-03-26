@@ -1,11 +1,13 @@
-import "./styles.scss";
+import "./styles.scss"
 
 const Loader = () => {
   return (
     <>
-      <div className='overlay'><div className='loader'></div></div>
+      <div className="overlay">
+        <div className="loader"></div>
+      </div>
     </>
-  );
-};
+  )
+}
 
-export default Loader;
+export default Loader

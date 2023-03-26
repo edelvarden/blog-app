@@ -1,42 +1,39 @@
-import React, { useState, useEffect } from 'react';
-import { Button } from "react-bootstrap";
-import toLightModeIcon from 'assets/lightMode.svg'
-import toDarkModeIcon from 'assets/darkMode.svg'
+import { useState } from "react"
+import { Button } from "react-bootstrap"
+import toLightModeIcon from "assets/lightMode.svg"
+import toDarkModeIcon from "assets/darkMode.svg"
 
 const DarkModeSwitcher = () => {
-  const [isDark, setIsDark] = useState(false);
-  const [icon, setIcon] = useState(toLightModeIcon);
+  const pref = localStorage.getItem("darkModePreference")
+  const byBrowser =
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  const [isDark, setIsDark] = useState(pref === "dark" || byBrowser)
 
-  useEffect(() => {
-    // Get the dark mode preference from local storage
-    const pref = localStorage.getItem('darkModePreference');
-    // Check if the browser supports prefers-color-scheme media query
-    const byBrowser = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    // Set the initial state based on the above two checks
-    setIsDark(pref === 'dark' || byBrowser);
-    setIcon(pref === 'dark' || byBrowser ? toDarkModeIcon : toLightModeIcon);
-  }, []);
+  let darkModeClass = ""
+  if (isDark) {
+    darkModeClass = "dark-mode"
+  } else {
+    darkModeClass = "light-mode"
+  }
+  document.querySelector("body").className = darkModeClass
 
-  const darkModeClass = isDark ? 'dark-mode' : 'light-mode';
-  document.querySelector('body').className = darkModeClass;
-  
+  const [icon, setIcon] = useState(isDark ? toLightModeIcon : toDarkModeIcon)
+
   const toggleMode = () => {
-    const newMode = isDark ? 'light' : 'dark';
-    localStorage.setItem('darkModePreference', newMode);
-    setIsDark(!isDark);
-    setIcon(isDark ? toDarkModeIcon : toLightModeIcon);
-  };
+    const newMode = isDark ? "light" : "dark"
+    localStorage.setItem("darkModePreference", newMode)
+    setIsDark(!isDark)
+    setIcon(isDark ? toDarkModeIcon : toLightModeIcon)
+  }
 
   return (
     <>
-      <Button
-        variant="light"
-        onClick={toggleMode}
-      >
+      <Button variant="light" onClick={toggleMode}>
         <img src={icon} alt="icon" />
       </Button>
     </>
-  );
-};
+  )
+}
 
-export default DarkModeSwitcher;
+export default DarkModeSwitcher
