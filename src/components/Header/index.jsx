@@ -12,6 +12,19 @@ const Header = ({ routes }) => {
 
   const handleClose = () => setIsCreate(false)
   const handleShow = () => setIsCreate(true)
+  const handleCreate = (data) => {
+    if (
+      data.title.length > 10 &&
+      data.excerpt.length > 10 &&
+      data.content.length > 30
+    ) {
+      setIsCreate(false)
+      // log -----------------
+      console.log(data.title)
+      console.log(data.content)
+      // ---------------------
+    }
+  }
   const getLinks = () =>
     routes.map(({ path, name, id }, key) => (
       <Link
@@ -50,6 +63,7 @@ const Header = ({ routes }) => {
           onClose={handleClose}
           title={"Create"}
           submitLabel={"OK"}
+          onSubmit={handleCreate}
         />
       )}
     </>
