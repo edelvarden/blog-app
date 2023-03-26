@@ -1,5 +1,5 @@
 import FormRichEdit from 'components/FormRichEdit';
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import { Button, Form, Modal } from "react-bootstrap";
 import './styles.scss';
 
@@ -16,29 +16,30 @@ const ModalWindow = ({ isOpen, onClose, title, submitLabel, onSubmit, postImage 
     if (form.checkValidity() === false) {
       e.stopPropagation();
     }
+    else {
+      setValidated(true);
 
-    setValidated(true);
-
-    if (validated && newPostTitle.length > 10 && newPostContent.length > 30) {
-      const postData = {
-        image: imagePreview,
-        title: newPostTitle,
-        excerpt: newPostExcerpt,
-        content: newPostContent,
-      };
-
-      onSubmit(postData);
+      if (newPostTitle.length > 10 && newPostContent.length > 30) {
+        const postData = {
+          image: imagePreview,
+          title: newPostTitle,
+          excerpt: newPostExcerpt,
+          content: newPostContent,
+        };
+  
+        onSubmit(postData);
+      }
     }
   };
 
-  const handleImageChange = (e) => {
+  // Use async/await to improve performance
+  const handleImageChange = async (e) => {
     const file = e.target.files[0];
 
     // Convert image to webp format
-    convertImageToWebP(file).then(convertedFile => {
-      setImagePreview(URL.createObjectURL(convertedFile));
-    });
-  }
+    const convertedFile = await convertImageToWebP(file);
+    setImagePreview(URL.createObjectURL(convertedFile));
+  };
 
   return (
     <>
@@ -97,6 +98,7 @@ const ModalWindow = ({ isOpen, onClose, title, submitLabel, onSubmit, postImage 
   );
 };
 
+// Use async/await to convert image to webp format
 const convertImageToWebP = async (file) => {
   const bitmap = await createImageBitmap(file);
   const canvas = document.createElement('canvas');

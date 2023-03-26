@@ -1,7 +1,7 @@
 import create from 'assets/create.svg';
 import DarkModeSwitcher from 'components/DarkModeSwitcher';
 import ModalWindow from "components/ModalWindow";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import "./styles.scss";
@@ -13,6 +13,17 @@ const Header = ({ routes }) => {
 
   const handleClose = () => setIsCreate(false);
   const handleShow = () => setIsCreate(true);
+  
+  const links = useMemo(() => 
+    routes.map(({ path, name, id }, key) => (
+      <Link
+        key={key}
+        to={path}
+        className={`nav-link ${pathname === path ? "active" : ""}`}
+      >
+        {name}
+      </Link>
+    )), [routes, pathname]);
 
   return (
     <>
@@ -22,15 +33,7 @@ const Header = ({ routes }) => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className="header__nav">
             <Nav className="mr-auto">
-              {routes.map(({ path, name, id }, key) => (
-                <Link
-                  key={key}
-                  to={path}
-                  className={`nav-link ${pathname === path ? "active" : ""}`}
-                >
-                  {name}
-                </Link>
-              ))}
+              {links}
             </Nav>
 
             <DarkModeSwitcher />
@@ -47,12 +50,16 @@ const Header = ({ routes }) => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <ModalWindow
-        isOpen={isCreate}
-        onClose={handleClose}
-        title={"Create"}
-        submitLabel={"OK"}
-      />
+      
+      {/* Use conditional rendering to avoid unnecessary re-renders */}
+      {isCreate && (
+        <ModalWindow
+          isOpen={isCreate}
+          onClose={handleClose}
+          title={"Create"}
+          submitLabel={"OK"}
+        />
+      )}
     </>
   );
 };
