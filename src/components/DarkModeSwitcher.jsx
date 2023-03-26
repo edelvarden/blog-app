@@ -4,7 +4,7 @@ import toLightModeIcon from 'assets/lightMode.svg'
 import toDarkModeIcon from 'assets/darkMode.svg'
 
 
-const DarkMode = () => {
+const DarkModeSwitcher = () => {
   const pref = localStorage.getItem('darkModePreference');
   const byBrowser = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [isDark, setIsDark] = useState(pref === 'dark' || byBrowser);
@@ -37,4 +37,4 @@ const DarkMode = () => {
   );
 };
 
-export default DarkMode;
+export default DarkModeSwitcher;

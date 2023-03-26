@@ -18,3 +18,11 @@
     gap: 0.5em;
   }
 }
+
+.nav-link {
+  color: var(--secondary-color) !important;
+
+  &.active {
+    color: var(--primary-color) !important;
+  }
+}
