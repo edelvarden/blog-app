@@ -12,7 +12,7 @@ const toolbarOptions = [
   { list: "ordered" },
   { list: "bullet" },
   { link: true },
-  { "code-block": true },
+  // { "code-block": true },
 ]
 
 const FormRichEdit = memo(({ value, onChange, placeholder, ...props }) => {
