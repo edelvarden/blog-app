@@ -8,6 +8,7 @@ body.light-mode {
   /* background colors */
   --primary-bgcolor: #fff;
   --secondary-bgcolor: #fff;
+  --secondary-bgcolor-light: #fff;
 }
 
 body.dark-mode {
@@ -18,7 +19,8 @@ body.dark-mode {
 
   /* background colors */
   --primary-bgcolor: #121212;
-  --secondary-bgcolor: #1b1b1b;
+  --secondary-bgcolor: #242424;
+  --secondary-bgcolor-light: #32353a;
 }
 
 body {
