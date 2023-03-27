@@ -4,7 +4,7 @@ import "./styles.scss"
 
 const BlogList = ({ articles }) => {
   const renderArticles = articles.map((article, key) => (
-    <li key={key} className="list__item">
+    <div key={key} className="list__item">
       <BlogCard
         id={article.id}
         image={`/articles/${article.id}/${article.image}`}
@@ -13,7 +13,7 @@ const BlogList = ({ articles }) => {
         date={article.date}
         excerpt={article.excerpt}
       />
-    </li>
+    </div>
   ))
 
   return (
@@ -23,7 +23,7 @@ const BlogList = ({ articles }) => {
           {renderArticles}
         </Row>
       </Container>
-      <div id="end-of-page" />
+      <div id="end-of-page" style={{ width: "100%" }} />
     </>
   )
 }

@@ -149,7 +149,7 @@ const ModalWindow = memo(
   }
 )
 
-// Use async/await to convert image to webp format
+// convert image to webp format
 const convertImageToWebP = async file => {
   const bitmap = await createImageBitmap(file)
   const canvas = document.createElement("canvas")
