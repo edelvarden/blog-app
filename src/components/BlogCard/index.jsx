@@ -6,7 +6,6 @@ import "./styles.scss"
 
 const BlogCard = ({ id, image, title, category, date, excerpt }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false)
-
   const handleImageLoad = () => setIsImageLoaded(true)
 
   return (

@@ -39,6 +39,13 @@ const BlogContent = ({ id, title, date, excerpt, content, image }) => {
     window.scrollTo({ top: 0, behavior: "smooth" })
   }, [postTitle])
 
+  const postData = {
+    postImage,
+    postTitle,
+    postContent,
+    postExcerpt,
+  }
+
   return (
     <Container style={{ maxWidth: "728px" }}>
       <div className="d-flex justify-content-between align-items-center">
@@ -58,28 +65,28 @@ const BlogContent = ({ id, title, date, excerpt, content, image }) => {
         onClose={() => setIsEditMode(false)}
         title="Edit article"
         submitLabel="Save"
-        postImage={postImage}
-        postTitle={postTitle}
-        postContent={postContent}
-        postExcerpt={postExcerpt}
+        postImage={postData.postImage}
+        postTitle={postData.postTitle}
+        postContent={postData.postContent}
+        postExcerpt={postData.postExcerpt}
         onSubmit={handlePostSave}
       />
 
       <section className="blog-content__section">
         <Row className="justify-content-center">
           <Col>
-            <h1 className="blog-content__title">{postTitle}</h1>
+            <h1 className="blog-content__title">{postData.postTitle}</h1>
             <div className="blog-content__image">
               <img
                 className={` ${isImageLoaded ? "loaded" : ""}`}
-                src={postImage}
-                alt={postTitle}
+                src={postData.postImage}
+                alt={postData.postTitle}
                 onLoad={handleImageLoad}
               />
             </div>
             <div
               className="blog-content__content"
-              dangerouslySetInnerHTML={{ __html: postContent }}
+              dangerouslySetInnerHTML={{ __html: postData.postContent }}
             />
           </Col>
         </Row>

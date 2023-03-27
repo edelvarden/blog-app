@@ -22,17 +22,18 @@ const useGetAllArticles = () => {
         })
         .finally(() => setFetching(false))
     }
-  }, [fetching])
+  }, [fetching, pageNumber])
 
   useEffect(() => {
-    window.addEventListener("scroll", e => handleScroll(e))
-    return () => window.removeEventListener("scroll", e => handleScroll(e))
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const handleScroll = e => {
+  const handleScroll = () => {
+    const endOfPageElement = document.querySelector("#end-of-page")
     if (
-      e.target.querySelector("#end-of-page").getBoundingClientRect().top <=
-      window.innerHeight
+      endOfPageElement &&
+      endOfPageElement.getBoundingClientRect().top <= window.innerHeight
     ) {
       setFetching(true)
     }

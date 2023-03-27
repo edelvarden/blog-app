@@ -1,31 +1,31 @@
-import { useState } from "react"
+import { useState, useCallback, useMemo, memo } from "react"
 import { Button } from "react-bootstrap"
 import toLightModeIcon from "assets/lightMode.svg"
 import toDarkModeIcon from "assets/darkMode.svg"
 
 const DarkModeSwitcher = () => {
+  const [darkModeIcon, setDarkModeIcon] = useState(toDarkModeIcon)
+  const [lightModeIcon, setLightModeIcon] = useState(toLightModeIcon)
   const pref = localStorage.getItem("darkModePreference")
   const byBrowser =
     window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches
   const [isDark, setIsDark] = useState(pref === "dark" || byBrowser)
 
-  let darkModeClass = ""
-  if (isDark) {
-    darkModeClass = "dark-mode"
-  } else {
-    darkModeClass = "light-mode"
-  }
+  const darkModeClass = useMemo(
+    () => (isDark ? "dark-mode" : "light-mode"),
+    [isDark]
+  )
   document.querySelector("body").className = darkModeClass
 
-  const [icon, setIcon] = useState(isDark ? toLightModeIcon : toDarkModeIcon)
+  const [icon, setIcon] = useState(isDark ? lightModeIcon : darkModeIcon)
 
-  const toggleMode = () => {
+  const toggleMode = useCallback(() => {
     const newMode = isDark ? "light" : "dark"
     localStorage.setItem("darkModePreference", newMode)
     setIsDark(!isDark)
-    setIcon(isDark ? toDarkModeIcon : toLightModeIcon)
-  }
+    setIcon(isDark ? darkModeIcon : lightModeIcon)
+  }, [isDark, darkModeIcon, lightModeIcon])
 
   return (
     <>
