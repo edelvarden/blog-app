@@ -2,6 +2,7 @@ import FormRichEdit from "components/FormRichEdit"
 import { useState, memo } from "react"
 import { Button, Form, Modal } from "react-bootstrap"
 import "./styles.scss"
+import useWebpConversion from "hooks/useWebpConversion"
 
 const ModalWindow = memo(
   ({
@@ -42,12 +43,11 @@ const ModalWindow = memo(
       }
     }
 
-    // Use async/await to improve performance
     const handleImageChange = async e => {
       const file = e.target.files[0]
 
       // Convert image to webp format
-      const convertedFile = await convertImageToWebP(file)
+      const convertedFile = await useWebpConversion(file)
       setImagePreview(URL.createObjectURL(convertedFile))
     }
 
@@ -148,30 +148,5 @@ const ModalWindow = memo(
     )
   }
 )
-
-// convert image to webp format
-const convertImageToWebP = async file => {
-  const bitmap = await createImageBitmap(file)
-  const canvas = document.createElement("canvas")
-
-  canvas.width = bitmap.width
-  canvas.height = bitmap.height
-  canvas.getContext("2d").drawImage(bitmap, 0, 0)
-
-  return await new Promise((resolve, reject) => {
-    canvas.toBlob(
-      blob => {
-        const convertedFile = new File(
-          [blob],
-          `${file.name.split(".").shift()}.webp`,
-          { type: "image/webp" }
-        )
-        resolve(convertedFile)
-      },
-      "image/webp",
-      1
-    )
-  })
-}
 
 export default ModalWindow
