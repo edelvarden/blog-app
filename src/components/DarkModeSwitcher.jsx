@@ -1,11 +1,11 @@
-import { useState, useCallback, useMemo, memo } from "react";
-import { Button } from "react-bootstrap";
-import toLightModeIcon from "assets/lightMode.svg";
 import toDarkModeIcon from "assets/darkMode.svg";
+import toLightModeIcon from "assets/lightMode.svg";
+import { useCallback, useMemo, useState } from "react";
+import { Button } from "react-bootstrap";
 
 const DarkModeSwitcher = () => {
-  const [darkModeIcon, setDarkModeIcon] = useState(toDarkModeIcon);
-  const [lightModeIcon, setLightModeIcon] = useState(toLightModeIcon);
+  const darkModeIcon = useMemo(() => toDarkModeIcon);
+  const lightModeIcon = useMemo(() => toLightModeIcon);
   const pref = localStorage.getItem("darkModePreference");
   const byBrowser =
     window.matchMedia &&

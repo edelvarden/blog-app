@@ -7,7 +7,7 @@ const useWebpConversion = async file => {
   canvas.height = bitmap.height;
   context.drawImage(bitmap, 0, 0);
 
-  return await new Promise((resolve, reject) => {
+  return await new Promise(resolve => {
     canvas.toBlob(
       blob => {
         const [name] = file.name.split(".");

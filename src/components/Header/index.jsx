@@ -26,7 +26,7 @@ const Header = ({ routes }) => {
     }
   };
   const getLinks = () =>
-    routes.map(({ path, name, id }, key) => (
+    routes.map(({ path, name }, key) => (
       <Link
         key={key}
         to={path}
