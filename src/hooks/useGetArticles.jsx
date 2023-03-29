@@ -1,45 +1,51 @@
-import { useState, useEffect } from "react"
-import customArticles from "./../articles.json"
-import axios from "axios"
+import { useState, useEffect, useMemo } from "react";
+import customArticles from "./../articles.json";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
 
-const useGetAllArticles = () => {
-  const [articles, setArticles] = useState(customArticles)
-  const [pageNumber, setPageNumber] = useState(1)
-  const [fetching, setFetching] = useState(true)
+const useGetArticles = () => {
+  const [articles, setArticles] = useState(customArticles);
+  const [pageNumber, setPageNumber] = useState(1);
+  const [isFetching, setIsFetching] = useState(true);
+  const currentLocation = useLocation();
+  const location = useMemo(() => currentLocation, [currentLocation]);
 
   useEffect(() => {
-    if (fetching) {
+    if (isFetching) {
       axios
         .get(
           `https://jsonplaceholder.typicode.com/posts?_limit=10&_page=${pageNumber}`
         )
         .then(res => {
-          setArticles([...articles, ...res.data])
-          setPageNumber(prevState => prevState + 1)
+          setArticles([...articles, ...res.data]);
+          setPageNumber(prevState => prevState + 1);
         })
         .catch(err => {
-          console.log(err)
+          console.log(err);
         })
-        .finally(() => setFetching(false))
+        .finally(() => setIsFetching(false));
     }
-  }, [fetching, pageNumber])
+  }, [isFetching, pageNumber]);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    if (location.pathname === "/") {
+      window.addEventListener("scroll", handleScroll);
+    }
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [location]);
 
   const handleScroll = () => {
-    const endOfPageElement = document.querySelector("#end-of-page")
-    if (
-      endOfPageElement &&
-      endOfPageElement.getBoundingClientRect().top <= window.innerHeight
-    ) {
-      setFetching(true)
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const scrollTop = window.scrollY;
+
+    if (Math.round(windowHeight + scrollTop) >= documentHeight) {
+      console.log("End of page reached!");
+      setIsFetching(true);
     }
-  }
+  };
 
-  return articles
-}
+  return articles;
+};
 
-export default useGetAllArticles
+export default useGetArticles;

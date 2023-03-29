@@ -1,4 +1,4 @@
-import "./styles.scss"
+import "./styles.scss";
 
 const Loader = () => {
   return (
@@ -7,7 +7,7 @@ const Loader = () => {
         <div className="loader"></div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Loader
+export default Loader;

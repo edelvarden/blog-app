@@ -1,17 +1,17 @@
-import "bootstrap/dist/css/bootstrap.min.css"
-import Footer from "components/Footer"
-import Header from "components/Header"
-import HomePage from "components/HomePage"
-import Loader from "components/Loader"
-import ToTopButton from "components/ToTopButton"
-import { lazy, Suspense, useMemo } from "react"
-import { Route, Routes } from "react-router-dom"
-import useGetArticles from "hooks/useGetArticles"
+import "bootstrap/dist/css/bootstrap.min.css";
+import Footer from "components/Footer";
+import Header from "components/Header";
+import HomePage from "components/HomePage";
+import Loader from "components/Loader";
+import ToTopButton from "components/ToTopButton";
+import { lazy, Suspense, useMemo } from "react";
+import { Route, Routes } from "react-router-dom";
+import useGetArticles from "hooks/useGetArticles";
 
 const App = () => {
-  const articles = useGetArticles()
+  const articles = useGetArticles();
 
-  const LazyBlogContent = lazy(() => import("components/BlogContent"))
+  const LazyBlogContent = lazy(() => import("components/BlogContent"));
   const renderArticlesRoutes = useMemo(
     () =>
       articles.map(
@@ -38,7 +38,7 @@ const App = () => {
         )
       ),
     [articles]
-  )
+  );
 
   return (
     <div className="App">
@@ -52,7 +52,7 @@ const App = () => {
       </main>
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

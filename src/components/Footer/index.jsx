@@ -1,9 +1,9 @@
-import { useMemo } from "react"
-import { Container } from "react-bootstrap"
-import "./styles.scss"
+import { useMemo } from "react";
+import { Container } from "react-bootstrap";
+import "./styles.scss";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="footer">
@@ -15,7 +15,7 @@ const Footer = () => {
         </div>
       </Container>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

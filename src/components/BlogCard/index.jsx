@@ -1,12 +1,12 @@
-import useDateFormatter from "hooks/useDateFormatter"
-import { useState } from "react"
-import { Card } from "react-bootstrap"
-import { Link } from "react-router-dom"
-import "./styles.scss"
+import useDateFormatter from "hooks/useDateFormatter";
+import { useState } from "react";
+import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import "./styles.scss";
 
 const BlogCard = ({ id, image, title, category, date, excerpt }) => {
-  const [isImageLoaded, setIsImageLoaded] = useState(false)
-  const handleImageLoad = () => setIsImageLoaded(true)
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const handleImageLoad = () => setIsImageLoaded(true);
 
   return (
     <Card className="card-block">
@@ -33,7 +33,7 @@ const BlogCard = ({ id, image, title, category, date, excerpt }) => {
         </Card.Body>
       </Link>
     </Card>
-  )
-}
+  );
+};
 
-export default BlogCard
+export default BlogCard;

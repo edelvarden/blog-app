@@ -1,8 +1,8 @@
-import FormRichEdit from "components/FormRichEdit"
-import { useState, memo } from "react"
-import { Button, Form, Modal } from "react-bootstrap"
-import "./styles.scss"
-import useWebpConversion from "hooks/useWebpConversion"
+import FormRichEdit from "components/FormRichEdit";
+import { useState, memo } from "react";
+import { Button, Form, Modal } from "react-bootstrap";
+import "./styles.scss";
+import useWebpConversion from "hooks/useWebpConversion";
 
 const ModalWindow = memo(
   ({
@@ -16,19 +16,19 @@ const ModalWindow = memo(
     postExcerpt = "",
     postContent = "",
   }) => {
-    const [newPostTitle, setNewPostTitle] = useState(postTitle)
-    const [newPostExcerpt, setNewPostExcerpt] = useState(postExcerpt)
-    const [newPostContent, setNewPostContent] = useState(postContent)
-    const [imagePreview, setImagePreview] = useState(postImage)
-    const [validated, setValidated] = useState(false)
+    const [newPostTitle, setNewPostTitle] = useState(postTitle);
+    const [newPostExcerpt, setNewPostExcerpt] = useState(postExcerpt);
+    const [newPostContent, setNewPostContent] = useState(postContent);
+    const [imagePreview, setImagePreview] = useState(postImage);
+    const [validated, setValidated] = useState(false);
 
     const handleSubmit = e => {
-      e.preventDefault()
-      const form = e.currentTarget
+      e.preventDefault();
+      const form = e.currentTarget;
       if (form.checkValidity() === false) {
-        e.stopPropagation()
+        e.stopPropagation();
       } else {
-        setValidated(true)
+        setValidated(true);
 
         if (newPostTitle.length > 10 && newPostContent.length > 30) {
           const postData = {
@@ -36,20 +36,20 @@ const ModalWindow = memo(
             title: newPostTitle,
             excerpt: newPostExcerpt,
             content: newPostContent,
-          }
+          };
 
-          onSubmit(postData)
+          onSubmit(postData);
         }
       }
-    }
+    };
 
     const handleImageChange = async e => {
-      const file = e.target.files[0]
+      const file = e.target.files[0];
 
       // Convert image to webp format
-      const convertedFile = await useWebpConversion(file)
-      setImagePreview(URL.createObjectURL(convertedFile))
-    }
+      const convertedFile = await useWebpConversion(file);
+      setImagePreview(URL.createObjectURL(convertedFile));
+    };
 
     return (
       <>
@@ -134,7 +134,7 @@ const ModalWindow = memo(
             <Button
               variant="light"
               onClick={() => {
-                onClose()
+                onClose();
               }}
             >
               Cancel
@@ -145,8 +145,8 @@ const ModalWindow = memo(
           </Modal.Footer>
         </Modal>
       </>
-    )
+    );
   }
-)
+);
 
-export default ModalWindow
+export default ModalWindow;

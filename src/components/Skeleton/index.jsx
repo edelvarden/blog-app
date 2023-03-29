@@ -1,18 +1,18 @@
-import { useMemo } from "react"
-import "./styles.scss"
+import { useMemo } from "react";
+import "./styles.scss";
 
 const Skeleton = ({ height }) => {
   const style = useMemo(() => {
-    let heightValue
+    let heightValue;
 
     typeof +height === "number"
       ? (heightValue = `${height}px`)
-      : (heightValue = height)
+      : (heightValue = height);
 
-    return { height: heightValue }
-  }, [height])
+    return { height: heightValue };
+  }, [height]);
 
-  return <div className="skeleton" style={style}></div>
-}
+  return <div className="skeleton" style={style}></div>;
+};
 
-export default Skeleton
+export default Skeleton;

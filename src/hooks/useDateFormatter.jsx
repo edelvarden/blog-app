@@ -1,25 +1,25 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
 export const useDateFormatter = initialDate => {
-  const [formattedDate, setFormattedDate] = useState("")
+  const [formattedDate, setFormattedDate] = useState("");
 
   useEffect(() => {
-    const formatDate = d => {
-      const dateObj = new Date(d)
+    const formatDate = date => {
+      const dateObj = new Date(date);
       const options = {
         year: "numeric",
         month: "short",
         day: "numeric",
-      }
-      return dateObj.toLocaleDateString("en-US", options)
-    }
+      };
+      return dateObj.toLocaleDateString("en-US", options);
+    };
 
     if (initialDate !== formattedDate) {
-      setFormattedDate(formatDate(initialDate))
+      setFormattedDate(formatDate(initialDate));
     }
-  }, [initialDate])
+  }, [initialDate]);
 
-  return formattedDate
-}
+  return formattedDate;
+};
 
-export default d => useDateFormatter(d)
+export default date => useDateFormatter(date);

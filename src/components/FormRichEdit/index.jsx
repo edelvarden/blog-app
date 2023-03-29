@@ -1,7 +1,7 @@
-import { memo } from "react"
-import ReactQuill from "react-quill"
-import "react-quill/dist/quill.snow.css"
-import "./styles.scss"
+import { memo } from "react";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+import "./styles.scss";
 
 const toolbarOptions = [
   { header: "2" },
@@ -13,7 +13,7 @@ const toolbarOptions = [
   { list: "bullet" },
   { link: true },
   // { "code-block": true },
-]
+];
 
 const FormRichEdit = memo(({ value, onChange, placeholder, ...props }) => {
   return (
@@ -31,7 +31,7 @@ const FormRichEdit = memo(({ value, onChange, placeholder, ...props }) => {
         {...props}
       />
     </>
-  )
-})
+  );
+});
 
-export default FormRichEdit
+export default FormRichEdit;

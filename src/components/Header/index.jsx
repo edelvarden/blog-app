@@ -1,30 +1,30 @@
-import create from "assets/create.svg"
-import DarkModeSwitcher from "components/DarkModeSwitcher"
-import ModalWindow from "components/ModalWindow"
-import { useState, useMemo } from "react"
-import { Button, Container, Nav, Navbar } from "react-bootstrap"
-import { Link, useLocation } from "react-router-dom"
-import "./styles.scss"
+import create from "assets/create.svg";
+import DarkModeSwitcher from "components/DarkModeSwitcher";
+import ModalWindow from "components/ModalWindow";
+import { useState, useMemo } from "react";
+import { Button, Container, Nav, Navbar } from "react-bootstrap";
+import { Link, useLocation } from "react-router-dom";
+import "./styles.scss";
 
 const Header = ({ routes }) => {
-  const { pathname } = useLocation()
-  const [isCreate, setIsCreate] = useState(false)
+  const { pathname } = useLocation();
+  const [isCreate, setIsCreate] = useState(false);
 
-  const handleClose = () => setIsCreate(false)
-  const handleShow = () => setIsCreate(true)
+  const handleClose = () => setIsCreate(false);
+  const handleShow = () => setIsCreate(true);
   const handleCreate = data => {
     if (
       data.title.length > 10 &&
       data.excerpt.length > 10 &&
       data.content.length > 30
     ) {
-      setIsCreate(false)
+      setIsCreate(false);
       // log -----------------
-      console.log(data.title)
-      console.log(data.content)
+      console.log(data.title);
+      console.log(data.content);
       // ---------------------
     }
-  }
+  };
   const getLinks = () =>
     routes.map(({ path, name, id }, key) => (
       <Link
@@ -34,9 +34,9 @@ const Header = ({ routes }) => {
       >
         {name}
       </Link>
-    ))
+    ));
 
-  const links = useMemo(getLinks, [routes, pathname])
+  const links = useMemo(getLinks, [routes, pathname]);
 
   return (
     <>
@@ -67,7 +67,7 @@ const Header = ({ routes }) => {
         />
       )}
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

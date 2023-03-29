@@ -1,21 +1,21 @@
-import { useEffect, useState, useCallback } from "react"
-import "./styles.scss"
+import { useEffect, useState, useCallback } from "react";
+import "./styles.scss";
 
 const ToTopButton = () => {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
 
   const handleScroll = useCallback(() => {
-    window.pageYOffset > 500 ? setIsVisible(true) : setIsVisible(false)
-  }, [])
+    window.pageYOffset > 500 ? setIsVisible(true) : setIsVisible(false);
+  }, []);
 
   const handleClick = useCallback(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }, [])
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [handleScroll])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
 
   return (
     <button
@@ -26,7 +26,7 @@ const ToTopButton = () => {
     >
       ↑
     </button>
-  )
-}
+  );
+};
 
-export default ToTopButton
+export default ToTopButton;
