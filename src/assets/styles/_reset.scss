@@ -1,0 +1,64 @@
+// Box sizing rules
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// Remove default margin
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd,
+pre {
+  margin: 0;
+}
+
+// Set core body defaults
+body {
+  min-height: 100vh;
+}
+
+// Make images easier to work with
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+// Inherit fonts for inputs and buttons
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+}
+
+// override read-only attr on textarea
+textarea {
+  &:read-only,
+  &[read-only] {
+    pointer-events: none;
+  }
+}
+
+// Remove the default border on iframes
+iframe {
+  border: 0;
+}
+
+// Define a basic hairline element.
+hr {
+  height: 1px;
+  margin: 0;
+}
