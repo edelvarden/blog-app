@@ -33,7 +33,7 @@ const ModalWindow: FC<IModalWindowProps> = ({
   const [imagePreview, setImagePreview] = useState(postImage)
   const [validated, setValidated] = useState(false)
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const form = e.currentTarget
     if (form.checkValidity() === false) {
@@ -54,11 +54,13 @@ const ModalWindow: FC<IModalWindowProps> = ({
     }
   }
 
-  const handleImageChange = async (e: any) => {
-    const file: any = e.target.files[0]
+  const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+
+    if (!file) return
 
     // Convert image to webp format
-    const convertedFile = (await useWebpConversion(file)) as Blob
+    const convertedFile: Blob = await useWebpConversion(file)
     setImagePreview(URL.createObjectURL(convertedFile))
   }
 

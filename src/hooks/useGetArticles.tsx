@@ -23,7 +23,7 @@ const useGetArticles = () => {
         })
         .finally(() => setIsFetching(false))
     }
-  }, [isFetching, pageNumber])
+  }, [articles, isFetching, pageNumber])
 
   useEffect(() => {
     if (location.pathname === "/") {

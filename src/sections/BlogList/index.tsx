@@ -3,7 +3,7 @@ import { Container, Row } from "react-bootstrap"
 import "./styles.scss"
 import { FC } from "react"
 
-type TArticles = {
+interface IArticles {
   id: number
   image: string
   category: string
@@ -12,11 +12,11 @@ type TArticles = {
   excerpt: string
 }
 
-interface IBlogList {
-  articles: Array<TArticles>
+interface IBlogListProps {
+  articles: IArticles[]
 }
 
-const BlogList: FC<IBlogList> = ({ articles }) => {
+const BlogList: FC<IBlogListProps> = ({ articles }) => {
   const renderArticles = articles.map(
     ({ id, image, category, title, date = new Date(), excerpt }, key) => (
       <div key={key} className="list__item">

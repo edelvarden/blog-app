@@ -6,11 +6,6 @@ export const useDateFormatter = (initialDate: string) => {
   useEffect(() => {
     const formatDate = (date: string) => {
       const dateObj = new Date(date)
-      const options = {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-      }
       return dateObj.toLocaleDateString("en-US", {
         year: "numeric",
         month: "short",
@@ -21,7 +16,7 @@ export const useDateFormatter = (initialDate: string) => {
     if (initialDate !== formattedDate) {
       setFormattedDate(formatDate(initialDate))
     }
-  }, [initialDate])
+  }, [formattedDate, initialDate])
 
   return formattedDate
 }

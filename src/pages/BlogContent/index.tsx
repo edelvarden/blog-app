@@ -1,6 +1,6 @@
 import edit from "assets/icons/edit.svg"
 import ModalWindow from "components/ModalWindow"
-import { useDateFormatter } from "hooks/useDateFormatter"
+import useDateFormatter from "hooks/useDateFormatter"
 import { FC, useEffect, useState } from "react"
 import { Button, Col, Container, Row } from "react-bootstrap"
 import "./styles.scss"
@@ -21,8 +21,16 @@ const BlogContent: FC<IBlogContentProps> = ({ id, title, date, excerpt, content,
   const [postExcerpt, setPostExcerpt] = useState(excerpt)
   const [postContent, setPostContent] = useState(content)
   const [isEditMode, setIsEditMode] = useState(false)
+  const formattedDate = useDateFormatter(date)
 
-  const handlePostSave = (data: any) => {
+  interface IPostData {
+    title: string
+    excerpt: string
+    content: string
+    image: string
+  }
+
+  const handlePostSave = (data: IPostData) => {
     if (data.title.length > 10 && data.excerpt.length > 10 && data.content.length > 30) {
       setPostImage(data.image)
       setPostTitle(data.title)
@@ -56,7 +64,7 @@ const BlogContent: FC<IBlogContentProps> = ({ id, title, date, excerpt, content,
       <div className="d-flex justify-content-between align-items-center">
         {date && (
           <span className="blog-content__date">
-            Published <time dateTime={date}>{useDateFormatter(date)}</time>
+            Published <time dateTime={date}>{formattedDate}</time>
           </span>
         )}
         <Button

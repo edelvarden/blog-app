@@ -20,7 +20,7 @@ module.exports = {
   plugins: ["react", "@typescript-eslint", "prettier", "react-hooks", "jsx-a11y"],
   rules: {
     "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-explicit-any": "warn",
     "prettier/prettier": "error",
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",

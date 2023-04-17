@@ -2,7 +2,7 @@ import { FC, useEffect } from "react"
 import BlogList from "sections/BlogList"
 import "./styles.scss"
 
-type TArticles = {
+interface IArticles {
   id: number
   image: string
   category: string
@@ -12,7 +12,7 @@ type TArticles = {
 }
 
 interface IHomeProps {
-  articles: Array<TArticles>
+  articles: IArticles[]
 }
 
 const Home: FC<IHomeProps> = ({ articles }) => {

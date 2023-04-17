@@ -16,6 +16,7 @@ interface IBlogCardProps {
 const BlogCard: FC<IBlogCardProps> = ({ id, image, title, category, date, excerpt }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false)
   const handleImageLoad = () => setIsImageLoaded(true)
+  const formattedDate = useDateFormatter(date)
 
   return (
     <Card className="card-block">
@@ -35,7 +36,7 @@ const BlogCard: FC<IBlogCardProps> = ({ id, image, title, category, date, excerp
           </div>
           <Card.Title className="card-block__title">{title}</Card.Title>
           <Card.Subtitle className="card-block__date mb-2">
-            {date && <time dateTime={date}>{useDateFormatter(date)}</time>}
+            {date && <time dateTime={date}>{formattedDate}</time>}
           </Card.Subtitle>
 
           <Card.Text className="card-block__excerpt">{excerpt}</Card.Text>

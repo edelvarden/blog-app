@@ -23,7 +23,7 @@ const DarkModeSwitcher = () => {
   const [icon, setIcon] = useState(isDark ? lightModeIcon : darkModeIcon)
 
   useEffect(() => {
-    Promise.all([loadImage(darkModeIcon), loadImage(lightModeIcon)]).then((images) => {
+    Promise.all([loadImage(darkModeIcon), loadImage(lightModeIcon)]).then(() => {
       setIcon(isDark ? lightModeIcon : darkModeIcon)
     })
   }, [isDark])
