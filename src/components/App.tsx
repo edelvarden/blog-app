@@ -5,8 +5,8 @@ import useGetArticles from "hooks/useGetArticles"
 import Home from "pages/Home"
 import { FC, lazy, Suspense, useMemo } from "react"
 import { Route, Routes } from "react-router-dom"
-import Footer from "sections/Footer"
-import Header from "sections/Header"
+import Footer from "components/Footer"
+import Header from "components/Header"
 
 const App: FC = () => {
   const articles = useGetArticles()

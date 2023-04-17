@@ -27,7 +27,7 @@
       "data/*": ["data/*"]
     },
   },
-  "include": ["src"],
+  "include": ["src", "helpers"],
   "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

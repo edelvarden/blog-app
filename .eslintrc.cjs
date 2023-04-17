@@ -28,4 +28,19 @@ module.exports = {
     "no-console": "warn",
     "no-debugger": "error",
   },
+  ignorePatterns: [
+    "node_modules/",
+    "build/", 
+    "coverage/", 
+    "dist/", 
+    "dest/", 
+    "tsconfig.*", 
+    "*.config.js",
+    ".eslintrc", 
+    ".eslintrc.*", 
+    ".prettierrc", 
+    ".prettierrc.*", 
+    "*.svg", 
+    "helpers/"
+  ],
 }
