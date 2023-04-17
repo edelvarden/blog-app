@@ -1,7 +1,10 @@
+import { FC } from "react"
+import "./Footer.scss"
 import { Container } from "react-bootstrap"
-import "./styles.scss"
 
-const Footer = () => {
+interface IFooterProps {}
+
+const Footer: FC<IFooterProps> = () => {
   const currentYear = new Date().getFullYear()
 
   return (

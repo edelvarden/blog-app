@@ -17,29 +17,29 @@ componentNames.forEach((componentName) => {
   const componentStylePath = path.join(componentDir, `${componentName}.scss`);
   const indexFilePath = path.join(componentDir, "index.ts");
 
-  const componentContent = `import { FC } from "react";
-  import "./${componentName}.scss";
+  const componentContent = `import { FC } from "react"
+import "./${componentName}.scss"
 
-  interface I${componentName}Props {
-    
-  }
+interface I${componentName}Props {
+  
+}
 
-  const ${componentName}: FC<I${componentName}Props> = () => {
-    return (
-      <>
+const ${componentName}: FC<I${componentName}Props> = () => {
+  return (
+    <>
 
-      </>
-    )
-  }
+    </>
+  )
+}
 
-  export default ${componentName};
+export default ${componentName}
   `;
 
   // create component directory and files
   fs.mkdirSync(componentDir);
   fs.writeFileSync(componentFilePath, componentContent);
   fs.writeFileSync(componentStylePath, "");
-  fs.writeFileSync(indexFilePath, `export { default } from "./${componentName}";`);
+  fs.writeFileSync(indexFilePath, `export { default } from "./${componentName}"`);
 
   console.log(`Created at: "${componentDir}"`)
 })

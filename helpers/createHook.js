@@ -21,18 +21,18 @@ hookNames.forEach((hookName) => {
   // create hook file
   fs.writeFileSync(
     hookFilePath,
-    `import { useState } from "react";
+    `import { useState } from "react"
 
-  interface I${hookName}State {
-    
-  }
+interface I${hookName}State {
+  
+}
 
-  export const use${hookName} = (): I${hookName}State => {
-    const [state, setState] = useState<I${hookName}State>()
+export const use${hookName} = (): I${hookName}State => {
+  const [state, setState] = useState<I${hookName}State>()
 
-    return state
-  }
-  `
+  return state
+}
+`
   );
 
   console.log(`Created at: "${hookDir}"`)

@@ -1,6 +1,6 @@
 import { FC, useEffect } from "react"
 import BlogList from "components/BlogList"
-import "./styles.scss"
+import "./Home.scss"
 
 interface IArticles {
   id: number

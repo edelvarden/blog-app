@@ -1,5 +1,5 @@
 import { FC, useCallback, useEffect, useState } from "react"
-import "./styles.scss"
+import "./ToTopButton.scss"
 
 const ToTopButton: FC = () => {
   const [isVisible, setIsVisible] = useState(false)

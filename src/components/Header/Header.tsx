@@ -4,7 +4,7 @@ import ModalWindow from "components/ModalWindow"
 import { FC, useMemo, useState } from "react"
 import { Button, Container, Nav, Navbar } from "react-bootstrap"
 import { Link, useLocation } from "react-router-dom"
-import "./styles.scss"
+import "./Header.scss"
 
 interface IRoutes {
   path: string
@@ -22,13 +22,13 @@ const Header: FC<IHeaderProps> = ({ routes }) => {
   const handleClose = () => setIsCreate(false)
   const handleShow = () => setIsCreate(true)
 
-  interface FormData {
+  interface IFormData {
     title: string
     excerpt: string
     content: string
   }
 
-  const handleCreate = (data: FormData) => {
+  const handleCreate = (data: IFormData) => {
     if (data.title.length > 10 && data.excerpt.length > 10 && data.content.length > 30) {
       setIsCreate(false)
       // log -----------------

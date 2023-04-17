@@ -1,9 +1,9 @@
 import edit from "assets/icons/edit.svg"
 import ModalWindow from "components/ModalWindow"
-import useDateFormatter from "hooks/useDateFormatter"
+import { useDateFormatter } from "hooks/useDateFormatter"
 import { FC, useEffect, useState } from "react"
 import { Button, Col, Container, Row } from "react-bootstrap"
-import "./styles.scss"
+import "./BlogContent.scss"
 
 interface IBlogContentProps {
   id: number

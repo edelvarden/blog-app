@@ -2,14 +2,21 @@ import FormRichEdit from "components/FormRichEdit"
 import useWebpConversion from "hooks/useWebpConversion"
 import { FC, useState } from "react"
 import { Button, Form, Modal } from "react-bootstrap"
-import "./styles.scss"
+import "./ModalWindow.scss"
+
+interface IFormData {
+  image: string
+  title: string
+  excerpt: string
+  content: string
+}
 
 interface IModalWindowProps {
   isOpen: boolean
   onClose: () => void
   title: string
   submitLabel: string
-  onSubmit: (postData: {}) => void
+  onSubmit: (data: IFormData) => void
   postImage?: string
   postTitle?: string
   postExcerpt?: string
@@ -97,7 +104,9 @@ const ModalWindow: FC<IModalWindowProps> = ({
                 autoComplete="off"
                 type="text"
                 value={newPostTitle}
-                onChange={(e) => setNewPostTitle(e.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  setNewPostTitle(e.target.value)
+                }
                 required
                 placeholder={"My loud article headline"}
                 minLength={10}
@@ -114,7 +123,9 @@ const ModalWindow: FC<IModalWindowProps> = ({
                 autoComplete="off"
                 type="text"
                 value={newPostExcerpt}
-                onChange={(e) => setNewPostExcerpt(e.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  setNewPostExcerpt(e.target.value)
+                }
                 required
                 placeholder={"My short description of the article"}
                 minLength={10}
@@ -148,7 +159,7 @@ const ModalWindow: FC<IModalWindowProps> = ({
           >
             Cancel
           </Button>
-          <Button variant="primary" type="submit" onClick={handleSubmit}>
+          <Button variant="primary" type="submit">
             {submitLabel}
           </Button>
         </Modal.Footer>

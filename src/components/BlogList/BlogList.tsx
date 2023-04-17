@@ -1,7 +1,7 @@
+import { FC } from "react"
+import "./BlogList.scss"
 import BlogCard from "components/BlogCard"
 import { Container, Row } from "react-bootstrap"
-import "./styles.scss"
-import { FC } from "react"
 
 interface IArticles {
   id: number

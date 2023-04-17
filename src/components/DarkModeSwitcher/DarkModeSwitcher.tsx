@@ -1,6 +1,6 @@
 import darkModeIcon from "assets/icons/dark-mode.svg"
 import lightModeIcon from "assets/icons/light-mode.svg"
-import { useCallback, useEffect, useState } from "react"
+import { FC, useCallback, useEffect, useState } from "react"
 import { Button } from "react-bootstrap"
 
 const isDarkModeEnabled = () => {
@@ -18,7 +18,7 @@ const loadImage = (src: string) => {
   })
 }
 
-const DarkModeSwitcher = () => {
+const DarkModeSwitcher: FC = () => {
   const [isDark, setIsDark] = useState(isDarkModeEnabled())
   const [icon, setIcon] = useState(isDark ? lightModeIcon : darkModeIcon)
 

@@ -1,7 +1,7 @@
 import { FC, memo } from "react"
 import ReactQuill from "react-quill"
 import "react-quill/dist/quill.snow.css"
-import "./styles.scss"
+import "./FormRichEdit.scss"
 
 const toolbarOptions = [
   { header: "2" },
