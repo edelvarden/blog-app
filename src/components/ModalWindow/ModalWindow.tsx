@@ -148,21 +148,21 @@ const ModalWindow: FC<IModalWindowProps> = ({
                 Please make the content longer.
               </Form.Control.Feedback>
             </Form.Group>
+            <Form.Group className="form__footer">
+              <Button
+                variant="light"
+                onClick={() => {
+                  onClose()
+                }}
+              >
+                Cancel
+              </Button>
+              <Button variant="primary" type="submit">
+                {submitLabel}
+              </Button>
+            </Form.Group>
           </Form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button
-            variant="light"
-            onClick={() => {
-              onClose()
-            }}
-          >
-            Cancel
-          </Button>
-          <Button variant="primary" type="submit">
-            {submitLabel}
-          </Button>
-        </Modal.Footer>
       </Modal>
     </>
   )
