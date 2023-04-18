@@ -39,7 +39,6 @@ const BlogCard: FC<IBlogCardProps> = ({ id, image, title, category, date, excerp
             <Card.Subtitle className="card-block__date mb-2">
               {date && <time dateTime={date}>{`${formattedDate}`}</time>}
             </Card.Subtitle>
-
             <Card.Text className="card-block__excerpt">{excerpt}</Card.Text>
           </Card.Body>
         </Link>

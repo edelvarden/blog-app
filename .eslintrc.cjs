@@ -34,13 +34,14 @@ module.exports = {
     "coverage/", 
     "dist/", 
     "dest/", 
+    "helpers/",
     "tsconfig.*", 
     "*.config.js",
     ".eslintrc", 
     ".eslintrc.*", 
     ".prettierrc", 
     ".prettierrc.*", 
-    "*.svg", 
-    "helpers/"
+    ".prettier.*", 
+    "*.svg"
   ],
 }
