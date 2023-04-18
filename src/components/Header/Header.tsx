@@ -55,7 +55,17 @@ const Header: FC<IHeaderProps> = ({ routes }) => {
       {/* Use conditional rendering to avoid unnecessary re-renders */}
       {isCreate && (
         <ModalWindow isOpen={isCreate} onClose={handleClose} title="Create">
-          <Form onClose={handleClose} submitLabel="OK" onSubmit={handleCreate} />
+          <Form
+            onClose={handleClose}
+            submitLabel="OK"
+            onSubmit={handleCreate}
+            postData={{
+              image: "",
+              title: "",
+              excerpt: "",
+              content: "",
+            }}
+          />
         </ModalWindow>
       )}
     </>

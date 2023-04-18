@@ -4,11 +4,13 @@ import "./Home.scss"
 
 interface IArticles {
   id: number
-  image: string
-  category: string
   title: string
-  date: string
-  excerpt: string
+  body: string
+  author?: string
+  date?: string
+  category?: string
+  excerpt?: string
+  image?: string
 }
 
 interface IHomeProps {

@@ -1,72 +1,148 @@
+import FormRichEdit from "components/FormRichEdit"
+import { useWebpConversion } from "hooks/useWebpConversion"
 import { FC, useState } from "react"
 import { Button, Form } from "react-bootstrap"
 import "./Form.scss"
-import FormContentGroup from "./FormContentGroup"
-import FormExcerptGroup from "./FormExcerptGroup"
-import FormImageGroup from "./FormImageGroup"
-import FormTitleGroup from "./FormTitleGroup"
 
-interface IFormData {
-  image: string
+interface IPostData {
   title: string
   excerpt: string
   content: string
+  image: string
 }
 
 interface IFormProps {
   submitLabel: string
-  onSubmit: (data: IFormData) => void
+  onSubmit: (data: IPostData) => void
   onClose: () => void
-  postImage?: string
-  postTitle?: string
-  postExcerpt?: string
-  postContent?: string
+  postData: IPostData
 }
 
-const FormComponent: FC<IFormProps> = ({
-  submitLabel,
-  onSubmit,
-  onClose,
-  postImage = "",
-  postTitle = "",
-  postExcerpt = "",
-  postContent = "",
-}) => {
-  const newPostTitle = postTitle
-  const newPostExcerpt = postExcerpt
-  const newPostContent = postContent
-  const imagePreview = postImage
+const FormComponent: FC<IFormProps> = ({ submitLabel, onSubmit, onClose, postData }) => {
+  const [newPostData, setNewPostData] = useState<IPostData>({
+    image: postData.image,
+    title: postData.title,
+    excerpt: postData.excerpt,
+    content: postData.content,
+  })
   const [validated, setValidated] = useState<boolean>(false)
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     const form = e.currentTarget
+
     if (form.checkValidity() === false) {
       e.stopPropagation()
-    } else {
-      setValidated(true)
-
-      const postData = {
-        image: imagePreview,
-        title: newPostTitle,
-        excerpt: newPostExcerpt,
-        content: newPostContent,
-      }
-
-      onSubmit(postData)
     }
+
+    setValidated(true)
+
+    onSubmit(newPostData)
   }
 
   const handleClose = () => onClose()
 
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    field: string
+  ) => {
+    setNewPostData((prevState) => ({
+      ...prevState,
+      [field]: e.target.value,
+    }))
+  }
+
+  const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+
+    if (!file) return
+
+    // Convert image to webp format
+    const convertedFile: Blob | MediaSource = await useWebpConversion(file)
+
+    setNewPostData((prevState) => ({
+      ...prevState,
+      image: URL.createObjectURL(convertedFile),
+    }))
+  }
+
   return (
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
-      <FormImageGroup postImage={imagePreview} />
-      <FormTitleGroup postTitle={newPostTitle} />
-      <FormExcerptGroup postExcerpt={newPostExcerpt} />
-      <FormContentGroup postContent={newPostContent} />
+      {/* form image select */}
+      <Form.Group controlId="postImage" className="form__group">
+        <Form.Label>Image</Form.Label>
+        <div className="form__image-picker">
+          {
+            <div className="form__image-preview">
+              <img
+                style={{ display: postData.image ? "block" : "none" }}
+                src={postData.image}
+                alt="preview"
+              />
+            </div>
+          }
+          <Form.Control type="file" accept="image/*" onChange={handleImageChange} />
+        </div>
+        <Form.Control.Feedback type="invalid">
+          Please upload an image preview.
+        </Form.Control.Feedback>
+      </Form.Group>
 
+      {/* form title input */}
+      <Form.Group controlId="postTitle" className="form__group">
+        <Form.Label>Title</Form.Label>
+        <Form.Control
+          autoComplete="off"
+          type="text"
+          value={newPostData.title}
+          onChange={(e) => handleChange(e, "title")}
+          required
+          placeholder={"My loud article headline"}
+          minLength={10}
+          maxLength={100}
+        />
+        <Form.Control.Feedback type="invalid">Please make the title longer.</Form.Control.Feedback>
+      </Form.Group>
+
+      {/* form excerpt input */}
+      <Form.Group controlId="postExcerpt" className="form__group">
+        <Form.Label>Excerpt</Form.Label>
+        <Form.Control
+          autoComplete="off"
+          type="text"
+          value={newPostData.excerpt}
+          onChange={(e) => handleChange(e, "excerpt")}
+          required
+          placeholder={"My short description of the article"}
+          minLength={10}
+          maxLength={100}
+        />
+        <Form.Control.Feedback type="invalid">
+          Please make the excerpt longer.
+        </Form.Control.Feedback>
+      </Form.Group>
+
+      {/* form content input textarea (QUIL) */}
+      <Form.Group controlId="postContent" className="form__group">
+        <Form.Label>Content</Form.Label>
+        <FormRichEdit
+          className="form__group"
+          value={newPostData.content}
+          onChange={(value: string) =>
+            setNewPostData((prevState) => ({
+              ...prevState,
+              content: value,
+            }))
+          }
+          placeholder={"Share your thoughts about this topic"}
+        />
+        <Form.Control.Feedback type="invalid">
+          Please make the content longer.
+        </Form.Control.Feedback>
+      </Form.Group>
+
+      {/* form footer  */}
       <Form.Group className="form__footer">
         <Button variant="light" onClick={handleClose}>
           Cancel

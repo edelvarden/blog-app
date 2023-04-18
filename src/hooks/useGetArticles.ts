@@ -11,9 +11,10 @@ interface IArticles {
   date?: string
   category?: string
   excerpt?: string
+  image?: string
 }
 
-export const useGetArticles = () => {
+export const useGetArticles = (): IArticles[] => {
   const [articles, setArticles] = useState<IArticles[]>(customArticles)
   const [pageNumber, setPageNumber] = useState<number>(1)
   const [isFetching, setIsFetching] = useState<boolean>(true)

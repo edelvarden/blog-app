@@ -15,28 +15,32 @@ interface IBlogContentProps {
   image: string
 }
 
-const BlogContent: FC<IBlogContentProps> = ({ id, title, date, excerpt, content, image }) => {
-  const [isImageLoaded, setIsImageLoaded] = useState(false)
-  const [postImage, setPostImage] = useState(`/articles/${id}/${image}`)
-  const [postTitle, setPostTitle] = useState(title)
-  const [postExcerpt, setPostExcerpt] = useState(excerpt)
-  const [postContent, setPostContent] = useState(content)
-  const [isEditMode, setIsEditMode] = useState(false)
-  const formattedDate = useDateFormatter(date)
+interface IPostData {
+  title: string
+  excerpt: string
+  content: string
+  image: string
+}
 
-  interface IPostData {
-    title: string
-    excerpt: string
-    content: string
-    image: string
-  }
+const BlogContent: FC<IBlogContentProps> = ({ id, title, date, excerpt, content, image }) => {
+  const [postData, setPostData] = useState<IPostData>({
+    image: `/articles/${id}/${image}`,
+    title: title,
+    excerpt: excerpt,
+    content: content,
+  })
+  const [isImageLoaded, setIsImageLoaded] = useState<boolean>(false)
+  const [isEditMode, setIsEditMode] = useState<boolean>(false)
+  const formattedDate = useDateFormatter(date)
 
   const handlePostSave = (data: IPostData) => {
     if (data.title.length > 10 && data.excerpt.length > 10 && data.content.length > 30) {
-      setPostImage(data.image)
-      setPostTitle(data.title)
-      setPostExcerpt(data.excerpt)
-      setPostContent(data.content)
+      setPostData({
+        image: data.image,
+        title: data.title,
+        excerpt: data.excerpt,
+        content: data.content,
+      })
       setIsEditMode(false)
       // log -----------------
       console.log(data.title)
@@ -49,18 +53,11 @@ const BlogContent: FC<IBlogContentProps> = ({ id, title, date, excerpt, content,
 
   // Use useEffect hook to update the page title on each render
   useEffect(() => {
-    document.title = `${postTitle}`
+    document.title = `${postData.title}`
     window.scrollTo({ top: 0, behavior: "smooth" })
-  }, [postTitle])
+  }, [postData])
 
-  const postData = {
-    postImage,
-    postTitle,
-    postContent,
-    postExcerpt,
-  }
-
-  const handleClose = (): void => setIsEditMode(false)
+  const handleClose = () => setIsEditMode(false)
 
   return (
     <Container style={{ maxWidth: "728px" }}>
@@ -83,10 +80,7 @@ const BlogContent: FC<IBlogContentProps> = ({ id, title, date, excerpt, content,
       <ModalWindow isOpen={isEditMode} onClose={handleClose} title="Edit article">
         <Form
           submitLabel="Save"
-          postImage={postData.postImage}
-          postTitle={postData.postTitle}
-          postContent={postData.postContent}
-          postExcerpt={postData.postExcerpt}
+          postData={postData}
           onSubmit={handlePostSave}
           onClose={handleClose}
         />
@@ -95,18 +89,18 @@ const BlogContent: FC<IBlogContentProps> = ({ id, title, date, excerpt, content,
       <section className="blog-content__section">
         <Row className="justify-content-center">
           <Col>
-            <h1 className="blog-content__title">{postData.postTitle}</h1>
+            <h1 className="blog-content__title">{postData.title}</h1>
             <div className="blog-content__image">
               <img
                 className={` ${isImageLoaded ? "loaded" : ""}`}
-                src={postData.postImage}
-                alt={postData.postTitle}
+                src={postData.image}
+                alt={postData.title}
                 onLoad={handleImageLoad}
               />
             </div>
             <div
               className="blog-content__content"
-              dangerouslySetInnerHTML={{ __html: postData.postContent }}
+              dangerouslySetInnerHTML={{ __html: postData.content }}
             />
           </Col>
         </Row>

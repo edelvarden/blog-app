@@ -19,10 +19,16 @@ interface IFormRichEditProps {
   value: string
   onChange: (value: string) => void
   placeholder: string
-  className: string
+  className?: string
 }
 
-const FormRichEdit: FC<IFormRichEditProps> = ({ value, onChange, placeholder, className }) => {
+const FormRichEdit: FC<IFormRichEditProps> = ({
+  value,
+  onChange,
+  placeholder,
+  className,
+  ...props
+}) => {
   return (
     <ReactQuill
       theme="snow"
@@ -34,6 +40,7 @@ const FormRichEdit: FC<IFormRichEditProps> = ({ value, onChange, placeholder, cl
       }}
       placeholder={placeholder}
       className={className}
+      {...props}
     />
   )
 }
