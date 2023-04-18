@@ -1,12 +1,22 @@
-import { useState, useEffect, useMemo } from "react"
-import customArticles from "data/articles.json"
-import { useLocation } from "react-router-dom"
 import axios from "axios"
+import customArticles from "data/articles.json"
+import { useEffect, useMemo, useState } from "react"
+import { useLocation } from "react-router-dom"
+
+interface IArticles {
+  id: number
+  title: string
+  body: string
+  author?: string
+  date?: string
+  category?: string
+  excerpt?: string
+}
 
 export const useGetArticles = () => {
-  const [articles, setArticles] = useState(customArticles)
-  const [pageNumber, setPageNumber] = useState(1)
-  const [isFetching, setIsFetching] = useState(true)
+  const [articles, setArticles] = useState<IArticles[]>(customArticles)
+  const [pageNumber, setPageNumber] = useState<number>(1)
+  const [isFetching, setIsFetching] = useState<boolean>(true)
   const currentLocation = useLocation()
   const location = useMemo(() => currentLocation, [currentLocation])
 
@@ -38,7 +48,6 @@ export const useGetArticles = () => {
     const scrollTop = window.scrollY
 
     if (Math.round(windowHeight + scrollTop) >= documentHeight) {
-      console.log("End of page reached!")
       setIsFetching(true)
     }
   }
