@@ -1,4 +1,4 @@
-import useWebpConversion from "hooks/useWebpConversion"
+import { useWebpConversion } from "hooks/useWebpConversion"
 import { FC, useState } from "react"
 import { Form } from "react-bootstrap"
 

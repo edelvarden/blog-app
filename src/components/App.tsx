@@ -1,12 +1,12 @@
 import "bootstrap/dist/css/bootstrap.min.css"
+import Footer from "components/Footer"
+import Header from "components/Header"
 import Loader from "components/Loader"
 import ToTopButton from "components/ToTopButton"
-import useGetArticles from "hooks/useGetArticles"
+import { useGetArticles } from "hooks/useGetArticles"
 import Home from "pages/Home"
 import { FC, lazy, Suspense, useMemo } from "react"
 import { Route, Routes } from "react-router-dom"
-import Footer from "components/Footer"
-import Header from "components/Header"
 
 const App: FC = () => {
   const articles = useGetArticles()
@@ -32,7 +32,7 @@ const App: FC = () => {
           }
         />
       )),
-    [articles]
+    [articles, LazyBlogContent]
   )
 
   return (

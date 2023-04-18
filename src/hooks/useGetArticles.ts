@@ -3,7 +3,7 @@ import customArticles from "data/articles.json"
 import { useLocation } from "react-router-dom"
 import axios from "axios"
 
-const useGetArticles = () => {
+export const useGetArticles = () => {
   const [articles, setArticles] = useState(customArticles)
   const [pageNumber, setPageNumber] = useState(1)
   const [isFetching, setIsFetching] = useState(true)
@@ -45,5 +45,3 @@ const useGetArticles = () => {
 
   return articles
 }
-
-export default useGetArticles

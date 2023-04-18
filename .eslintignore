@@ -1,0 +1,16 @@
+**/node_modules/**
+**/build/**
+**/coverage/**
+**/dist/**
+**/dest/**
+**/helpers/**
+**/tsconfig.*
+**/*.config.js
+**/*.config.ts
+**/.eslintrc
+**/.eslintrc.*
+**/.prettierrc
+**/.prettierrc.*
+**/.prettier.*
+**/*.svg
+**/public/**

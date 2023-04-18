@@ -1,4 +1,4 @@
-const useWebpConversion = async (file: File): Promise<File> => {
+export const useWebpConversion = async (file: File): Promise<File> => {
   const bitmap = await createImageBitmap(file)
   const canvas = document.createElement("canvas")
   const context = canvas.getContext("2d")
@@ -21,5 +21,3 @@ const useWebpConversion = async (file: File): Promise<File> => {
     )
   })
 }
-
-export default useWebpConversion
