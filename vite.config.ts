@@ -13,6 +13,7 @@ export default defineConfig({
       assets: "/src/assets",
       components: "/src/components",
       sections: "/src/sections",
+      services: "/src/services",
       pages: "/src/pages",
       routes: "/src/routes",
       hooks: "/src/hooks",

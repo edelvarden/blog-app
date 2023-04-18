@@ -1,7 +1,7 @@
 import FormRichEdit from "components/FormRichEdit"
-import { useWebpConversion } from "hooks/useWebpConversion"
 import { FC, useState } from "react"
 import { Button, Form } from "react-bootstrap"
+import { webpConversion } from "services/webpConversion"
 import "./Form.scss"
 
 interface IPostData {
@@ -59,7 +59,7 @@ const FormComponent: FC<IFormProps> = ({ submitLabel, onSubmit, onClose, postDat
     if (!file) return
 
     // Convert image to webp format
-    const convertedFile: Blob | MediaSource = await useWebpConversion(file)
+    const convertedFile: Blob | MediaSource = await webpConversion(file)
 
     setNewPostData((prevState) => ({
       ...prevState,

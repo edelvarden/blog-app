@@ -20,6 +20,7 @@
       "assets/*": ["assets/*"],
       "components/*": ["components/*"],
       "sections/*": ["sections/*"],
+      "services/*": ["services/*"],
       "pages/*": ["pages/*"],
       "routes/*": ["routes/*"],
       "hooks/*": ["hooks/*"],
