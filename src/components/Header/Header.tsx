@@ -1,10 +1,12 @@
 import create from "assets/icons/create.svg"
 import DarkModeSwitcher from "components/DarkModeSwitcher"
+import Form from "components/Form"
 import ModalWindow from "components/ModalWindow"
-import { FC, useMemo, useState } from "react"
+import { FC } from "react"
 import { Button, Container, Nav, Navbar } from "react-bootstrap"
-import { Link, useLocation } from "react-router-dom"
+import { Link } from "react-router-dom"
 import "./Header.scss"
+import { useHeaderLogic } from "./useHeaderLogic"
 
 interface IRoutes {
   path: string
@@ -15,36 +17,22 @@ interface IHeaderProps {
   routes: IRoutes[]
 }
 
+interface ILinks {
+  routes: IRoutes[]
+  pathname: string
+}
+
+const getLinks = ({ routes, pathname }: ILinks) =>
+  routes.map(({ path, name }, key) => (
+    <Link key={key} to={path} className={`nav-link ${pathname === path ? "active" : ""}`}>
+      {name}
+    </Link>
+  ))
+
 const Header: FC<IHeaderProps> = ({ routes }) => {
-  const { pathname } = useLocation()
-  const [isCreate, setIsCreate] = useState(false)
+  const { pathname, isCreate, handleClose, handleShow, handleCreate } = useHeaderLogic()
 
-  const handleClose = () => setIsCreate(false)
-  const handleShow = () => setIsCreate(true)
-
-  interface IFormData {
-    title: string
-    excerpt: string
-    content: string
-  }
-
-  const handleCreate = (data: IFormData) => {
-    if (data.title.length > 10 && data.excerpt.length > 10 && data.content.length > 30) {
-      setIsCreate(false)
-      // log -----------------
-      console.log(data.title)
-      console.log(data.content)
-      // ---------------------
-    }
-  }
-  const getLinks = () =>
-    routes.map(({ path, name }, key) => (
-      <Link key={key} to={path} className={`nav-link ${pathname === path ? "active" : ""}`}>
-        {name}
-      </Link>
-    ))
-
-  const links = useMemo(getLinks, [routes, pathname])
+  const links = getLinks({ routes, pathname })
 
   return (
     <>
@@ -66,13 +54,9 @@ const Header: FC<IHeaderProps> = ({ routes }) => {
 
       {/* Use conditional rendering to avoid unnecessary re-renders */}
       {isCreate && (
-        <ModalWindow
-          isOpen={isCreate}
-          onClose={handleClose}
-          title={"Create"}
-          submitLabel={"OK"}
-          onSubmit={handleCreate}
-        />
+        <ModalWindow isOpen={isCreate} onClose={handleClose} title="Create">
+          <Form onClose={handleClose} submitLabel="OK" onSubmit={handleCreate} />
+        </ModalWindow>
       )}
     </>
   )

@@ -24,19 +24,17 @@ interface IFormRichEditProps {
 
 const FormRichEdit: FC<IFormRichEditProps> = ({ value, onChange, placeholder, className }) => {
   return (
-    <>
-      <ReactQuill
-        theme="snow"
-        value={value}
-        onChange={onChange}
-        modules={{
-          // syntax: true,
-          toolbar: toolbarOptions,
-        }}
-        placeholder={placeholder}
-        className={className}
-      />
-    </>
+    <ReactQuill
+      theme="snow"
+      value={value}
+      onChange={onChange}
+      modules={{
+        // syntax: true,
+        toolbar: toolbarOptions,
+      }}
+      placeholder={placeholder}
+      className={className}
+    />
   )
 }
 

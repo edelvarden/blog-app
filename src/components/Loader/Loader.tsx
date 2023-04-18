@@ -3,11 +3,9 @@ import "./Loader.scss"
 
 const Loader: FC = () => {
   return (
-    <>
-      <div className="overlay">
-        <div className="loader"></div>
-      </div>
-    </>
+    <div className="overlay">
+      <div className="loader"></div>
+    </div>
   )
 }
 

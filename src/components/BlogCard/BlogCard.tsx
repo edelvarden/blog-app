@@ -19,31 +19,29 @@ const BlogCard: FC<IBlogCardProps> = ({ id, image, title, category, date, excerp
   const formattedDate = useDateFormatter(date)
 
   return (
-    <>
-      <Card className="card-block">
-        <Link className="card-block__link" to={`/articles/${id}`}>
-          <div className="card-block__image">
-            <Card.Img
-              variant="top"
-              src={image}
-              alt={title}
-              onLoad={handleImageLoad}
-              className={isImageLoaded ? "loaded" : ""}
-            />
+    <Card className="card-block">
+      <Link className="card-block__link" to={`/articles/${id}`}>
+        <div className="card-block__image">
+          <Card.Img
+            variant="top"
+            src={image}
+            alt={title}
+            onLoad={handleImageLoad}
+            className={isImageLoaded ? "loaded" : ""}
+          />
+        </div>
+        <Card.Body className="card-block__content">
+          <div className="card-block__category">
+            <span className="card-block__category-item">{category}</span>
           </div>
-          <Card.Body className="card-block__content">
-            <div className="card-block__category">
-              <span className="card-block__category-item">{category}</span>
-            </div>
-            <Card.Title className="card-block__title">{title}</Card.Title>
-            <Card.Subtitle className="card-block__date mb-2">
-              {date && <time dateTime={date}>{`${formattedDate}`}</time>}
-            </Card.Subtitle>
-            <Card.Text className="card-block__excerpt">{excerpt}</Card.Text>
-          </Card.Body>
-        </Link>
-      </Card>
-    </>
+          <Card.Title className="card-block__title">{title}</Card.Title>
+          <Card.Subtitle className="card-block__date mb-2">
+            {date && <time dateTime={date}>{`${formattedDate}`}</time>}
+          </Card.Subtitle>
+          <Card.Text className="card-block__excerpt">{excerpt}</Card.Text>
+        </Card.Body>
+      </Link>
+    </Card>
   )
 }
 

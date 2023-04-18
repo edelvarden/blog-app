@@ -1,4 +1,5 @@
 import edit from "assets/icons/edit.svg"
+import Form from "components/Form"
 import ModalWindow from "components/ModalWindow"
 import { useDateFormatter } from "hooks/useDateFormatter"
 import { FC, useEffect, useState } from "react"
@@ -59,6 +60,8 @@ const BlogContent: FC<IBlogContentProps> = ({ id, title, date, excerpt, content,
     postExcerpt,
   }
 
+  const handleClose = (): void => setIsEditMode(false)
+
   return (
     <Container style={{ maxWidth: "728px" }}>
       <div className="d-flex justify-content-between align-items-center">
@@ -77,17 +80,17 @@ const BlogContent: FC<IBlogContentProps> = ({ id, title, date, excerpt, content,
         </Button>
       </div>
 
-      <ModalWindow
-        isOpen={isEditMode}
-        onClose={() => setIsEditMode(false)}
-        title="Edit article"
-        submitLabel="Save"
-        postImage={postData.postImage}
-        postTitle={postData.postTitle}
-        postContent={postData.postContent}
-        postExcerpt={postData.postExcerpt}
-        onSubmit={handlePostSave}
-      />
+      <ModalWindow isOpen={isEditMode} onClose={handleClose} title="Edit article">
+        <Form
+          submitLabel="Save"
+          postImage={postData.postImage}
+          postTitle={postData.postTitle}
+          postContent={postData.postContent}
+          postExcerpt={postData.postExcerpt}
+          onSubmit={handlePostSave}
+          onClose={handleClose}
+        />
+      </ModalWindow>
 
       <section className="blog-content__section">
         <Row className="justify-content-center">
