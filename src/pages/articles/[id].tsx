@@ -1,22 +1,20 @@
-import Layout from "@/components/layout/Layout"
-import Heading from "@/components/common/Heading"
+import ArticleContent from "@/components/screens/ArticleContent"
 import NotFound from "@/pages/404"
 import { NextPage } from "next"
 import { useRouter } from "next/router"
 
-const About: NextPage = () => {
+const ArticlePage: NextPage = () => {
   const router = useRouter()
-  const { id, title } = router.query
+  const { id } = router.query
 
-  if (!title) {
+  console.log(`${id}`);
+  
+
+  if (!id) {
     return <NotFound />
   }
 
-  return (
-    <Layout title={`${title}`}>
-      <Heading level={1}>{title}</Heading>
-    </Layout>
-  )
+  return <ArticleContent id={+`${id}`} title={``} date={``} body={``} />
 }
 
-export default About
+export default ArticlePage

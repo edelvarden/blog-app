@@ -4,6 +4,7 @@ import { clsx } from "clsx"
 import { Poppins } from "next/font/google"
 import Head from "next/head"
 import { FC, ReactNode } from "react"
+import ToTopButton from "@/components/common/ToTopButton"
 
 const poppins = Poppins({
   weight: ["400", "500", "700"],
@@ -35,7 +36,9 @@ const Layout: FC<ILayout> = ({ title, children }) => {
             { path: "/about", name: "About" },
           ]}
         />
-        <main className="w-screen flex-1">{children}</main>
+        <main className="w-screen flex-1">{children}
+        <ToTopButton/>
+        </main>
         <Footer />
       </div>
     </>

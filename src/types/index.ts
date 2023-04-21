@@ -4,7 +4,11 @@ export interface IArticle {
   body: string
   author?: string
   date?: string
-  category?: string[] | string
+  category?: string
   excerpt?: string
   image?: string
+}
+
+export interface IArticles {
+  articles: IArticle[]
 }

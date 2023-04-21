@@ -13,7 +13,7 @@ export const useGetArticles = (): IArticle[] => {
   useEffect(() => {
     if (isFetching) {
       axios
-        .get(`https://jsonplaceholder.typicode.com/posts?_limit=10&_page=${pageNumber}`)
+        .get<IArticle[]>(`https://jsonplaceholder.typicode.com/posts?_limit=10&_page=${pageNumber}`)
         .then((res) => {
           setArticles([...articles, ...res.data])
           setPageNumber((prevState) => prevState + 1)

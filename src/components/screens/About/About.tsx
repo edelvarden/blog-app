@@ -5,11 +5,11 @@ import { FC } from "react"
 const About: FC = () => {
   return (
     <Layout title="About">
-      <div className="my-4">
+      <div className="my-8">
         <div className="mx-4 text-center">
           <Heading level={1}>About</Heading>
         </div>
-        <div className="max-w-[1px]">
+        <div className="mt-[2em] max-w-[1px]">
           <p>
             About Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, laborum
             possimus? Quam, dolore. Facere esse necessitatibus fugit incidunt natus corrupti ea
