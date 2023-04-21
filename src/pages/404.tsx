@@ -1,12 +1,8 @@
-import Layout from "@/components/layout/Layout"
+import NotFound from "@/components/screens/NotFound"
 import { NextPage } from "next"
 
-const NotFound: NextPage = () => {
-  return (
-    <Layout title="Not found">
-      <h1>Not found</h1>
-    </Layout>
-  )
+const NotFoundPage: NextPage = () => {
+  return <NotFound />
 }
 
-export default NotFound
+export default NotFoundPage

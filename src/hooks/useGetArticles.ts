@@ -1,25 +1,14 @@
 import axios from "axios"
-import customArticles from "data/articles.json"
-import { useEffect, useMemo, useState } from "react"
-import { useLocation } from "react-router-dom"
+import customArticles from "@/data/articles.json"
+import { IArticle } from "@/types"
+import { useEffect, useState } from "react"
+import { useRouter } from "next/router"
 
-interface IArticles {
-  id: number
-  title: string
-  body: string
-  author?: string
-  date?: string
-  category?: string
-  excerpt?: string
-  image?: string
-}
-
-export const useGetArticles = (): IArticles[] => {
-  const [articles, setArticles] = useState<IArticles[]>(customArticles)
+export const useGetArticles = (): IArticle[] => {
+  const [articles, setArticles] = useState<IArticle[]>(customArticles)
   const [pageNumber, setPageNumber] = useState<number>(1)
   const [isFetching, setIsFetching] = useState<boolean>(true)
-  const currentLocation = useLocation()
-  const location = useMemo(() => currentLocation, [currentLocation])
+  const { pathname } = useRouter()
 
   useEffect(() => {
     if (isFetching) {
@@ -37,11 +26,11 @@ export const useGetArticles = (): IArticles[] => {
   }, [articles, isFetching, pageNumber])
 
   useEffect(() => {
-    if (location.pathname === "/") {
+    if (pathname === "/") {
       window.addEventListener("scroll", handleScroll)
     }
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [location])
+  }, [pathname])
 
   const handleScroll = () => {
     const windowHeight = window.innerHeight

@@ -2,8 +2,8 @@ import Footer from "@/components/layout/Footer"
 import Header from "@/components/layout/Header"
 import { clsx } from "clsx"
 import { Poppins } from "next/font/google"
-import { FC, ReactNode } from "react"
 import Head from "next/head"
+import { FC, ReactNode } from "react"
 
 const poppins = Poppins({
   weight: ["400", "500", "700"],
@@ -35,7 +35,7 @@ const Layout: FC<ILayout> = ({ title, children }) => {
             { path: "/about", name: "About" },
           ]}
         />
-        <main className="flex-1">{children}</main>
+        <main className="w-screen flex-1">{children}</main>
         <Footer />
       </div>
     </>

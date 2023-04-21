@@ -1,5 +1,5 @@
 import { FC, useCallback, useEffect, useState } from "react"
-import "./ToTopButton.scss"
+import styles from "./ToTopButton.module.scss"
 
 const ToTopButton: FC = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -19,7 +19,7 @@ const ToTopButton: FC = () => {
 
   return (
     <button
-      className="toTopBtn"
+      className={styles.toTopBtn}
       style={{ display: isVisible ? "block" : "none" }}
       onClick={handleClick}
       aria-label="Back to top"

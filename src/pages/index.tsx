@@ -1,12 +1,8 @@
-import Layout from "@/components/layout/Layout"
+import Home from "@/components/screens/Home"
 import { NextPage } from "next"
 
-const Home: NextPage = () => {
-  return (
-    <Layout title="Home Page">
-      <h1>Home Page</h1>
-    </Layout>
-  )
+const HomePage: NextPage = () => {
+  return <Home />
 }
 
-export default Home
+export default HomePage

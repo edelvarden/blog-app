@@ -1,12 +1,8 @@
-import Layout from "@/components/layout/Layout"
+import About from "@/components/screens/About"
 import { NextPage } from "next"
 
-const About: NextPage = () => {
-  return (
-    <Layout title="About Page">
-      <h1>About Page</h1>
-    </Layout>
-  )
+const AboutPage: NextPage = () => {
+  return <About />
 }
 
-export default About
+export default AboutPage

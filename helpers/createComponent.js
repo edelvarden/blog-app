@@ -1,5 +1,5 @@
-import fs from "fs";
-import path from "path";
+const fs =  require("fs");
+const path =  require("path");
 
 // Get component names from command line arguments
 const componentNames = process.argv.slice(2);
@@ -12,7 +12,7 @@ if (componentNames.length === 0) {
 
 // Loop through each component name and create the component
 componentNames.forEach((componentName) => {
-  const componentDir = path.join("src", "components", componentName);
+  const componentDir = path.join("src", "components", "common", componentName);
   const componentFilePath = path.join(componentDir, `${componentName}.tsx`);
   const componentStylePath = path.join(componentDir, `${componentName}.scss`);
   const indexFilePath = path.join(componentDir, "index.ts");
