@@ -1,5 +1,5 @@
 import { FC, useEffect } from "react"
-import BlogList from "components/BlogList"
+import BlogList from "@/components/common/BlogList"
 import "./Home.scss"
 
 interface IArticles {

@@ -14,3 +14,4 @@
 **/.prettier.*
 **/*.svg
 **/public/**
+**/.next/**

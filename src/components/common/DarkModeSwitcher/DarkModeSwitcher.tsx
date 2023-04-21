@@ -1,5 +1,5 @@
-import darkModeIcon from "assets/icons/dark-mode.svg"
-import lightModeIcon from "assets/icons/light-mode.svg"
+import darkModeIcon from "@/assets/icons/dark-mode.svg"
+import lightModeIcon from "@/assets/icons/light-mode.svg"
 import { FC, useCallback, useEffect, useState } from "react"
 import { Button } from "react-bootstrap"
 
