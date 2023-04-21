@@ -1,4 +1,4 @@
-import ArtcilesList from "@/components/common/ArtcilesList"
+import ArticlesList from "@/components/common/ArticlesList"
 import Heading from "@/components/common/Heading"
 import Layout from "@/components/layout/Layout"
 import { FC } from "react"
@@ -13,7 +13,7 @@ const Home: FC = () => {
         </div>
 
         <div className="mt-[2em]">
-          <ArtcilesList/>
+          <ArticlesList />
         </div>
       </div>
     </Layout>

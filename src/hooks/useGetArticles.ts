@@ -1,8 +1,8 @@
-import axios from "axios"
 import customArticles from "@/data/articles.json"
 import { IArticle } from "@/types"
-import { useEffect, useState } from "react"
+import axios from "axios"
 import { useRouter } from "next/router"
+import { useEffect, useState } from "react"
 
 export const useGetArticles = (): IArticle[] => {
   const [articles, setArticles] = useState<IArticle[]>(customArticles)
@@ -15,11 +15,12 @@ export const useGetArticles = (): IArticle[] => {
       axios
         .get<IArticle[]>(`https://jsonplaceholder.typicode.com/posts?_limit=10&_page=${pageNumber}`)
         .then((res) => {
-          setArticles([...articles, ...res.data])
-          setPageNumber((prevState) => prevState + 1)
+          setArticles((prevArticles) => [...prevArticles, ...res.data]);
+          setPageNumber((prevPageNumber) => prevPageNumber + 1);
+          // console.log(`${res.data}`);
         })
-        .catch((err) => {
-          console.log(err)
+        .catch((error) => {
+          console.log(error)
         })
         .finally(() => setIsFetching(false))
     }
