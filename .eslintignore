@@ -3,7 +3,7 @@
 **/coverage/**
 **/dist/**
 **/dest/**
-**/helpers/**
+**/scripts/**
 **/tsconfig.*
 **/*.config.js
 **/*.config.ts

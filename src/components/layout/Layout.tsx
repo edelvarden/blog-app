@@ -36,8 +36,9 @@ const Layout: FC<ILayout> = ({ title, children }) => {
             { path: "/about", name: "About" },
           ]}
         />
-        <main className="w-screen flex-1">{children}
-        <ToTopButton/>
+        <main className="w-screen flex-1">
+          {children}
+          <ToTopButton />
         </main>
         <Footer />
       </div>

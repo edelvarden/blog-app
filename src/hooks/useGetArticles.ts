@@ -4,8 +4,11 @@ import axios from "axios"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 
+const API_URL = "https://jsonplaceholder.typicode.com/posts"
+// const API_URL = "/api/articles"
+
 export const useGetArticles = (): IArticle[] => {
-  const [articles, setArticles] = useState<IArticle[]>(customArticles)
+  const [articles, setArticles] = useState<IArticle[]>([])
   const [pageNumber, setPageNumber] = useState<number>(1)
   const [isFetching, setIsFetching] = useState<boolean>(true)
   const { pathname } = useRouter()
@@ -13,10 +16,10 @@ export const useGetArticles = (): IArticle[] => {
   useEffect(() => {
     if (isFetching) {
       axios
-        .get<IArticle[]>(`https://jsonplaceholder.typicode.com/posts?_limit=10&_page=${pageNumber}`)
+        .get<IArticle[]>(`${API_URL}?_limit=10&_page=${pageNumber}`)
         .then((res) => {
-          setArticles((prevArticles) => [...prevArticles, ...res.data]);
-          setPageNumber((prevPageNumber) => prevPageNumber + 1);
+          setArticles((prevArticles) => [...prevArticles, ...res.data])
+          setPageNumber((prevPageNumber) => prevPageNumber + 1)
           // console.log(`${res.data}`);
         })
         .catch((error) => {
@@ -24,7 +27,7 @@ export const useGetArticles = (): IArticle[] => {
         })
         .finally(() => setIsFetching(false))
     }
-  }, [articles, isFetching, pageNumber])
+  }, [isFetching, pageNumber])
 
   useEffect(() => {
     if (pathname === "/") {

@@ -1,0 +1,67 @@
+// headdings
+h1 {
+  @apply text-5xl;
+  line-height: 1.4 !important;
+}
+
+h2 {
+  @apply text-4xl;
+}
+
+h3 {
+  @apply text-3xl;
+}
+
+h4 {
+  @apply text-2xl;
+}
+
+h5 {
+  @apply text-xl;
+}
+
+h6 {
+  @apply text-base;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply mb-4 break-words font-bold;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+p {
+  margin-top: 1em;
+}
+
+// special for blog content
+.blog {
+  max-width: 728px;
+
+  ul,
+  ol {
+    margin-top: 1em;
+  }
+  p,
+  li {
+    font-size: 1.125em;
+    line-height: 200%;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    padding-top: 1em;
+  }
+
+  p {
+    color: #04111d;
+  }
+}

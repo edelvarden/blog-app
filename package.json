@@ -11,8 +11,8 @@
     "format:js": "prettier --write \"src/**/*.+(js|jsx|ts|tsx)\"",
     "format:css": "prettier --write \"src/**/*.+(css|scss|sass)\"",
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",
-    "cc": "node helpers/createComponent.js",
-    "ch": "node helpers/createHook.js"
+    "cc": "node scripts/createComponent.js",
+    "ch": "node scripts/createHook.js"
   },
   "dependencies": {
     "@types/node": "^18.15.13",

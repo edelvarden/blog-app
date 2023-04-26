@@ -1,19 +1,16 @@
-import Heading from "@/components/common/Heading"
-import {useGetArticles} from "@/hooks/useGetArticles"
-import { IArticle, IArticles } from "@/types"
+import { useGetArticles } from "@/hooks/useGetArticles"
+import { IArticle } from "@/types"
 import { FC } from "react"
-import RouterLink from "../RouterLink"
+import ArticlesCard from "./ArticleCard"
 
-const ArticlesList: FC= () => {
+const ArticlesList: FC = () => {
   const articles = useGetArticles()
-  
+
   return (
-    <ul className="px-4">
+    <ul className="container mx-auto grid grid-cols-3 gap-4 px-4">
       {articles?.map((article: IArticle, key: number) => (
-        <li key={key}>
-          <Heading level={4}>{article.title}</Heading>
-          <p>{article.excerpt}</p>
-          <RouterLink href={`/articles/${article.id}`}>Read More</RouterLink>
+        <li key={key} className="grid gap-4">
+          <ArticlesCard article={article} />
         </li>
       ))}
     </ul>

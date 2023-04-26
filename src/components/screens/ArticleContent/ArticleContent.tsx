@@ -1,7 +1,7 @@
-import { useDateFormatter } from "@/hooks/useDateFormatter"
-import { FC, useState } from "react"
 import Layout from "@/components/layout/Layout"
-import { IArticle } from "@/types";
+import { useDateFormatter } from "@/hooks/useDateFormatter"
+import { IArticle } from "@/types"
+import { FC, useState } from "react"
 
 const ArticleContent: FC<IArticle> = ({ id, title, date, body, image }) => {
   const [isImageLoaded, setIsImageLoaded] = useState<boolean>(false)
@@ -11,29 +11,36 @@ const ArticleContent: FC<IArticle> = ({ id, title, date, body, image }) => {
 
   return (
     <Layout title={title}>
-      <div className="d-flex justify-content-between align-items-center">
-        {date && (
-          <span className="blog-content__date">
-            Published <time dateTime={date}>{formattedDate}</time>
-          </span>
-        )}
-      </div>
-
-      <section className="blog-content__section">
-            <h1 className="blog-content__title">{title}</h1>
-            <div className="blog-content__image">
+      <div className="my-8 px-4">
+        <article className="blog mx-auto text-left">
+          <header>
+            <div className="flex items-center justify-between">
+              {date && (
+                <span>
+                  Published <time dateTime={date}>{formattedDate}</time>
+                </span>
+              )}
+            </div>
+            <h1>{title}</h1>
+            <div>
               <img
-                className={` ${isImageLoaded ? "loaded" : ""}`}
+                className={`mb-[5.5em] ${isImageLoaded ? "loaded" : ""}`}
                 src={image}
                 alt={title}
                 onLoad={handleImageLoad}
               />
             </div>
+          </header>
+
+          <div className="mt-[2em]">
             <div
-              className="blog-content__content"
-              dangerouslySetInnerHTML={{ __html: body }}
+              dangerouslySetInnerHTML={{
+                __html: body,
+              }}
             />
-      </section>
+          </div>
+        </article>
+      </div>
     </Layout>
   )
 }
