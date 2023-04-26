@@ -12,3 +12,12 @@ export interface IArticle {
 export interface IArticles {
   articles: IArticle[]
 }
+
+export interface IRoutes {
+  path: string
+  name: string
+}
+
+export interface INavLinks {
+  routes: IRoutes[]
+}

@@ -16,7 +16,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Articl
     if (article) {
       res.status(200).json({ data: article })
     }
-
   } else {
     res.status(200).json({ data: articles })
   }

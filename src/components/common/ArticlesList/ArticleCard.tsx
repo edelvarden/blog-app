@@ -1,7 +1,7 @@
 import RouterLink from "@/components/common/RouterLink"
 import { IArticle } from "@/types"
 import { FC } from "react"
-import styles from "./ArticleCard.module.scss";
+import styles from "./ArticleCard.module.scss"
 
 interface IArticlesCardProps {
   article: IArticle
