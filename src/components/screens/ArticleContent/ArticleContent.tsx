@@ -32,13 +32,13 @@ const ArticleContent: FC<IArticle> = ({ id, title, date, body, image }) => {
             </div>
           </header>
 
-          <div className="mt-[2em]">
+          <section className="mt-[2em]" aria-label="Blog content">
             <div
               dangerouslySetInnerHTML={{
                 __html: body,
               }}
             />
-          </div>
+          </section>
         </article>
       </div>
     </Layout>
