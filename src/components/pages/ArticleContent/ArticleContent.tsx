@@ -1,5 +1,5 @@
 import Layout from "@/components/layout/Layout"
-import { useDateFormatter } from "@/hooks/useDateFormatter"
+import { useDateFormatter } from "@/lib/changeDateFormat"
 import { IArticle } from "@/types"
 import { FC, useState } from "react"
 

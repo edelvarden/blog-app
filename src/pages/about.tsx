@@ -1,4 +1,4 @@
-import About from "@/components/screens/About"
+import About from "@/components/pages/About"
 import { NextPage } from "next"
 
 const AboutPage: NextPage = () => {

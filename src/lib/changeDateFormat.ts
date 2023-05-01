@@ -7,6 +7,6 @@ const formatDate = (date: string): string => {
   })
 }
 
-export const useDateFormatter = (initialDate: string): string => {
+export const changeDateFormat = (initialDate: string): string => {
   return formatDate(initialDate)
 }
