@@ -1,13 +1,11 @@
 import { PostType } from "@/types"
 import { getAllPostsWithSlug, getPostAndMorePosts } from "@/lib/api"
 import { CMS_NAME } from "@/lib/constants"
-import markdownToHtml from "@/lib/markdownToHtml"
 import ErrorPage from "next/error"
 import Head from "next/head"
 import { useRouter } from "next/router"
 import { ParsedUrlQueryInput } from "querystring"
 import Container from "@/components/container"
-import Header from "@/components/header"
 import Layout from "@/components/layout"
 import MoreStories from "@/components/more-stories"
 import PostBody from "@/components/post-body"
@@ -30,23 +28,19 @@ const Post = (props: PostProps) => {
   }
 
   return (
-    <Layout preview={preview}>
+    <Layout title={`${post.title} | Next.js Blog Example with ${CMS_NAME}`}>
       <Container>
-        <Header />
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article>
-              <Head>
-                <title>{`${post.title} | Next.js Blog Example with ${CMS_NAME}`}</title>
-                <meta property="og:image" content={post.metadata.cover_image.imgix_url} />
-              </Head>
+            <article className="article mx-auto max-w-[728px] py-8">
               <PostHeader
                 title={post.title}
                 coverImage={post.metadata.cover_image}
                 date={post.created_at}
                 author={post.metadata.author}
+                slug={post.slug}
               />
               <PostBody content={post.metadata.content} />
             </article>
@@ -69,7 +63,7 @@ export const getStaticProps = async (props: staticProps) => {
   const { params, preview = null } = props
   try {
     const data = await getPostAndMorePosts(params.slug as string, preview)
-    const content = await data["post"]?.metadata?.content || ""
+    const content = (await data["post"]?.metadata?.content) || ""
     return {
       props: {
         preview,

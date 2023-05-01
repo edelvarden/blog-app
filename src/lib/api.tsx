@@ -1,5 +1,5 @@
 import Cosmic from "cosmicjs"
-import { PostType } from "interfaces"
+import { PostType } from "@/types"
 import ErrorPage from "next/error"
 
 const BUCKET_SLUG = process.env.COSMIC_BUCKET_SLUG

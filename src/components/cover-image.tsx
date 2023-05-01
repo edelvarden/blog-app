@@ -14,9 +14,7 @@ const CoverImage = (props: CoverImageProps) => {
     <Image
       src={`${url}?auto=format,compress,enhance&w=700`}
       alt={`Cover Image for ${title}`}
-      className={cn("lazyload w-full shadow-small", {
-        "transition-shadow duration-200 hover:shadow-medium": slug,
-      })}
+      className={"cover-image mx-auto w-full max-w-[800px] rounded-2xl"}
       width={700}
       height={350}
       priority
