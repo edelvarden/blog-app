@@ -7,7 +7,7 @@ type PostTitleProps = {
 const PostTitle = (props: PostTitleProps) => {
   const { children } = props
   return (
-    <h1 className="text-left text-6xl font-bold leading-tight tracking-tighter md:leading-none">
+    <h1 className="text-left">
       {children}
     </h1>
   )

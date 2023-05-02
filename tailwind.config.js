@@ -24,6 +24,9 @@ export default {
         sans: ['Poppins', 'sans-serif'],
         serif: ['Poppins', 'serif'],
       },
+      lineHeight: {
+        base: '1.4',
+      }
     },
   },
   darkMode: 'class',

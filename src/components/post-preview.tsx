@@ -29,7 +29,7 @@ const PostPreview = (props: PostPreviewProps) => {
       <div className="mb-4 text-lg">
         <Date dateString={date} />
       </div>
-      <p className="mb-4 text-lg leading-relaxed">{excerpt}</p>
+      <p className="mb-4">{excerpt}</p>
       <Avatar name={author.title} picture={author.metadata.picture.imgix_url} />
     </div>
   )

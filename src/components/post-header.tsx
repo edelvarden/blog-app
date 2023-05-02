@@ -23,11 +23,11 @@ const PostHeader = (props: PostHeaderProps) => {
         <Date dateString={date} />
       </div>
       <PostTitle>{title}</PostTitle>
-      <div className="hidden md:mb-8 md:block">
-        <Avatar name={author.title} picture={author.metadata.picture.imgix_url} />
-      </div>
       <div className="mb-8 sm:mx-0 md:mb-16">
         <CoverImage title={title} url={coverImage.imgix_url} slug={""} />
+      </div>
+      <div className="hidden md:mb-8 md:block">
+        <Avatar name={author.title} picture={author.metadata.picture.imgix_url} />
       </div>
       <div className="mx-auto max-w-2xl">
         <div className="mb-6 block md:hidden">
