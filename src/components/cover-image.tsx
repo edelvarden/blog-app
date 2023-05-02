@@ -1,20 +1,23 @@
-import cn from "classnames"
-import Link from "next/link"
+import { clsx } from "clsx"
 import Image from "next/image"
+import Link from "next/link"
 
 type CoverImageProps = {
   title: string
   url: string
   slug: string
+  className: string
 }
 const CoverImage = (props: CoverImageProps) => {
-  const { title, url, slug } = props
+  const { title, url, slug, className } = props
+
+  const imageClassNames = clsx("cover-image mx-auto w-full max-w-[800px] rounded-2xl",className)
 
   const image = (
     <Image
       src={`${url}?auto=format,compress,enhance&w=700`}
       alt={`Cover Image for ${title}`}
-      className={"cover-image mx-auto w-full max-w-[800px] rounded-2xl"}
+      className={imageClassNames}
       width={700}
       height={350}
       priority

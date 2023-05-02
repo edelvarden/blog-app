@@ -14,7 +14,7 @@ const Avatar = (props: AvatarProps) => {
         {picture && (
           <Image
             src={`${picture}?auto=format,compress,enhance&w=100&h=100`}
-            className="outline-3 rounded-full outline -outline-offset-1 outline-violet-500"
+            className="rounded-full"
             alt={name}
             width={100}
             height={100}
