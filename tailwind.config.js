@@ -15,11 +15,10 @@ export default {
         // dark mode colors
         "accent-dark": "#1fb6ff",
         "primary-dark": "#ffffff",
-        "secondary-dark": "#fafafa",
+        "secondary-dark": "#fafafa"
       },
       fontFamily: {
         sans: ["Poppins", "sans-serif"],
-        serif: ["Poppins", "serif"],
       },
       lineHeight: {
         base: "1.4",

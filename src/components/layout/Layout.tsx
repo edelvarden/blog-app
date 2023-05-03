@@ -14,11 +14,14 @@ const poppins = Poppins({
   style: "normal",
   subsets: ["latin"],
   display: "swap",
+  variable: "--poppins-font",
 })
 
 const layoutClassName = clsx(
-  `flex flex-col justify-start items-start ${poppins.className}`,
-  "min-h-screen"
+  "flex flex-col justify-start items-start",
+  "min-h-screen",
+  "font-sans",
+  poppins.className
 )
 
 interface ILayout {
@@ -34,11 +37,7 @@ const Layout: FC<ILayout> = ({ title, children }) => {
         <title>{title}</title>
       </Head>
       <div className={layoutClassName}>
-        <Header
-          routes={[
-            { path: "/", name: "Blog." }
-          ]}
-        />
+        <Header routes={[{ path: "/", name: "Blog." }]} />
         <main className="w-screen flex-1">
           {children}
           <ToTopButton />

@@ -6,12 +6,12 @@ type CoverImageProps = {
   title: string
   url: string
   slug: string
-  className: string
+  className?: string
 }
 const CoverImage = (props: CoverImageProps) => {
   const { title, url, slug, className } = props
 
-  const imageClassNames = clsx("cover-image mx-auto w-full max-w-[800px] rounded-2xl",className)
+  const imageClassNames = clsx("cover-image mx-auto w-full max-w-[800px] rounded-2xl", className)
 
   const image = (
     <Image

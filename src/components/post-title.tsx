@@ -6,10 +6,6 @@ type PostTitleProps = {
 
 const PostTitle = (props: PostTitleProps) => {
   const { children } = props
-  return (
-    <h1 className="text-left">
-      {children}
-    </h1>
-  )
+  return <h1 className="text-left">{children}</h1>
 }
 export default PostTitle

@@ -6,9 +6,9 @@ const currentYear = new Date().getFullYear()
 
 const Footer: FC = () => {
   return (
-    <footer className="flex-0 border-accent-2 bg-accent-1 border-t w-screen">
+    <footer className="flex-0 border-accent-2 bg-accent-1 w-screen border-t">
       <Container>
-        <div className="flex flex-col items-center py-28 lg:flex-row">
+        <section className="flex flex-col items-center py-28 lg:flex-row">
           <h3 className="mb-10 text-center text-4xl font-bold leading-tight tracking-tighter lg:mb-0 lg:w-1/2 lg:pr-4 lg:text-left lg:text-5xl">
             Statically Generated with Next.js.
           </h3>
@@ -41,10 +41,10 @@ const Footer: FC = () => {
               View on GitHub
             </a>
           </div>
-        </div>
-        <div className="flex justify-center">
+        </section>
+        <section className="flex justify-center">
           <p className="py-4">&copy; {currentYear} Blog. All Rights Reserved.</p>
-        </div>
+        </section>
       </Container>
     </footer>
   )

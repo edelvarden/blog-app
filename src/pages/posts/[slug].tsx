@@ -33,7 +33,7 @@ const Post = (props: PostProps) => {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article className="article mx-auto max-w-[728px]">
+            <article className="mx-auto max-w-[728px]">
               <PostHeader
                 title={post.title}
                 coverImage={post.metadata.cover_image}

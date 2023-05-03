@@ -19,10 +19,13 @@ const Index = (props: IndexProps) => {
   const morePosts = allPosts.slice(1)
 
   return (
-    <>
-      <Layout title={`Next.js Blog Example with ${CMS_NAME}`}>
-        <Container>
-          {heroPost && (
+    <Layout title={`Next.js Blog Example with ${CMS_NAME}`}>
+      <Container>
+        {heroPost && (
+          <>
+            <div className="mx-4 text-center">
+              <h1>Articles</h1>
+            </div>
             <HeroPost
               title={heroPost.title}
               coverImage={heroPost.metadata.cover_image}
@@ -31,11 +34,11 @@ const Index = (props: IndexProps) => {
               slug={heroPost.slug}
               excerpt={heroPost.metadata.excerpt}
             />
-          )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-        </Container>
-      </Layout>
-    </>
+          </>
+        )}
+        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+      </Container>
+    </Layout>
   )
 }
 
