@@ -7,7 +7,7 @@ import { FC, ReactNode } from "react"
 import ToTopButton from "@/components/common/ToTopButton"
 import "lazysizes"
 import "lazysizes/plugins/parent-fit/ls.parent-fit"
-import Meta from "@/components/layout/meta"
+import Meta from "@/seo/meta"
 
 const poppins = Poppins({
   weight: ["400", "500", "700"],

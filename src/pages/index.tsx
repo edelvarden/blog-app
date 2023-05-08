@@ -6,6 +6,7 @@ import Container from "@/components/container"
 import HeroPost from "@/components/hero-post"
 import Layout from "@/components/layout"
 import MoreStories from "@/components/more-stories"
+import Slider from "@/components/slider"
 
 type IndexProps = {
   allPosts: PostType[]
@@ -26,14 +27,7 @@ const Index = (props: IndexProps) => {
             <div className="mx-4 text-center">
               <h1>Articles</h1>
             </div>
-            <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.metadata.cover_image}
-              date={heroPost.created_at}
-              author={heroPost.metadata.author}
-              slug={heroPost.slug}
-              excerpt={heroPost.metadata.excerpt}
-            />
+            <Slider posts={morePosts} />
           </>
         )}
         {morePosts.length > 0 && <MoreStories posts={morePosts} />}
