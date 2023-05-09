@@ -26,6 +26,7 @@ export default {
       boxShadow: {
         "elevation-1": "rgb(0 0 0 / 8%) 0px 4px 16px",
         "elevation-2": "rgb(0 0 0 / 14%) 0px 4px 16px",
+        "rounded": "1px 1px 16px rgba(0, 0, 0, .1)"
       },
     },
   },

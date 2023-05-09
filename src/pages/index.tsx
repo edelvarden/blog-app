@@ -3,7 +3,6 @@ import { CMS_NAME } from "@/lib/constants"
 import { PostType } from "@/types"
 
 import Container from "@/components/container"
-import HeroPost from "@/components/hero-post"
 import Layout from "@/components/layout"
 import MoreStories from "@/components/more-stories"
 import Slider from "@/components/slider"
@@ -16,21 +15,13 @@ type IndexProps = {
 const Index = (props: IndexProps) => {
   const { allPosts } = props
 
-  const heroPost = allPosts[0]
-  const morePosts = allPosts.slice(1)
-
   return (
     <Layout title={`Next.js Blog Example with ${CMS_NAME}`}>
+      <Container >
+        <Slider posts={allPosts} />
+      </Container>
       <Container>
-        {heroPost && (
-          <>
-            <div className="mx-4 text-center">
-              <h1>Articles</h1>
-            </div>
-            <Slider posts={morePosts} />
-          </>
-        )}
-        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+        {allPosts.length > 0 && <MoreStories posts={allPosts} />}
       </Container>
     </Layout>
   )

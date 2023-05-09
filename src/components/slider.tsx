@@ -1,6 +1,6 @@
 import { PostType } from "@/types"
-import "swiper/css"
-import { Swiper, SwiperSlide } from "swiper/react"
+import { Splide, SplideSlide } from "@splidejs/react-splide"
+import "@splidejs/react-splide/css/core"
 import HeroPost from "./hero-post"
 
 type SliderProps = {
@@ -12,15 +12,23 @@ const Slider = (props: SliderProps) => {
 
   return (
     <>
-      <Swiper
-        spaceBetween={50}
-        slidesPerView={1}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
-        loop
+      <Splide
+        tag="section"
+        options={{
+          type: "loop",
+          gap: "1rem",
+          perPage: 1,
+          pagination: true,
+          // drag: false,
+          
+          // autoplay options
+          autoplay: true,
+          interval: 1000,
+          lazyLoad: 'sequential',
+        }}
       >
         {posts?.map((post, index) => (
-          <SwiperSlide key={index}>
+          <SplideSlide key={index}>
             <HeroPost
               key={post.slug}
               title={post.title}
@@ -30,9 +38,9 @@ const Slider = (props: SliderProps) => {
               slug={post.slug}
               excerpt={post.metadata.excerpt}
             />
-          </SwiperSlide>
+          </SplideSlide>
         ))}
-      </Swiper>
+      </Splide>
     </>
   )
 }
