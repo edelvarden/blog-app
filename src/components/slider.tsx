@@ -23,8 +23,9 @@ const Slider = (props: SliderProps) => {
           
           // autoplay options
           autoplay: true,
-          interval: 1000,
+          interval: 5000,
           lazyLoad: 'sequential',
+          pauseOnFocus: true,
         }}
       >
         {posts?.map((post, index) => (
