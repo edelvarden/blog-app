@@ -6,36 +6,37 @@ import Container from "@/components/container"
 import Layout from "@/components/layout"
 import MoreStories from "@/components/more-stories"
 import Slider from "@/components/slider"
+import { NextPage } from "next"
 
-type IndexProps = {
+interface IHomeProps {
   allPosts: PostType[]
   preview: boolean
 }
 
-const Index = (props: IndexProps) => {
+const Home: NextPage<IHomeProps> = (props) => {
   const { allPosts } = props
 
   return (
     <Layout title={`Next.js Blog Example with ${CMS_NAME}`}>
-      <Container >
+      <Container>
         <Slider posts={allPosts} />
       </Container>
-      <Container>
-        {allPosts.length > 0 && <MoreStories posts={allPosts} />}
-      </Container>
+      <Container>{allPosts.length > 0 && <MoreStories posts={allPosts} />}</Container>
     </Layout>
   )
 }
 
-export default Index
+export default Home
 
-type staticProps = {
+interface IstaticProps {
   preview: boolean
 }
 
-export const getStaticProps = async (props: staticProps) => {
+export const getStaticProps = async (props: IstaticProps) => {
   const { preview = null } = props
+
   const allPosts = (await getAllPostsForHome(preview)) || []
+
   return {
     props: { allPosts, preview },
   }

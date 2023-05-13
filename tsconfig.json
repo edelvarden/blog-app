@@ -20,7 +20,7 @@
       "@/styles/*": ["./src/styles/*"],
       "@/seo/*": ["./src/seo/*"],
       "@/*": ["./src/*"]
-    },
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

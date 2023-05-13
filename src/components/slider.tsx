@@ -20,11 +20,11 @@ const Slider = (props: SliderProps) => {
           perPage: 1,
           pagination: true,
           // drag: false,
-          
+
           // autoplay options
           autoplay: true,
           interval: 5000,
-          lazyLoad: 'sequential',
+          lazyLoad: "sequential",
           pauseOnFocus: true,
         }}
       >

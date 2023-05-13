@@ -1,21 +1,21 @@
-const fs =  require("fs");
-const path =  require("path");
+const fs = require("fs")
+const path = require("path")
 
 // Get component names from command line arguments
-const componentNames = process.argv.slice(2);
+const componentNames = process.argv.slice(2)
 
 // If no component name is provided, exit the script with an error message
 if (componentNames.length === 0) {
-  console.error("Please provide at least one component name");
-  process.exit(1);
+  console.error("Please provide at least one component name")
+  process.exit(1)
 }
 
 // Loop through each component name and create the component
 componentNames.forEach((componentName) => {
-  const componentDir = path.join("src", "components", "common", componentName);
-  const componentFilePath = path.join(componentDir, `${componentName}.tsx`);
-  const componentStylePath = path.join(componentDir, `${componentName}.scss`);
-  const indexFilePath = path.join(componentDir, "index.ts");
+  const componentDir = path.join("src", "components", "common", componentName)
+  const componentFilePath = path.join(componentDir, `${componentName}.tsx`)
+  const componentStylePath = path.join(componentDir, `${componentName}.scss`)
+  const indexFilePath = path.join(componentDir, "index.ts")
 
   const componentContent = `import { FC } from "react"
 import "./${componentName}.scss"
@@ -33,13 +33,13 @@ const ${componentName}: FC<I${componentName}Props> = () => {
 }
 
 export default ${componentName}
-  `;
+  `
 
   // create component directory and files
-  fs.mkdirSync(componentDir);
-  fs.writeFileSync(componentFilePath, componentContent);
-  fs.writeFileSync(componentStylePath, "");
-  fs.writeFileSync(indexFilePath, `export { default } from "./${componentName}"`);
+  fs.mkdirSync(componentDir)
+  fs.writeFileSync(componentFilePath, componentContent)
+  fs.writeFileSync(componentStylePath, "")
+  fs.writeFileSync(indexFilePath, `export { default } from "./${componentName}"`)
 
   console.log(`Created at: "${componentDir}"`)
 })

@@ -11,14 +11,15 @@ import PostBody from "@/components/post-body"
 import PostHeader from "@/components/post-header"
 import PostTitle from "@/components/post-title"
 import SectionSeparator from "@/components/section-separator"
+import { FC } from "react"
 
 type PostProps = {
   post: PostType
   morePosts: PostType[]
-  preview
+  preview: boolean
 }
 
-const Post = (props: PostProps) => {
+const Post: FC<PostProps> = (props) => {
   const { post, morePosts, preview } = props
 
   const router = useRouter()

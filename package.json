@@ -12,6 +12,7 @@
     "format:js": "prettier --write \"src/**/*.+(js|jsx|ts|tsx)\"",
     "format:css": "prettier --write \"src/**/*.+(css|scss|sass)\"",
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",
+    "pre-commit": "prettier --write . --list-different",
     "cc": "node scripts/createComponent.js",
     "ch": "node scripts/createHook.js"
   },
@@ -43,6 +44,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.3",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.8.7",
     "prettier-plugin-tailwindcss": "^0.2.7",

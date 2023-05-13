@@ -19,7 +19,7 @@ const HeroPost = (props: HeroPostProps) => {
   return (
     <>
       <section className="p-4">
-        <div className="rounded-[18px] p-4 md:p-8 shadow-rounded">
+        <div className="rounded-[18px] p-4 shadow-rounded md:p-8">
           <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8">
             <div className="mb-8 md:mb-0">
               <CoverImage title={title} url={coverImage.imgix_url} slug={slug} />
