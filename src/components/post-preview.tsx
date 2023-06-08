@@ -1,5 +1,6 @@
 import { AuthorType, ImgixType } from "@/types"
 import Link from "next/link"
+import React from "react"
 import Avatar from "./avatar"
 import CoverImage from "./cover-image"
 import Date from "./date"
@@ -13,12 +14,17 @@ type PostPreviewProps = {
   slug: string
 }
 
-const PostPreview = (props: PostPreviewProps) => {
-  const { title, coverImage, date, excerpt, author, slug } = props
-
+const PostPreview: React.FC<PostPreviewProps> = ({
+  title,
+  coverImage,
+  date,
+  excerpt,
+  author,
+  slug,
+}) => {
   return (
     <article className="relative overflow-hidden rounded-[18px] shadow-elevation-1 transition-shadow hover:shadow-elevation-2">
-      <Link href={`/posts/${slug}`} className="absolute left-0 top-0 block h-full w-full" />
+      <Link href={`/posts/${slug}`} className="absolute left-0 top-0 block h-full w-full"></Link>
       <section>
         <CoverImage slug={slug} title={title} url={coverImage.imgix_url} className="rounded-none" />
       </section>

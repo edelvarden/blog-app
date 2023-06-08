@@ -1,12 +1,12 @@
 import { PostType } from "@/types"
+import React from "react"
 import PostPreview from "./post-preview"
 
 type MoreStoriesProps = {
   posts: PostType[]
 }
 
-const MoreStories = (props: MoreStoriesProps) => {
-  const { posts } = props
+const MoreStories: React.FC<MoreStoriesProps> = ({ posts }) => {
   return (
     <section>
       <h2 className="mb-8 text-6xl font-bold leading-tight tracking-tighter md:text-7xl">

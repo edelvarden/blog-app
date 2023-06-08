@@ -1,9 +1,10 @@
 import { AuthorType, ImgixType } from "@/types"
+import React from "react"
 import Avatar from "./avatar"
 import CoverImage from "./cover-image"
 import Date from "./date"
-import PostTitle from "./post-title"
 import PostBreadcrumbs from "./post-breadcrumbs"
+import PostTitle from "./post-title"
 
 type PostHeaderProps = {
   title: string
@@ -13,8 +14,7 @@ type PostHeaderProps = {
   slug: string
 }
 
-const PostHeader = (props: PostHeaderProps) => {
-  const { title, coverImage, date, author, slug } = props
+const PostHeader: React.FC<PostHeaderProps> = ({ title, coverImage, date, author, slug }) => {
   return (
     <header>
       <PostBreadcrumbs title={title} slug={slug} />

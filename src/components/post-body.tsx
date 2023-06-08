@@ -1,14 +1,14 @@
+import React from "react"
 import styles from "./styles.module.scss"
 
 type PostBodyProps = {
   content: string
 }
 
-const PostBody = (props: PostBodyProps) => {
-  const { content } = props
+const PostBody: React.FC<PostBodyProps> = ({ content }) => {
   return (
     <div className="mx-auto max-w-2xl">
-      <div className={styles["article-wrapper"]} dangerouslySetInnerHTML={{ __html: content }} />
+      <div className={styles.articleWrapper} dangerouslySetInnerHTML={{ __html: content }} />
     </div>
   )
 }

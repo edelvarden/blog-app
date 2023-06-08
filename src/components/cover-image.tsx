@@ -1,16 +1,16 @@
 import { clsx } from "clsx"
 import Image from "next/image"
 import Link from "next/link"
+import React from "react"
 
 type CoverImageProps = {
   title: string
   url: string
-  slug: string
+  slug?: string
   className?: string
 }
-const CoverImage = (props: CoverImageProps) => {
-  const { title, url, slug, className } = props
 
+const CoverImage: React.FC<CoverImageProps> = ({ title, url, slug, className }) => {
   const imageClassNames = clsx("cover-image mx-auto w-full max-w-[800px] rounded-2xl", className)
 
   const image = (
@@ -23,6 +23,7 @@ const CoverImage = (props: CoverImageProps) => {
       priority
     />
   )
+
   return (
     <div className="sm:mx-0">
       {slug ? (
@@ -35,4 +36,5 @@ const CoverImage = (props: CoverImageProps) => {
     </div>
   )
 }
+
 export default CoverImage

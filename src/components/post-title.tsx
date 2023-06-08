@@ -1,11 +1,11 @@
-import { ReactNode } from "react"
+import React, { ReactNode } from "react"
 
 type PostTitleProps = {
   children: ReactNode
 }
 
-const PostTitle = (props: PostTitleProps) => {
-  const { children } = props
+const PostTitle: React.FC<PostTitleProps> = ({ children }) => {
   return <h1 className="text-left">{children}</h1>
 }
+
 export default PostTitle

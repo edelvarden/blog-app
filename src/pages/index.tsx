@@ -6,16 +6,14 @@ import Container from "@/components/container"
 import Layout from "@/components/layout"
 import MoreStories from "@/components/more-stories"
 import Slider from "@/components/slider"
-import { NextPage } from "next"
+import { GetStaticProps, NextPage } from "next"
 
-interface IHomeProps {
+type HomeProps = {
   allPosts: PostType[]
   preview: boolean
 }
 
-const Home: NextPage<IHomeProps> = (props) => {
-  const { allPosts } = props
-
+const Home: NextPage<HomeProps> = ({ allPosts }) => {
   return (
     <Layout title={`Next.js Blog Example with ${CMS_NAME}`}>
       <Container>
@@ -28,13 +26,7 @@ const Home: NextPage<IHomeProps> = (props) => {
 
 export default Home
 
-interface IstaticProps {
-  preview: boolean
-}
-
-export const getStaticProps = async (props: IstaticProps) => {
-  const { preview = null } = props
-
+export const getStaticProps: GetStaticProps<HomeProps> = async ({ preview = false }) => {
   const allPosts = (await getAllPostsForHome(preview)) || []
 
   return {

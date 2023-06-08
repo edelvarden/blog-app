@@ -25,12 +25,12 @@ const layoutClassName = clsx(
   poppins.className
 )
 
-interface ILayoutProps {
+type LayoutProps = {
   title: string
   children: ReactNode
 }
 
-const Layout: FC<ILayoutProps> = ({ title, children }) => {
+const Layout: FC<LayoutProps> = ({ title, children }) => {
   return (
     <>
       <Meta />
