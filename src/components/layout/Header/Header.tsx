@@ -1,8 +1,8 @@
 import { INavLinks } from "@/types"
+import { useRouter } from "next/router"
 import { FC, memo } from "react"
 import Nav from "./Nav"
 import ScrollTracker from "./ScrollTracker"
-import { useRouter } from "next/router"
 
 const Header: FC<INavLinks> = ({ routes }) => {
   const router = useRouter()

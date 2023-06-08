@@ -23,7 +23,7 @@ const ScrollTracker = () => {
     width: `${scrollPosition * 100}%`,
   }
 
-  return <div style={headerStyle} className={`border-b-8 border-violet-500 bg-opacity-90`}></div>
+  return <div style={headerStyle} className="border-b-8 border-violet-500 bg-opacity-90"></div>
 }
 
 export default ScrollTracker
