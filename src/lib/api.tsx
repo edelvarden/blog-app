@@ -23,7 +23,7 @@ export const getPreviewPostBySlug = async (slug: string) => {
   try {
     const { objects } = await bucket.getObjects(params)
     return objects[0]
-  } catch (err) {
+  } catch (err: any) {
     // Don't throw if a slug doesn't exist
     return <ErrorPage statusCode={err.status} />
   }
@@ -84,7 +84,9 @@ export const getPostAndMorePosts = async (
   const object = objects[0]
 
   const { objects: moreObjects } = await bucket.getObjects(moreObjectParams)
-  const morePosts = moreObjects?.filter(({ slug: object_slug }) => object_slug !== slug).slice(0, 2)
+  const morePosts = moreObjects
+    ?.filter(({ slug: object_slug }: { slug: string }) => object_slug !== slug)
+    .slice(0, 2)
 
   return {
     post: object,

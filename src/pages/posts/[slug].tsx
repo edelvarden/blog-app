@@ -1,9 +1,8 @@
-import { PostType } from "@/types"
-import { getAllPostsWithSlug, getPostAndMorePosts } from "@/lib/api"
-import { CMS_NAME } from "@/lib/constants"
-import ErrorPage from "next/error"
-import { useRouter } from "next/router"
+import { FC } from "react"
 import { ParsedUrlQueryInput } from "querystring"
+import { useRouter } from "next/router"
+import { GetStaticProps, GetStaticPaths } from "next"
+import ErrorPage from "next/error"
 import Container from "@/components/container"
 import Layout from "@/components/layout"
 import MoreStories from "@/components/more-stories"
@@ -11,78 +10,88 @@ import PostBody from "@/components/post-body"
 import PostHeader from "@/components/post-header"
 import PostTitle from "@/components/post-title"
 import SectionSeparator from "@/components/section-separator"
-import { FC } from "react"
+import { CMS_NAME } from "@/lib/constants"
+import { getAllPostsWithSlug, getPostAndMorePosts } from "@/lib/api"
+import { PostType } from "@/types"
 
-type PostProps = {
+interface PostProps {
   post: PostType
   morePosts: PostType[]
   preview: boolean
 }
 
-const Post: FC<PostProps> = (props) => {
-  const { post, morePosts, preview } = props
-
+const Post: FC<PostProps> = ({ post, morePosts, preview }) => {
   const router = useRouter()
+
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
+  }
+
+  if (router.isFallback) {
+    return (
+      <Layout title={`Loading... | Next.js Blog Example with ${CMS_NAME}`}>
+        <Container>
+          <PostTitle>Loading...</PostTitle>
+        </Container>
+      </Layout>
+    )
   }
 
   return (
     <Layout title={`${post.title} | Next.js Blog Example with ${CMS_NAME}`}>
       <Container>
-        {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
-        ) : (
-          <>
-            <article className="mx-auto max-w-[728px]">
-              <PostHeader
-                title={post.title}
-                coverImage={post.metadata.cover_image}
-                date={post.created_at}
-                author={post.metadata.author}
-                slug={post.slug}
-              />
-              <PostBody content={post.metadata.content} />
-            </article>
-            <SectionSeparator />
-            {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-          </>
-        )}
+        <article className="mx-auto max-w-[728px]">
+          <PostHeader
+            title={post.title}
+            coverImage={post.metadata.cover_image}
+            date={post.created_at}
+            author={post.metadata.author}
+            slug={post.slug}
+          />
+          <PostBody content={post.metadata.content} />
+        </article>
+        <SectionSeparator />
+        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
       </Container>
     </Layout>
   )
 }
+
 export default Post
 
-type staticProps = {
+interface StaticProps {
   params: ParsedUrlQueryInput
   preview: boolean
 }
 
-export const getStaticProps = async (props: staticProps) => {
-  const { params, preview = null } = props
+export const getStaticProps = async ({ params, preview = false }: StaticProps) => {
   try {
-    const data = await getPostAndMorePosts(params.slug as string, preview)
-    const content = (await data["post"]?.metadata?.content) || ""
+    const { slug } = params
+    const data = await getPostAndMorePosts(slug as string, preview)
+    const content = data?.post?.metadata?.content || ""
+    const post = { ...data?.post, content } as PostType
+
     return {
       props: {
         preview,
-        post: {
-          ...data["post"],
-          content,
-        },
-        morePosts: data["morePosts"] || [],
+        post,
+        morePosts: data?.morePosts || [],
       },
     }
-  } catch (err) {
-    return <ErrorPage statusCode={err.status} />
+  } catch (err: any) {
+    return {
+      props: {
+        statusCode: err.status,
+      },
+    }
   }
 }
 
-export async function getStaticPaths() {
-  const allPosts = (await getAllPostsWithSlug()) || []
+export const getStaticPaths: GetStaticPaths = async () => {
+  const allPosts = await getAllPostsWithSlug()
+
   return {
-    paths: allPosts.map((post) => `/posts/${post.slug}`),
+    paths: allPosts?.map((post: PostType) => `/posts/${post.slug}`) || [],
     fallback: true,
   }
 }

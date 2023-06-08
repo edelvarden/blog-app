@@ -1,8 +1,0 @@
-.title,
-.excerpt {
-  -webkit-line-clamp: 4; // lines limit
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}

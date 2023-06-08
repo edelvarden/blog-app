@@ -1,4 +1,4 @@
-export default function exit(_, res) {
+export default function exit(_: any, res: any) {
   // Exit the current user from "Preview Mode". This function accepts no args.
   res.clearPreviewData()
 
