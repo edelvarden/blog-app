@@ -1,4 +1,4 @@
-.toTopBtn {
+.button {
   appearance: none;
   position: fixed;
   bottom: 20px;
@@ -28,13 +28,13 @@
 }
 
 @media screen and (min-width: 768px) {
-  .toTopBtn {
+  .button {
     right: 30px;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .toTopBtn {
+  .button {
     right: 50px;
   }
 }

@@ -1,11 +1,11 @@
-import { FC, useCallback, useEffect, useState } from "react"
+import React, { FC, useCallback, useEffect, useState } from "react"
 import styles from "./ToTopButton.module.scss"
 
 const ToTopButton: FC = () => {
   const [isVisible, setIsVisible] = useState(false)
 
   const handleScroll = useCallback(() => {
-    window.pageYOffset > 500 ? setIsVisible(true) : setIsVisible(false)
+    setIsVisible(window.pageYOffset > 500)
   }, [])
 
   const handleClick = useCallback(() => {
@@ -17,10 +17,12 @@ const ToTopButton: FC = () => {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [handleScroll])
 
+  const buttonStyle = { display: isVisible ? "block" : "none" }
+
   return (
     <button
-      className={styles.toTopBtn}
-      style={{ display: isVisible ? "block" : "none" }}
+      className={styles.button}
+      style={buttonStyle}
       onClick={handleClick}
       aria-label="Back to top"
     >
